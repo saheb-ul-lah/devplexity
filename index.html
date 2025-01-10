@@ -52,6 +52,20 @@
       .responsive {
         font-size: 15px;
       }
+
+      #hero-card-container {
+        flex-direction: row;
+
+        div {
+          height: 100px;
+          width: 100px;
+          font-size: 20px;
+
+          i {
+            font-size: 20px;
+          }
+        }
+      }
     }
   </style>
 </head>
@@ -111,6 +125,16 @@
     .header.animate-nav .btn-getstarted {
       animation: slideDownFadeIn 0.5s ease-out 4.1s forwards;
     }
+
+    .rounded-feel {
+      background-color: #333;
+      margin-top: 20px;
+      padding: 0px 20px;
+      border-radius: 40px;
+      border: 1px solid antiquewhite;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
   </style>
   <header id="header" class="header d-flex align-items-center fixed-top">
     <div class="container-fluid container-xl position-relative d-flex align-items-center justify-content-between">
@@ -164,7 +188,14 @@
   <script>
     document.addEventListener("DOMContentLoaded", function () {
       const header = document.querySelector("#header");
-      setTimeout(() => { header.classList.add("animate-nav"); }, 3200);
+      const roundedFeel = document.querySelector("#navmenu");
+
+      setTimeout(() => {
+        roundedFeel.classList.add("rounded-feel");
+      }, 3000);
+      setTimeout(() => {
+        header.classList.add("animate-nav");
+      }, 3200);
     });
   </script>
 
@@ -290,7 +321,7 @@
           }
         }
       </style>
-      <div class="container">
+      <div style="opacity: 0;" id="hero-cards-container" class="container">
         <div class="row justify-content-center text-center" data-aos="fade-up" data-aos-delay="100">
           <div class="col-xl-6 col-lg-8">
             <!-- <h2 class="responsive">Transforming Ideas into Digital Reality<span>.</span></h2> -->
@@ -307,7 +338,7 @@
             const texts = [
               "Innovative Solutions for Modern Businesses.",
               "Transforming Ideas into Digital Reality.",
-              "We are DevPlexity🥑."
+              "We are DevPlexity ❄."
             ];
             let count = 0;
             let index = 0;
@@ -337,7 +368,8 @@
           });
         </script>
 
-        <div class="row gy-4 mt-5 justify-content-center" data-aos="fade-up" data-aos-delay="200">
+        <div id="hero-card-container" class="row gy-4 mt-5 justify-content-center" data-aos="fade-up"
+          data-aos-delay="200">
           <div class="col-xl-2 col-md-4" data-aos="fade-up" data-aos-delay="300">
             <div class="icon-box">
               <i class="bi bi-binoculars"></i>
@@ -371,6 +403,36 @@
         </div>
       </div>
     </section>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const heroCardsContainer = document.querySelector("#hero-cards-container");
+        const fadeDuration = 4000; // 4 seconds for the fade-in
+        const startDelay = 4000; // 4 seconds delay before starting the fade
+
+        // Set initial opacity to 0
+        heroCardsContainer.style.opacity = "0";
+
+        setTimeout(() => {
+          const startTime = performance.now(); // Get the start time of the fade
+
+          function fadeIn(currentTime) {
+            const elapsedTime = currentTime - startTime; // Calculate elapsed time
+            const progress = Math.min(elapsedTime / fadeDuration, 1); // Calculate progress (0 to 1)
+
+            // Update opacity based on progress
+            heroCardsContainer.style.opacity = progress;
+
+            // Continue the animation until progress reaches 1
+            if (progress < 1) {
+              requestAnimationFrame(fadeIn);
+            }
+          }
+
+          // Start the fade-in animation
+          requestAnimationFrame(fadeIn);
+        }, startDelay);
+      });
+    </script>
     <!-- /Hero Section -->
 
     <!-- New section -->
@@ -529,15 +591,15 @@
     </section>
     <!-- New section -->
     <!-- Iframe  -->
-    <div style="width: 100vw;padding: 0;height: 100vh;" id="3d-cards" class="div">
+    <!-- <div style="width: 100vw;padding: 0;height: 100vh;" id="3d-cards" class="div">
       <div class="container" data-aos="fade-up" data-aos-delay="100">
         <iframe src="./assets/my-resources/3DCardsfornewYear/3dcards.html" frameborder="0" scrolling="no" width="100%"
           height="1000" style="border: none;"></iframe>
       </div>
-    </div>
+    </div> -->
     <!-- Iframe  -->
-    <!-- About Section -->
-    <section id="about" class="about section">
+    <!-- About Section (see here) -->
+    <!-- <section id="about" class="about section">
       <div class="container" data-aos="fade-up" data-aos-delay="100">
         <div class="row gy-4">
           <div class="col-lg-6 order-1 order-lg-2">
@@ -576,11 +638,10 @@
           </div>
         </div>
       </div>
-    </section>
+    </section> -->
     <!-- /About Section -->
 
     <!-- Clients Section -->
-    <!-- Kalyan bhai issey thik kar sakte ho to kardo -->
     <!-- <section id="clients" class="clients section">
   <div class="container" data-aos="fade-up" data-aos-delay="100">
     <div class="section-title">
@@ -686,8 +747,8 @@
 </section> -->
     <!-- /Clients Section -->
 
-    <!-- Features Section -->
-    <section id="features" class="features section">
+    <!-- Features Section (see here) -->
+    <!-- <section id="features" class="features section">
       <div class="container">
         <div class="row gy-4">
           <div class="features-image col-lg-6" data-aos="fade-up" data-aos-delay="100">
@@ -704,7 +765,6 @@
                 </p>
               </div>
             </div>
-            <!-- End Features Item-->
 
             <div class="features-item d-flex mt-5 ps-0 ps-lg-3" data-aos="fade-up" data-aos-delay="300">
               <i class="bi bi-basket flex-shrink-0"></i>
@@ -716,7 +776,6 @@
                 </p>
               </div>
             </div>
-            <!-- End Features Item-->
 
             <div class="features-item d-flex mt-5 ps-0 ps-lg-3" data-aos="fade-up" data-aos-delay="400">
               <i class="bi bi-broadcast flex-shrink-0"></i>
@@ -728,7 +787,6 @@
                 </p>
               </div>
             </div>
-            <!-- End Features Item-->
 
             <div class="features-item d-flex mt-5 ps-0 ps-lg-3" data-aos="fade-up" data-aos-delay="500">
               <i class="bi bi-camera-reels flex-shrink-0"></i>
@@ -740,11 +798,10 @@
                 </p>
               </div>
             </div>
-            <!-- End Features Item-->
           </div>
         </div>
       </div>
-    </section>
+    </section> -->
     <!-- /Features Section -->
     <style>
       /* Case Studies Section */
@@ -1052,6 +1109,7 @@
           background-color: aliceblue;
           padding: 10px;
         }
+
         .service-item:hover #container-service-item {
           background-image: url(https://th.bing.com/th/id/OIP.SguiOwxKEqpUpRUfAzv7TwHaE8?w=600&h=400&rs=1&pid=ImgDetMain);
         }
@@ -1336,7 +1394,8 @@
       <div class="container" data-aos="fade-up" data-aos-delay="100">
         <div class="row gy-4 align-items-center justify-content-between">
           <div class="col-lg-5">
-            <img src="assets/img/stats-img.jpg" alt="Our Achievements" class="img-fluid" />
+            <video autoplay muted loop src="assets/video/timelapse-devplexity.mp4" alt="Our Achievements"
+              class="img-fluid" />
           </div>
 
           <div class="col-lg-6">
@@ -1354,7 +1413,7 @@
                 <div class="stats-item d-flex">
                   <i class="bi bi-emoji-smile flex-shrink-0"></i>
                   <div>
-                    <span data-purecounter-start="0" data-purecounter-end="15" data-purecounter-duration="1"
+                    <span data-purecounter-start="0" data-purecounter-end="15" data-purecounter-duration="3"
                       class="purecounter"></span>
                     <p>
                       <strong>Happy Clients</strong>
@@ -1369,7 +1428,7 @@
                 <div class="stats-item d-flex">
                   <i class="bi bi-journal-richtext flex-shrink-0"></i>
                   <div>
-                    <span data-purecounter-start="0" data-purecounter-end="15" data-purecounter-duration="1"
+                    <span data-purecounter-start="0" data-purecounter-end="15" data-purecounter-duration="6"
                       class="purecounter"></span>
                     <p>
                       <strong>Projects Completed</strong>
@@ -1384,7 +1443,7 @@
                 <div class="stats-item d-flex">
                   <i class="bi bi-headset flex-shrink-0"></i>
                   <div>
-                    <span data-purecounter-start="0" data-purecounter-end="2000" data-purecounter-duration="1"
+                    <span data-purecounter-start="0" data-purecounter-end="2000" data-purecounter-duration="6"
                       class="purecounter"></span>
                     <p>
                       <strong>Hours of Support</strong>
@@ -1399,7 +1458,7 @@
                 <div class="stats-item d-flex">
                   <i class="bi bi-people flex-shrink-0"></i>
                   <div>
-                    <span data-purecounter-start="0" data-purecounter-end="4" data-purecounter-duration="1"
+                    <span data-purecounter-start="0" data-purecounter-end="4" data-purecounter-duration="4"
                       class="purecounter"></span>
                     <p>
                       <strong>Expert Team Members</strong>
@@ -1418,7 +1477,9 @@
 
     <!-- Testimonials Section -->
     <section id="testimonials" class="testimonials section dark-background">
-      <img src="assets/img/testimonials-bg.jpg" class="testimonials-bg" alt="Testimonials Background" />
+      <img
+        src="https://img.freepik.com/premium-vector/minimal-geometric-background-dynamic-shapes-composition-full-color_573652-174.jpg?w=1060"
+        class="testimonials-bg" alt="Testimonials Background" />
 
       <div class="container" data-aos="fade-up" data-aos-delay="100">
         <div class="swiper init-swiper">
@@ -1440,8 +1501,10 @@
           <div class="swiper-wrapper">
             <div class="swiper-slide">
               <div class="testimonial-item">
-                <img src="assets/img/testimonials/testimonials-1.jpg" class="testimonial-img" alt="John Doe" />
-                <h3>Rizwan Rehman</h3>
+                <img
+                  src="https://i1.rgstatic.net/ii/profile.image/11431281104196663-1669970403724_Q512/Rizwan-Rehman-2.jpg"
+                  class="testimonial-img" alt="John Doe" />
+                <h3>Dr. Rizwan Rehman</h3>
                 <h4>Asst. Professor, Dibrugarh University</h4>
                 <div class="stars">
                   <i class="bi bi-star-fill"></i>
@@ -1464,7 +1527,9 @@
 
             <div class="swiper-slide">
               <div class="testimonial-item">
-                <img src="assets/img/testimonials/testimonials-2.jpg" class="testimonial-img" alt="Jane Smith" />
+                <img
+                  src="https://files.elfsightcdn.com/10f57fcd-29bb-4da4-9c09-61ea49a5bf6e/63dfd52f-f340-4e29-8cb8-11a65a5a79f9/PPP-New-HD.jpg"
+                  class="testimonial-img" alt="Jane Smith" />
                 <h3>Abhilash Boruah</h3>
                 <h4>Asst. Professor, Dibrugarh University</h4>
                 <div class="stars">
@@ -1476,7 +1541,7 @@
                 </div>
                 <p>
                   <i class="bi bi-quote quote-icon-left"></i>
-                  <span>Their team delivered a seamless Alumni Portal that
+                  <span>The Devplexity team delivered a seamless Alumni Portal that
                     automated and enhanced our Alumni registration. Truly a
                     partner in innovation and growth.</span>
                   <i class="bi bi-quote quote-icon-right"></i>
@@ -1487,7 +1552,9 @@
 
             <div class="swiper-slide">
               <div class="testimonial-item">
-                <img src="assets/img/testimonials/testimonials-3.jpg" class="testimonial-img" alt="Michael Brown" />
+                <img
+                  src="https://instagram.fgau1-3.fna.fbcdn.net/v/t51.2885-19/269884068_1119143455490065_1910673412901612636_n.jpg?stp=dst-jpg_s150x150_tt6&_nc_ht=instagram.fgau1-3.fna.fbcdn.net&_nc_cat=101&_nc_ohc=uf0fxKi_Qp0Q7kNvgHMJYv-&_nc_gid=e59d70425f0e445c8b6773c1905df08f&edm=AOQ1c0wBAAAA&ccb=7-5&oh=00_AYAlwHLcvVmsd-9mKfjItKPt2GaXnjCG35KXW2x-RHvaxg&oe=67872DF5&_nc_sid=8b3546"
+                  class="testimonial-img" alt="Michael Brown" />
                 <h3>Sudipta Pran Bhattacharjee</h3>
                 <h4>CTO, Little Box India</h4>
                 <div class="stars">
@@ -1510,8 +1577,9 @@
 
             <div class="swiper-slide">
               <div class="testimonial-item">
-                <img src="assets/img/testimonials/testimonials-4.jpg" class="testimonial-img" alt="Sarah Johnson" />
-                <h3>Ankur Bharali</h3>
+                <img src="https://th.bing.com/th/id/OIP.wsM6HBD8xJGTWCuATBeAJAHaHa?w=152&h=180&c=7&r=0&o=5&pid=1.7"
+                  class="testimonial-img" alt="Sarah Johnson" />
+                <h3>Prof. Ankur Bharali</h3>
                 <h4>Director, IQAC at Dibrugarh University</h4>
                 <div class="stars">
                   <i class="bi bi-star-fill"></i>
@@ -1841,7 +1909,7 @@
             <span>All Rights Reserved</span>
           </p> -->
         <div class="credits">
-          Designed by <a href="https://bootstrapmade.com/">Devplexity</a>
+          Designed by <a href="https://devplexity.vercel.app/">Team Devplexity</a>
         </div>
       </div>
     </div>
