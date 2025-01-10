@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  
+</head>
+
+<style>
+  @import url("https://fonts.googleapis.com/css?family=Raleway:200");
+
+  /*Styling for cards*/
+
+
+  .wrapper h1 {
+    color: #111;
+    text-align: center;
+    margin-top: 25px;
+    letter-spacing: 2px;
+  }
+
+  .wrapper {
+    position: absolute;
+    top: 10%;
+    left: 40%;
+    width: 300px;
+    height: 500px;
+    perspective: 900px;
+  }
+
+  .container {
+    position: absolute;
+    top: 0%;
+    width: 100%;
+    height: 100%;
+    transition: 0.4s all ease;
+    transform: rotateX(20deg) scale(0.7);
+    box-shadow: 0px 20px 50px #555;
+    animation: entry 1s linear 1;
+  }
+
+  @keyframes entry {
+    0% {
+      top: -20%;
+      opacity: 0.1;
+    }
+
+    100% {
+      top: 0%;
+    }
+  }
+
+  .container:hover {
+    cursor: pointer;
+    transform: rotate(0deg) scale(1) translateY(10px);
+    transition: 0.5s all ease;
+    perspective: 900;
+    z-index: 99;
+  }
+
+  #card1 {
+    background: linear-gradient(to bottom, #eba65b 30%, #d99267 100%);
+    z-index: 300;
+  }
+
+  #card2 {
+    background: linear-gradient(to bottom, #59476f 30%, #7b88d1 100%);
+    box-shadow: 0px 20px 100px #555;
+    left: 100%;
+    z-index: 0;
+  }
+
+  #card3 {
+    left: -100%;
+    z-index: 0;
+    background: linear-gradient(to bottom, #59476f 30%, #7b88d1 100%);
+    box-shadow: 0px 20px 100px #555;
+  }
+
+  .image {
+    position: absolute;
+    top: 0%;
+    left: 0%;
+    width: 100%;
+    height: 45%;
+  }
+
+  .story {
+    position: absolute;
+    top: 45%;
+    left: 0%;
+    height: 55%;
+    width: 100%;
+    z-index: 30;
+  }
+
+  #story1 {
+    background: linear-gradient(to bottom, #eba65b 0%, #d99267 40%);
+  }
+
+  #story2 {
+    background: linear-gradient(to top, #5b62a2 0%, #7b88d1 100%);
+  }
+
+  #story3 {
+    background: linear-gradient(to top, #5b62a2 0%, #7b88d1 120%);
+  }
+
+  .info {
+    position: absolute;
+    top: 10%;
+  }
+
+  .wrapper h3 {
+    text-align: center;
+    text-shadow: 0px 0px 10px #eee;
+    color: #eee;
+    letter-spacing: 2px;
+  }
+
+  .wrapper p {
+    font-size: 14px;
+    color: #fff;
+    padding: 0px 20px 20px 20px;
+    line-height: 150%;
+    text-align: center;
+    letter-spacing: 1px;
+  }
+</style>
+
+<body>
+  <h1> Why Choose Devplexity? </h1>
+  <div class="wrapper">
+
+    <div class="container" id="card1">
+      <div class="image">
+
+        <img
+          src="https://uicookies.com/wp-content/uploads/2019/03/sensive-free-html-website-templates.jpg"
+          width="100%" height="100%">
+
+      </div>
+      <div class="story" id="story1">
+        <div class="info">
+          <h3>Web Design & Development</h3>
+          <p> At Devplexity, we create visually stunning, responsive websites tailored to your brand and business goals. Our team ensures seamless user experiences that drive engagement and growth.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="container" id="card2">
+      <div class="image">
+
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ6z3mxUipSmMI5AqXnHcYDJOCUwvF9n3Yp1g&s" width="100%"
+          height="100%">
+
+      </div>
+      <div class="story" id="story2">
+        <div class="info">
+          <h3>Digital Marketing</h3>
+          <p> Drive growth with our data-driven marketing strategies. From SEO and PPC to social media campaigns, we maximize your online presence and deliver measurable results.</p>
+        </div>
+      </div>
+    </div>
+    <div class="container" id="card3">
+      <div class="image">
+
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQQWAAIZk9Krc8XXD_BYHCa6cQQg0Lh3m5sZQ&s"
+          width="100%" height="100%">
+
+      </div>
+      <div class="story" id="story3">
+        <div class="info">
+          <h3>Mobile App Development</h3>
+          <p> We build innovative and user-friendly mobile applications for iOS and Android platforms. Our apps are designed to provide seamless experiences across devices.</p>
+
+        </div>
+      </div>
+    </div>
+
+
+  </div>
+
+
+</body>
+
+</html>
