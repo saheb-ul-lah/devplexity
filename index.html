@@ -57,6 +57,61 @@
 </head>
 
 <body class="index-page">
+  <style>
+    /* Keyframes for slide-down and fade-in animation */
+    @keyframes slideDownFadeIn {
+      0% {
+        opacity: 0;
+        transform: translateY(-30px);
+      }
+
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* Apply animation to all navbar elements */
+    .header:not(.animate-nav) .logo,
+    .header:not(.animate-nav) .navmenu ul li,
+    .header:not(.animate-nav) .btn-getstarted {
+      opacity: 0;
+      transform: translateY(-30px);
+    }
+
+    /* Staggered delay for all navbar elements */
+    .header.animate-nav .logo {
+      animation: slideDownFadeIn 0.5s ease-out 2s forwards;
+    }
+
+    .header.animate-nav .navmenu ul li:nth-child(1) {
+      animation: slideDownFadeIn 0.5s ease-out 2.3s forwards;
+    }
+
+    .header.animate-nav .navmenu ul li:nth-child(2) {
+      animation: slideDownFadeIn 0.5s ease-out 2.6s forwards;
+    }
+
+    .header.animate-nav .navmenu ul li:nth-child(3) {
+      animation: slideDownFadeIn 0.5s ease-out 2.9s forwards;
+    }
+
+    .header.animate-nav .navmenu ul li:nth-child(4) {
+      animation: slideDownFadeIn 0.5s ease-out 3.2s forwards;
+    }
+
+    .header.animate-nav .navmenu ul li:nth-child(5) {
+      animation: slideDownFadeIn 0.5s ease-out 3.5s forwards;
+    }
+
+    .header.animate-nav .navmenu ul li:nth-child(6) {
+      animation: slideDownFadeIn 0.5s ease-out 3.8s forwards;
+    }
+
+    .header.animate-nav .btn-getstarted {
+      animation: slideDownFadeIn 0.5s ease-out 4.1s forwards;
+    }
+  </style>
   <header id="header" class="header d-flex align-items-center fixed-top">
     <div class="container-fluid container-xl position-relative d-flex align-items-center justify-content-between">
       <a href="index.html" class="logo d-flex align-items-center me-auto me-lg-0">
@@ -106,6 +161,12 @@
       <a class="btn-getstarted" href="index.html#about">Get Started</a>
     </div>
   </header>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const header = document.querySelector("#header");
+      setTimeout(() => { header.classList.add("animate-nav"); }, 3200);
+    });
+  </script>
 
   <main class="main">
     <!-- <section id="hero" class="hero section dark-background">
@@ -151,23 +212,130 @@
     <!-- Hero Section -->
     <section id="hero" class="hero section dark-background">
       <!-- <img src="assets/img/hero-bg.jpg" alt="" data-aos="fade-in" /> -->
-      <video autoplay muted loop style="position: absolute;; width: 100vw; height: 100vh; object-fit: cover; filter: brightness(0.8);"
+      <video autoplay muted loop
+        style="position: absolute;; width: 100vw; height: 100vh; object-fit: cover; filter: brightness(0.8);"
         data-aos="fade-in">
         <source src="assets/video/intro-1.mp4" type="video/mp4">
         Your browser does not support the video tag.
       </video>
+      <style>
+        .blinking-cursor {
+          font-weight: 100;
+          font-size: 30px;
+          color: #fff;
+          -webkit-animation: 1s blink step-end infinite;
+          -moz-animation: 1s blink step-end infinite;
+          -ms-animation: 1s blink step-end infinite;
+          -o-animation: 1s blink step-end infinite;
+          animation: 1s blink step-end infinite;
+        }
 
+        @keyframes blink {
+
+          from,
+          to {
+            color: transparent;
+          }
+
+          50% {
+            color: #fff;
+          }
+        }
+
+        @-moz-keyframes blink {
+
+          from,
+          to {
+            color: transparent;
+          }
+
+          50% {
+            color: #fff;
+          }
+        }
+
+        @-webkit-keyframes blink {
+
+          from,
+          to {
+            color: transparent;
+          }
+
+          50% {
+            color: #fff;
+          }
+        }
+
+        @-ms-keyframes blink {
+
+          from,
+          to {
+            color: transparent;
+          }
+
+          50% {
+            color: #fff;
+          }
+        }
+
+        @-o-keyframes blink {
+
+          from,
+          to {
+            color: transparent;
+          }
+
+          50% {
+            color: #fff;
+          }
+        }
+      </style>
       <div class="container">
         <div class="row justify-content-center text-center" data-aos="fade-up" data-aos-delay="100">
           <div class="col-xl-6 col-lg-8">
-            <h2 style="" class="responsive">Transforming Ideas into Digital Reality<span>.</span></h2>
+            <!-- <h2 class="responsive">Transforming Ideas into Digital Reality<span>.</span></h2> -->
+            <h2 style="font-size: 30px;min-height: 100px;margin: 0;" class="responsive">
+              <span style="color: aliceblue;opacity: 0.2;" id="typewriter"></span><span class="blinking-cursor">|</span>
+            </h2>
             <p>
-              We are a team of passionate developers, designers, and
-              strategists dedicated to delivering exceptional digital
-              solutions.
+
             </p>
           </div>
         </div>
+        <script>
+          document.addEventListener("DOMContentLoaded", function () {
+            const texts = [
+              "Innovative Solutions for Modern Businesses.",
+              "Transforming Ideas into Digital Reality.",
+              "We are DevPlexity🥑."
+            ];
+            let count = 0;
+            let index = 0;
+            let currentText = '';
+            let letter = '';
+
+            (function type() {
+              if (count === texts.length) {
+                count = 0;
+              }
+              currentText = texts[count];
+              letter = currentText.slice(0, ++index);
+
+              document.getElementById('typewriter').textContent = letter;
+              if (letter.length === currentText.length) {
+                setTimeout(() => {
+                  count++;
+                  index = 0;
+                  setTimeout(type, 1000); // Wait before starting the next text
+                }, 2000); // Wait before deleting the text
+              } else if (index > currentText.length / 2 && count < texts.length) {
+                setTimeout(type, 100); // Typing speed
+              } else {
+                setTimeout(type, 100); // Typing speed
+              }
+            })();
+          });
+        </script>
 
         <div class="row gy-4 mt-5 justify-content-center" data-aos="fade-up" data-aos-delay="200">
           <div class="col-xl-2 col-md-4" data-aos="fade-up" data-aos-delay="300">
@@ -204,12 +372,170 @@
       </div>
     </section>
     <!-- /Hero Section -->
+
+    <!-- New section -->
+    <style>
+      /* Services Section */
+      .services {
+        padding: 80px 0;
+        background-color: #f8f9fa;
+      }
+
+      .services h2 {
+        font-size: 2.5rem;
+        font-weight: 700;
+        margin-bottom: 20px;
+      }
+
+      .services .lead {
+        font-size: 1.1rem;
+        color: #6c757d;
+        margin-bottom: 40px;
+      }
+
+      .service-card {
+        background: #fff;
+        padding: 30px;
+        border-radius: 10px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        text-align: center;
+      }
+
+      .service-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 8px 12px rgba(0, 0, 0, 0.15);
+      }
+
+      .service-card .icon-box {
+        width: 80px;
+        height: 80px;
+        margin: 0 auto 20px;
+        background: #007bff;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #fff;
+        font-size: 2rem;
+        transition: background 0.3s ease;
+      }
+
+      .service-card:hover .icon-box {
+        background: #0056b3;
+      }
+
+      .service-card h3 {
+        font-size: 1.5rem;
+        font-weight: 600;
+        margin-bottom: 10px;
+      }
+
+      .service-card p {
+        font-size: 0.95rem;
+        color: #6c757d;
+      }
+    </style>
+    <section id="services" class="services section">
+      <div class="container">
+        <div class="row justify-content-center text-center" data-aos="fade-up" data-aos-delay="100">
+          <div class="col-xl-8 col-lg-10">
+            <h2>Our Services</h2>
+            <p class="lead">
+              We've developed expertise around technologies & solving complex problem statements.
+            </p>
+          </div>
+        </div>
+
+        <div class="row gy-4 mt-5 justify-content-center">
+          <!-- Service 1: Full Stack Development -->
+          <div class="col-xl-3 col-md-6" data-aos="fade-up" data-aos-delay="200">
+            <div class="service-card">
+              <div class="icon-box">
+                <i class="bi bi-layers"></i>
+              </div>
+              <h3>Full Stack Development</h3>
+              <p>Website & Dynamic Portals</p>
+            </div>
+          </div>
+
+          <!-- Service 2: UI/UX Design -->
+          <div class="col-xl-3 col-md-6" data-aos="fade-up" data-aos-delay="300">
+            <div class="service-card">
+              <div class="icon-box">
+                <i class="bi bi-palette"></i>
+              </div>
+              <h3>UI/UX Design</h3>
+              <p>Beautiful & Functional Designs</p>
+            </div>
+          </div>
+
+          <!-- Service 3: Mobile Apps -->
+          <div class="col-xl-3 col-md-6" data-aos="fade-up" data-aos-delay="400">
+            <div class="service-card">
+              <div class="icon-box">
+                <i class="bi bi-phone"></i>
+              </div>
+              <h3>Mobile Apps</h3>
+              <p>Native & Hybrid Development</p>
+            </div>
+          </div>
+
+          <!-- Service 4: MVP Development -->
+          <div class="col-xl-3 col-md-6" data-aos="fade-up" data-aos-delay="500">
+            <div class="service-card">
+              <div class="icon-box">
+                <i class="bi bi-rocket"></i>
+              </div>
+              <h3>MVP Development</h3>
+              <p>Fast & Scalable Solutions</p>
+            </div>
+          </div>
+
+          <!-- Service 5: IT Consulting -->
+          <div class="col-xl-3 col-md-6" data-aos="fade-up" data-aos-delay="600">
+            <div class="service-card">
+              <div class="icon-box">
+                <i class="bi bi-gear"></i>
+              </div>
+              <h3>IT Consulting</h3>
+              <p>Strategic Technology Guidance</p>
+            </div>
+          </div>
+
+          <!-- Service 6: SAAS Development -->
+          <div class="col-xl-3 col-md-6" data-aos="fade-up" data-aos-delay="700">
+            <div class="service-card">
+              <div class="icon-box">
+                <i class="bi bi-cloud"></i>
+              </div>
+              <h3>SAAS Development</h3>
+              <p>Cloud-Based Solutions</p>
+            </div>
+          </div>
+
+          <!-- Service 7: Security Audit -->
+          <div class="col-xl-3 col-md-6" data-aos="fade-up" data-aos-delay="800">
+            <div class="service-card">
+              <div class="icon-box">
+                <i class="bi bi-shield-lock"></i>
+              </div>
+              <h3>Security Audit</h3>
+              <p>Robust & Secure Systems</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- New section -->
+    <!-- Iframe  -->
     <div style="width: 100vw;padding: 0;height: 100vh;" id="3d-cards" class="div">
       <div class="container" data-aos="fade-up" data-aos-delay="100">
-        <iframe src="../assets/my-resources/3DCardsfornewYear/3dcards.html" frameborder="0" scrolling="no" width="100%"
+        <iframe src="./assets/my-resources/3DCardsfornewYear/3dcards.html" frameborder="0" scrolling="no" width="100%"
           height="1000" style="border: none;"></iframe>
       </div>
     </div>
+    <!-- Iframe  -->
     <!-- About Section -->
     <section id="about" class="about section">
       <div class="container" data-aos="fade-up" data-aos-delay="100">
@@ -420,7 +746,286 @@
       </div>
     </section>
     <!-- /Features Section -->
+    <style>
+      /* Case Studies Section */
+      .case-studies {
+        padding: 80px 0;
+        background-color: #f8f9fa;
+      }
 
+      .case-studies h2 {
+        font-size: 2.5rem;
+        font-weight: 700;
+        margin-bottom: 20px;
+      }
+
+      .case-studies .lead {
+        font-size: 1.1rem;
+        color: #6c757d;
+        margin-bottom: 40px;
+      }
+
+      /* Case Studies Carousel */
+      .case-studies-carousel {
+        display: flex;
+        overflow-x: auto;
+        scroll-behavior: smooth;
+        padding: 20px 0;
+        gap: 20px;
+      }
+
+      .case-studies-carousel::-webkit-scrollbar {
+        display: none;
+        /* Hide scrollbar */
+      }
+
+      .case-study-card {
+        flex: 0 0 300px;
+        background: #fff;
+        border-radius: 10px;
+        overflow: hidden;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+      }
+
+      .case-study-card:hover {
+        transform: scale(1.05);
+        box-shadow: 0 8px 12px rgba(0, 0, 0, 0.15);
+      }
+
+      .case-study-card .card-image {
+        overflow: hidden;
+        height: 200px;
+      }
+
+      .case-study-card .card-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.3s ease;
+      }
+
+      .case-study-card:hover .card-image img {
+        transform: scale(1.1);
+      }
+
+      .case-study-card .card-content {
+        padding: 20px;
+        text-align: center;
+      }
+
+      .case-study-card h3 {
+        font-size: 1.5rem;
+        font-weight: 600;
+        margin-bottom: 10px;
+      }
+
+      .case-study-card p {
+        font-size: 0.95rem;
+        color: #6c757d;
+      }
+
+      /* Arrows */
+      .arrow {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        background: #007bff;
+        color: #fff;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        z-index: 10;
+        transition: background 0.3s ease;
+      }
+
+      .arrow:hover {
+        background: #0056b3;
+      }
+
+      .left-arrow {
+        left: -20px;
+      }
+
+      .right-arrow {
+        right: -20px;
+      }
+    </style>
+    <!-- New part 2 -->
+    <section id="case-studies" class="case-studies section">
+      <div class="container">
+        <div class="row justify-content-center text-center" data-aos="fade-up" data-aos-delay="100">
+          <div class="col-xl-8 col-lg-10">
+            <h2>Case Studies</h2>
+            <p class="lead">
+              How digital makes a difference for Institutions and their stakeholders.
+            </p>
+          </div>
+        </div>
+
+        <div class="row mt-5 position-relative">
+          <!-- Left Arrow -->
+          <div class="arrow left-arrow" onclick="scrollCards(-1)">
+            <i class="bi bi-chevron-left"></i>
+          </div>
+
+          <!-- Case Studies Carousel -->
+          <div class="col-12">
+            <div class="case-studies-carousel">
+              <!-- Case Study 1 -->
+              <div class="case-study-card" data-aos="fade-up" data-aos-delay="200">
+                <div class="card-image">
+                  <img src="https://th.bing.com/th/id/OIP.ypXIdrCeMKnQihqfiLcDjAHaHa?rs=1&pid=ImgDetMain"
+                    alt="Jan Nigrami - Grievance Redressal" />
+                </div>
+                <div class="card-content">
+                  <h3>Jan Nigrami - Grievance Redressal</h3>
+                  <p>Rural Development Department</p>
+                </div>
+              </div>
+
+              <!-- Case Study 2 -->
+              <div class="case-study-card" data-aos="fade-up" data-aos-delay="300">
+                <div class="card-image">
+                  <img src="https://th.bing.com/th/id/OIP.ypXIdrCeMKnQihqfiLcDjAHaHa?rs=1&pid=ImgDetMain"
+                    alt="Digital Transformation" />
+                </div>
+                <div class="card-content">
+                  <h3>Digital Transformation</h3>
+                  <p>Enhancing Institutional Efficiency</p>
+                </div>
+              </div>
+
+              <!-- Case Study 3 -->
+              <div class="case-study-card" data-aos="fade-up" data-aos-delay="400">
+                <div class="card-image">
+                  <img src="https://th.bing.com/th/id/OIP.ypXIdrCeMKnQihqfiLcDjAHaHa?rs=1&pid=ImgDetMain"
+                    alt="Stakeholder Engagement" />
+                </div>
+                <div class="card-content">
+                  <h3>Stakeholder Engagement</h3>
+                  <p>Improving Communication & Collaboration</p>
+                </div>
+              </div>
+              <!-- Case Study 1 -->
+              <div class="case-study-card" data-aos="fade-up" data-aos-delay="200">
+                <div class="card-image">
+                  <img src="https://th.bing.com/th/id/OIP.ypXIdrCeMKnQihqfiLcDjAHaHa?rs=1&pid=ImgDetMain"
+                    alt="Jan Nigrami - Grievance Redressal" />
+                </div>
+                <div class="card-content">
+                  <h3>Jan Nigrami - Grievance Redressal</h3>
+                  <p>Rural Development Department</p>
+                </div>
+              </div>
+
+              <!-- Case Study 2 -->
+              <div class="case-study-card" data-aos="fade-up" data-aos-delay="300">
+                <div class="card-image">
+                  <img src="https://th.bing.com/th/id/OIP.ypXIdrCeMKnQihqfiLcDjAHaHa?rs=1&pid=ImgDetMain"
+                    alt="Digital Transformation" />
+                </div>
+                <div class="card-content">
+                  <h3>Digital Transformation</h3>
+                  <p>Enhancing Institutional Efficiency</p>
+                </div>
+              </div>
+
+              <!-- Case Study 3 -->
+              <div class="case-study-card" data-aos="fade-up" data-aos-delay="400">
+                <div class="card-image">
+                  <img src="https://th.bing.com/th/id/OIP.ypXIdrCeMKnQihqfiLcDjAHaHa?rs=1&pid=ImgDetMain"
+                    alt="Stakeholder Engagement" />
+                </div>
+                <div class="card-content">
+                  <h3>Stakeholder Engagement</h3>
+                  <p>Improving Communication & Collaboration</p>
+                </div>
+              </div>
+              <!-- Case Study 1 -->
+              <div class="case-study-card" data-aos="fade-up" data-aos-delay="200">
+                <div class="card-image">
+                  <img src="https://th.bing.com/th/id/OIP.ypXIdrCeMKnQihqfiLcDjAHaHa?rs=1&pid=ImgDetMain"
+                    alt="Jan Nigrami - Grievance Redressal" />
+                </div>
+                <div class="card-content">
+                  <h3>Jan Nigrami - Grievance Redressal</h3>
+                  <p>Rural Development Department</p>
+                </div>
+              </div>
+
+              <!-- Case Study 2 -->
+              <div class="case-study-card" data-aos="fade-up" data-aos-delay="300">
+                <div class="card-image">
+                  <img src="https://th.bing.com/th/id/OIP.ypXIdrCeMKnQihqfiLcDjAHaHa?rs=1&pid=ImgDetMain"
+                    alt="Digital Transformation" />
+                </div>
+                <div class="card-content">
+                  <h3>Digital Transformation</h3>
+                  <p>Enhancing Institutional Efficiency</p>
+                </div>
+              </div>
+
+              <!-- Case Study 3 -->
+              <div class="case-study-card" data-aos="fade-up" data-aos-delay="400">
+                <div class="card-image">
+                  <img src="https://th.bing.com/th/id/OIP.ypXIdrCeMKnQihqfiLcDjAHaHa?rs=1&pid=ImgDetMain"
+                    alt="Stakeholder Engagement" />
+                </div>
+                <div class="card-content">
+                  <h3>Stakeholder Engagement</h3>
+                  <p>Improving Communication & Collaboration</p>
+                </div>
+              </div>
+
+              <!-- Add more case studies as needed -->
+            </div>
+          </div>
+
+          <!-- Right Arrow -->
+          <div class="arrow right-arrow" onclick="scrollCards(1)">
+            <i class="bi bi-chevron-right"></i>
+          </div>
+        </div>
+      </div>
+    </section>
+    <script>
+      // Auto-scroll functionality
+      let scrollInterval;
+
+      function startAutoScroll() {
+        scrollInterval = setInterval(() => {
+          const carousel = document.querySelector('.case-studies-carousel');
+          carousel.scrollBy({ left: 300, behavior: 'smooth' });
+
+          if (carousel.scrollLeft + carousel.clientWidth >= carousel.scrollWidth) {
+            carousel.scrollTo({ left: 0, behavior: 'smooth' });
+          }
+        }, 3000); // Adjust scroll interval as needed
+      }
+
+      function stopAutoScroll() {
+        clearInterval(scrollInterval);
+      }
+
+      // Manual scroll functionality
+      function scrollCards(direction) {
+        const carousel = document.querySelector('.case-studies-carousel');
+        carousel.scrollBy({ left: direction * 300, behavior: 'smooth' });
+      }
+
+      // Start auto-scroll on page load
+      document.addEventListener('DOMContentLoaded', startAutoScroll);
+
+      // Pause auto-scroll on hover
+      document.querySelector('.case-studies-carousel').addEventListener('mouseenter', stopAutoScroll);
+      document.querySelector('.case-studies-carousel').addEventListener('mouseleave', startAutoScroll);
+    </script>
+    <!-- New part 2 -->
     <!-- Services Section -->
     <section id="services" class="services section">
       <!-- Section Title -->
@@ -429,10 +1034,31 @@
         <p class="responsive">Explore our comprehensive range of digital solutions</p>
       </div>
       <!-- End Section Title -->
+      <style>
+        .service-item {
+          background-image: url(https://www.elegantthemes.com/blog/wp-content/uploads/2013/09/bg-10-full.jpg);
+          border-radius: 25px;
+        }
 
+        .service-item:hover {
+          /* filter: brightness(0.4); */
+          background-image: url(https://th.bing.com/th/id/OIP.SguiOwxKEqpUpRUfAzv7TwHaE8?w=600&h=400&rs=1&pid=ImgDetMain);
+          border-radius: 50%;
+          border: 4px solid aliceblue;
+        }
+
+        .service-item:hover .icon {
+          border-radius: 50%;
+          background-color: aliceblue;
+          padding: 10px;
+        }
+        .service-item:hover #container-service-item {
+          background-image: url(https://th.bing.com/th/id/OIP.SguiOwxKEqpUpRUfAzv7TwHaE8?w=600&h=400&rs=1&pid=ImgDetMain);
+        }
+      </style>
       <div class="container">
         <div class="row gy-4">
-          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+          <div id="container-service-item" class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
             <div class="service-item position-relative">
               <div class="icon">
                 <i class="bi bi-activity"></i>
@@ -534,7 +1160,8 @@
 
     <!-- Call To Action Section -->
     <section id="call-to-action" class="call-to-action section dark-background">
-      <img src="assets/img/cta-bg.jpg" alt="Call to Action Background" />
+      <img src="https://images.freecreatives.com/wp-content/uploads/2016/04/Website-Backgrounds-For-Desktop.jpg"
+        alt="Call to Action Background" />
 
       <div class="container">
         <div class="row justify-content-center" data-aos="zoom-in" data-aos-delay="100">
