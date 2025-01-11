@@ -1100,7 +1100,7 @@
         .service-item:hover {
           /* filter: brightness(0.4); */
           background-image: url(https://th.bing.com/th/id/OIP.SguiOwxKEqpUpRUfAzv7TwHaE8?w=600&h=400&rs=1&pid=ImgDetMain);
-          border-radius: 50%;
+          /* border-radius: 50%; */
           border: 4px solid aliceblue;
         }
 
@@ -1725,10 +1725,13 @@
       }
 
       .team-card {
-        h3,p{
+
+        h3,
+        p {
           color: white;
         }
       }
+
       .team-card {
         position: relative;
         height: 400px;
@@ -1868,11 +1871,13 @@
                 </div>
               </div>
             </div>
-            <button data-aos="fade-up" class="carousel-control-prev" type="button" data-bs-target="#teamCarousel" data-bs-slide="prev">
+            <button data-aos="fade-up" class="carousel-control-prev" type="button" data-bs-target="#teamCarousel"
+              data-bs-slide="prev">
               <span class="carousel-control-prev-icon" aria-hidden="true"></span>
               <span class="visually-hidden">Previous</span>
             </button>
-            <button data-aos="fade-up" class="carousel-control-next" type="button" data-bs-target="#teamCarousel" data-bs-slide="next">
+            <button data-aos="fade-up" class="carousel-control-next" type="button" data-bs-target="#teamCarousel"
+              data-bs-slide="next">
               <span class="carousel-control-next-icon" aria-hidden="true"></span>
               <span class="visually-hidden">Next</span>
             </button>
@@ -2093,7 +2098,54 @@
       class="bi bi-arrow-up-short"></i></a>
 
   <!-- Preloader -->
-  <div id="preloader"></div>
+  <!-- <div id="preloader"></div> -->
+  <style>
+    /* Preloader Styles */
+    #custom-preloader {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 9999;
+    }
+
+    #custom-preloader::after {
+      content: '';
+      width: 50px;
+      height: 50px;
+      
+    }
+
+    /* Spinner Animation */
+    @keyframes spin {
+      from {
+        transform: rotate(0deg);
+      }
+
+      to {
+        transform: rotate(360deg);
+      }
+    }
+
+    /* Hide the preloader after duration */
+    body.loaded #custom-preloader {
+      display: none;
+    }
+  </style>
+  <div id="custom-preloader">
+    <iframe src="./creative-button.html" frameborder="0" scrolling="no" width="100%" height="100%"
+      style="border: none;"></iframe>
+  </div>
+  <script>
+    // Show preloader for at least 3 seconds, then remove it
+    window.addEventListener('load', () => {
+      // Wait for a minimum of 3 seconds before hiding the preloader
+      setTimeout(() => {
+        document.body.classList.add('loaded'); // Hide preloader
+      }, 3000); // 3 seconds
+    });
+  </script>
 
   <!-- Vendor JS Files -->
   <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>

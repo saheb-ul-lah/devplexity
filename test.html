@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Preloader</title>
+  <style>
+    /* Preloader Styles */
+    #custom-preloader {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: #fff; /* Change background color as needed */
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 9999; /* Ensure it stays above all other elements */
+    }
+
+    #custom-preloader::after {
+      content: '';
+      width: 50px;
+      height: 50px;
+      border: 5px solid #3498db; /* Outer circle color */
+      border-top: 5px solid transparent; /* Creates the spinning effect */
+      border-radius: 50%;
+      animation: spin 1s linear infinite;
+    }
+
+    /* Spinner Animation */
+    @keyframes spin {
+      from {
+        transform: rotate(0deg);
+      }
+      to {
+        transform: rotate(360deg);
+      }
+    }
+
+    /* Hide the preloader when content is loaded */
+    body.loaded #custom-preloader {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <!-- Preloader -->
+  <div id="custom-preloader"></div>
+
+  <!-- Content -->
+  <div style="padding: 20px;">
+    <h1>Welcome to the Website!</h1>
+    <p>This is the main content of the page.</p>
+  </div>
+
+  <script>
+    // Simulate content loading
+    window.addEventListener('load', () => {
+      document.body.classList.add('loaded');
+    });
+  </script>
+</body>
+</html>
