@@ -1,0 +1,2164 @@
+<!-- Devplexity -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+  <title>Devplexity</title>
+  <meta name="description" content="" />
+  <meta name="keywords" content="" />
+
+  <!-- Favicons -->
+  <link href="assets/img/favicon.png" rel="icon" />
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon" />
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com" rel="preconnect" />
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+    rel="stylesheet" />
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet" />
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet" />
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet" />
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet" />
+
+  <!-- Main CSS File -->
+  <link href="assets/css/main.css" rel="stylesheet" />
+
+  <!-- For mee -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+    rel="stylesheet">
+
+
+
+
+
+  <style>
+    * {
+      font-family: "Kanit", serif;
+      font-weight: 400;
+      font-style: normal;
+    }
+
+    @media (max-width: 576px) {
+      .responsive {
+        font-size: 15px;
+      }
+
+      #hero-card-container {
+        flex-direction: row;
+
+        div {
+          height: 100px;
+          width: 100px;
+          font-size: 20px;
+
+          i {
+            font-size: 20px;
+          }
+        }
+      }
+    }
+  </style>
+</head>
+
+<body class="index-page">
+  <style>
+    /* Keyframes for slide-down and fade-in animation */
+    @keyframes slideDownFadeIn {
+      0% {
+        opacity: 0;
+        transform: translateY(-30px);
+      }
+
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* Apply animation to all navbar elements */
+    .header:not(.animate-nav) .logo,
+    .header:not(.animate-nav) .navmenu ul li,
+    .header:not(.animate-nav) .btn-getstarted {
+      opacity: 0;
+      transform: translateY(-30px);
+    }
+
+    /* Staggered delay for all navbar elements */
+    .header.animate-nav .logo {
+      animation: slideDownFadeIn 0.5s ease-out 2s forwards;
+    }
+
+    .header.animate-nav .navmenu ul li:nth-child(1) {
+      animation: slideDownFadeIn 0.5s ease-out 2.3s forwards;
+    }
+
+    .header.animate-nav .navmenu ul li:nth-child(2) {
+      animation: slideDownFadeIn 0.5s ease-out 2.6s forwards;
+    }
+
+    .header.animate-nav .navmenu ul li:nth-child(3) {
+      animation: slideDownFadeIn 0.5s ease-out 2.9s forwards;
+    }
+
+    .header.animate-nav .navmenu ul li:nth-child(4) {
+      animation: slideDownFadeIn 0.5s ease-out 3.2s forwards;
+    }
+
+    .header.animate-nav .navmenu ul li:nth-child(5) {
+      animation: slideDownFadeIn 0.5s ease-out 3.5s forwards;
+    }
+
+    .header.animate-nav .navmenu ul li:nth-child(6) {
+      animation: slideDownFadeIn 0.5s ease-out 3.8s forwards;
+    }
+
+    .header.animate-nav .btn-getstarted {
+      animation: slideDownFadeIn 0.5s ease-out 4.1s forwards;
+    }
+
+    .rounded-feel {
+      background-color: #333;
+      margin-top: 20px;
+      padding: 0px 20px;
+      border-radius: 40px;
+      border: 1px solid antiquewhite;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+  </style>
+  <header id="header" class="header d-flex align-items-center fixed-top">
+    <div class="container-fluid container-xl position-relative d-flex align-items-center justify-content-between">
+      <a href="index.html" class="logo d-flex align-items-center me-auto me-lg-0">
+        <!-- Uncomment the line below if you also wish to use an image logo -->
+        <!-- <img src="assets/img/logo.png" alt=""> -->
+        <h1 class="sitename">Devplexity</h1>
+        <span>.</span>
+      </a>
+
+      <nav id="navmenu" class="navmenu">
+        <ul>
+          <li><a href="#hero" class="active">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#portfolio">Portfolio</a></li>
+          <li><a href="#team">Team</a></li>
+          <!-- <li class="dropdown">
+              <a href="#"
+                ><span>Dropdown</span>
+                <i class="bi bi-chevron-down toggle-dropdown"></i
+              ></a>
+              <ul>
+                <li><a href="#">Case Studies</a></li>
+                <li><a href="#">Industries</a></li>
+                <li class="dropdown">
+                  <a href="#"
+                    ><span>Resources</span>
+                    <i class="bi bi-chevron-down toggle-dropdown"></i
+                  ></a>
+                  <ul>
+                    <li><a href="#">Blog</a></li>
+                    <li><a href="#">Whitepapers</a></li>
+                    <li><a href="#">Webinars</a></li>
+                    <li><a href="#">FAQs</a></li>
+                    <li><a href="#">Support</a></li>
+                  </ul>
+                </li>
+                <li><a href="#">Careers</a></li>
+                <li><a href="#">Testimonials</a></li>
+              </ul>
+            </li> -->
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+        <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+      </nav>
+
+      <a class="btn-getstarted" href="index.html#about">Get Started</a>
+    </div>
+  </header>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const header = document.querySelector("#header");
+      const roundedFeel = document.querySelector("#navmenu");
+
+      setTimeout(() => {
+        roundedFeel.classList.add("rounded-feel");
+      }, 3000);
+      setTimeout(() => {
+        header.classList.add("animate-nav");
+      }, 3200);
+    });
+  </script>
+
+  <main class="main">
+    <!-- <section id="hero" class="hero section dark-background">
+      <video autoplay muted loop style="width: 100vw; height: 100vh; object-fit: cover; filter: brightness(0.8);"
+        data-aos="fade-in">
+        <source src="assets/video/intro-1.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+      <div style="position: absolute;" class="row gy-4 mt-5 justify-content-center" data-aos="fade-up" data-aos-delay="200">
+        <div class="col-xl-2 col-md-4" data-aos="fade-up" data-aos-delay="300">
+          <div class="icon-box">
+            <i class="bi bi-binoculars"></i>
+            <h3><a href="">Web Design</a></h3>
+          </div>
+        </div>
+        <div class="col-xl-2 col-md-4" data-aos="fade-up" data-aos-delay="400">
+          <div class="icon-box">
+            <i class="bi bi-bullseye"></i>
+            <h3><a href="">Digital Marketing</a></h3>
+          </div>
+        </div>
+        <div class="col-xl-2 col-md-4" data-aos="fade-up" data-aos-delay="500">
+          <div class="icon-box">
+            <i class="bi bi-fullscreen-exit"></i>
+            <h3><a href="">App Development</a></h3>
+          </div>
+        </div>
+        <div class="col-xl-2 col-md-4" data-aos="fade-up" data-aos-delay="600">
+          <div class="icon-box">
+            <i class="bi bi-card-list"></i>
+            <h3><a href="">SEO & Analytics</a></h3>
+          </div>
+        </div>
+        <div class="col-xl-2 col-md-4" data-aos="fade-up" data-aos-delay="700">
+          <div class="icon-box">
+            <i class="bi bi-gem"></i>
+            <h3><a href="">Branding</a></h3>
+          </div>
+        </div>
+      </div>
+    </section> -->
+
+    <!-- Hero Section -->
+    <section id="hero" class="hero section dark-background">
+      <!-- <img src="assets/img/hero-bg.jpg" alt="" data-aos="fade-in" /> -->
+      <video autoplay muted loop
+        style="position: absolute;; width: 100vw; height: 100vh; object-fit: cover; filter: brightness(0.8);"
+        data-aos="fade-in">
+        <source src="assets/video/intro-1.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+      <style>
+        .blinking-cursor {
+          font-weight: 100;
+          font-size: 30px;
+          color: #fff;
+          -webkit-animation: 1s blink step-end infinite;
+          -moz-animation: 1s blink step-end infinite;
+          -ms-animation: 1s blink step-end infinite;
+          -o-animation: 1s blink step-end infinite;
+          animation: 1s blink step-end infinite;
+        }
+
+        @keyframes blink {
+
+          from,
+          to {
+            color: transparent;
+          }
+
+          50% {
+            color: #fff;
+          }
+        }
+
+        @-moz-keyframes blink {
+
+          from,
+          to {
+            color: transparent;
+          }
+
+          50% {
+            color: #fff;
+          }
+        }
+
+        @-webkit-keyframes blink {
+
+          from,
+          to {
+            color: transparent;
+          }
+
+          50% {
+            color: #fff;
+          }
+        }
+
+        @-ms-keyframes blink {
+
+          from,
+          to {
+            color: transparent;
+          }
+
+          50% {
+            color: #fff;
+          }
+        }
+
+        @-o-keyframes blink {
+
+          from,
+          to {
+            color: transparent;
+          }
+
+          50% {
+            color: #fff;
+          }
+        }
+      </style>
+      <div style="opacity: 0;" id="hero-cards-container" class="container">
+        <div class="row justify-content-center text-center" data-aos="fade-up" data-aos-delay="100">
+          <div class="col-xl-6 col-lg-8">
+            <!-- <h2 class="responsive">Transforming Ideas into Digital Reality<span>.</span></h2> -->
+            <h2 style="font-size: 30px;min-height: 100px;margin: 0;" class="responsive">
+              <span style="color: aliceblue;opacity: 0.2;" id="typewriter"></span><span class="blinking-cursor">|</span>
+            </h2>
+            <p>
+
+            </p>
+          </div>
+        </div>
+        <script>
+          document.addEventListener("DOMContentLoaded", function () {
+            const texts = [
+              "Innovative Solutions for Modern Businesses.",
+              "Transforming Ideas into Digital Reality.",
+              "We are DevPlexity ❄."
+            ];
+            let count = 0;
+            let index = 0;
+            let currentText = '';
+            let letter = '';
+
+            (function type() {
+              if (count === texts.length) {
+                count = 0;
+              }
+              currentText = texts[count];
+              letter = currentText.slice(0, ++index);
+
+              document.getElementById('typewriter').textContent = letter;
+              if (letter.length === currentText.length) {
+                setTimeout(() => {
+                  count++;
+                  index = 0;
+                  setTimeout(type, 1000); // Wait before starting the next text
+                }, 2000); // Wait before deleting the text
+              } else if (index > currentText.length / 2 && count < texts.length) {
+                setTimeout(type, 100); // Typing speed
+              } else {
+                setTimeout(type, 100); // Typing speed
+              }
+            })();
+          });
+        </script>
+
+        <div id="hero-card-container" class="row gy-4 mt-5 justify-content-center" data-aos="fade-up"
+          data-aos-delay="200">
+          <div class="col-xl-2 col-md-4" data-aos="fade-up" data-aos-delay="300">
+            <div class="icon-box">
+              <i class="bi bi-binoculars"></i>
+              <h3><a href="">Web Design</a></h3>
+            </div>
+          </div>
+          <div class="col-xl-2 col-md-4" data-aos="fade-up" data-aos-delay="400">
+            <div class="icon-box">
+              <i class="bi bi-bullseye"></i>
+              <h3><a href="">Digital Marketing</a></h3>
+            </div>
+          </div>
+          <div class="col-xl-2 col-md-4" data-aos="fade-up" data-aos-delay="500">
+            <div class="icon-box">
+              <i class="bi bi-fullscreen-exit"></i>
+              <h3><a href="">App Development</a></h3>
+            </div>
+          </div>
+          <div class="col-xl-2 col-md-4" data-aos="fade-up" data-aos-delay="600">
+            <div class="icon-box">
+              <i class="bi bi-card-list"></i>
+              <h3><a href="">SEO & Analytics</a></h3>
+            </div>
+          </div>
+          <div class="col-xl-2 col-md-4" data-aos="fade-up" data-aos-delay="700">
+            <div class="icon-box">
+              <i class="bi bi-gem"></i>
+              <h3><a href="">Branding</a></h3>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const heroCardsContainer = document.querySelector("#hero-cards-container");
+        const fadeDuration = 4000; // 4 seconds for the fade-in
+        const startDelay = 4000; // 4 seconds delay before starting the fade
+
+        // Set initial opacity to 0
+        heroCardsContainer.style.opacity = "0";
+
+        setTimeout(() => {
+          const startTime = performance.now(); // Get the start time of the fade
+
+          function fadeIn(currentTime) {
+            const elapsedTime = currentTime - startTime; // Calculate elapsed time
+            const progress = Math.min(elapsedTime / fadeDuration, 1); // Calculate progress (0 to 1)
+
+            // Update opacity based on progress
+            heroCardsContainer.style.opacity = progress;
+
+            // Continue the animation until progress reaches 1
+            if (progress < 1) {
+              requestAnimationFrame(fadeIn);
+            }
+          }
+
+          // Start the fade-in animation
+          requestAnimationFrame(fadeIn);
+        }, startDelay);
+      });
+    </script>
+    <!-- /Hero Section -->
+
+    <!-- New section -->
+    <style>
+      /* Services Section */
+      .services {
+        padding: 80px 0;
+        background-color: #f8f9fa;
+      }
+
+      .services h2 {
+        font-size: 2.5rem;
+        font-weight: 700;
+        margin-bottom: 20px;
+      }
+
+      .services .lead {
+        font-size: 1.1rem;
+        color: #6c757d;
+        margin-bottom: 40px;
+      }
+
+      .service-card {
+        background: #fff;
+        padding: 30px;
+        border-radius: 10px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        text-align: center;
+      }
+
+      .service-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 8px 12px rgba(0, 0, 0, 0.15);
+      }
+
+      .service-card .icon-box {
+        width: 80px;
+        height: 80px;
+        margin: 0 auto 20px;
+        background: #007bff;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #fff;
+        font-size: 2rem;
+        transition: background 0.3s ease;
+      }
+
+      .service-card:hover .icon-box {
+        background: #0056b3;
+      }
+
+      .service-card h3 {
+        font-size: 1.5rem;
+        font-weight: 600;
+        margin-bottom: 10px;
+      }
+
+      .service-card p {
+        font-size: 0.95rem;
+        color: #6c757d;
+      }
+    </style>
+    <section id="services" class="services section">
+      <div class="container">
+        <div class="row justify-content-center text-center" data-aos="fade-up" data-aos-delay="100">
+          <div class="col-xl-8 col-lg-10">
+            <h2>Our Services</h2>
+            <p class="lead">
+              We've developed expertise around technologies & solving complex problem statements.
+            </p>
+          </div>
+        </div>
+
+        <div class="row gy-4 mt-5 justify-content-center">
+          <!-- Service 1: Full Stack Development -->
+          <div class="col-xl-3 col-md-6" data-aos="fade-up" data-aos-delay="200">
+            <div class="service-card">
+              <div class="icon-box">
+                <i class="bi bi-layers"></i>
+              </div>
+              <h3>Full Stack Development</h3>
+              <p>Website & Dynamic Portals</p>
+            </div>
+          </div>
+
+          <!-- Service 2: UI/UX Design -->
+          <div class="col-xl-3 col-md-6" data-aos="fade-up" data-aos-delay="300">
+            <div class="service-card">
+              <div class="icon-box">
+                <i class="bi bi-palette"></i>
+              </div>
+              <h3>UI/UX Design</h3>
+              <p>Beautiful & Functional Designs</p>
+            </div>
+          </div>
+
+          <!-- Service 3: Mobile Apps -->
+          <div class="col-xl-3 col-md-6" data-aos="fade-up" data-aos-delay="400">
+            <div class="service-card">
+              <div class="icon-box">
+                <i class="bi bi-phone"></i>
+              </div>
+              <h3>Mobile Apps</h3>
+              <p>Native & Hybrid Development</p>
+            </div>
+          </div>
+
+          <!-- Service 4: MVP Development -->
+          <div class="col-xl-3 col-md-6" data-aos="fade-up" data-aos-delay="500">
+            <div class="service-card">
+              <div class="icon-box">
+                <i class="bi bi-rocket"></i>
+              </div>
+              <h3>MVP Development</h3>
+              <p>Fast & Scalable Solutions</p>
+            </div>
+          </div>
+
+          <!-- Service 5: IT Consulting -->
+          <div class="col-xl-3 col-md-6" data-aos="fade-up" data-aos-delay="600">
+            <div class="service-card">
+              <div class="icon-box">
+                <i class="bi bi-gear"></i>
+              </div>
+              <h3>IT Consulting</h3>
+              <p>Strategic Technology Guidance</p>
+            </div>
+          </div>
+
+          <!-- Service 6: SAAS Development -->
+          <div class="col-xl-3 col-md-6" data-aos="fade-up" data-aos-delay="700">
+            <div class="service-card">
+              <div class="icon-box">
+                <i class="bi bi-cloud"></i>
+              </div>
+              <h3>SAAS Development</h3>
+              <p>Cloud-Based Solutions</p>
+            </div>
+          </div>
+
+          <!-- Service 7: Security Audit -->
+          <div class="col-xl-3 col-md-6" data-aos="fade-up" data-aos-delay="800">
+            <div class="service-card">
+              <div class="icon-box">
+                <i class="bi bi-shield-lock"></i>
+              </div>
+              <h3>Security Audit</h3>
+              <p>Robust & Secure Systems</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- New section -->
+    <!-- Iframe  -->
+    <!-- <div style="width: 100vw;padding: 0;height: 100vh;" id="3d-cards" class="div">
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+        <iframe src="./assets/my-resources/3DCardsfornewYear/3dcards.html" frameborder="0" scrolling="no" width="100%"
+          height="1000" style="border: none;"></iframe>
+      </div>
+    </div> -->
+    <!-- Iframe  -->
+    <!-- About Section (see here) -->
+    <!-- <section id="about" class="about section">
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+        <div class="row gy-4">
+          <div class="col-lg-6 order-1 order-lg-2">
+            <img src="assets/img/about.jpg" class="img-fluid" alt="About Us" />
+          </div>
+          <div class="col-lg-6 order-2 order-lg-1 content">
+            <h3>We Deliver Exceptional Digital Solutions</h3>
+            <p class="fst-italic">
+              At Devplexity, we specialize in creating innovative and
+              impactful digital experiences that drive growth and engagement
+              for businesses of all sizes.
+            </p>
+            <ul>
+              <li>
+                <i class="bi bi-check2-all"></i>
+                <span>Custom web design and development tailored to your brand
+                  and business goals.</span>
+              </li>
+              <li>
+                <i class="bi bi-check2-all"></i>
+                <span>Data-driven digital marketing strategies to maximize your
+                  online presence.</span>
+              </li>
+              <li>
+                <i class="bi bi-check2-all"></i>
+                <span>Cutting-edge app development for seamless user experiences
+                  across devices.</span>
+              </li>
+            </ul>
+            <p>
+              Our team of experts works closely with you to understand your
+              unique needs and deliver solutions that not only meet but exceed
+              your expectations. From concept to execution, we ensure every
+              project is aligned with your vision and objectives.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section> -->
+    <!-- /About Section -->
+
+    <!-- Clients Section -->
+    <!-- <section id="clients" class="clients section">
+  <div class="container" data-aos="fade-up" data-aos-delay="100">
+    <div class="section-title">
+      <h2>Our Trusted Clients</h2>
+      <p>We are proud to partner with leading brands across industries.</p>
+    </div>
+
+    <div class="swiper init-swiper">
+      <script type="application/json" class="swiper-config">
+        {
+          "loop": true,
+          "speed": 600,
+          "autoplay": {
+            "delay": 5000
+          },
+          "slidesPerView": "auto",
+          "pagination": {
+            "el": ".swiper-pagination",
+            "type": "bullets",
+            "clickable": true
+          },
+          "breakpoints": {
+            "320": {
+              "slidesPerView": 2,
+              "spaceBetween": 40
+            },
+            "480": {
+              "slidesPerView": 3,
+              "spaceBetween": 60
+            },
+            "640": {
+              "slidesPerView": 4,
+              "spaceBetween": 80
+            },
+            "992": {
+              "slidesPerView": 6,
+              "spaceBetween": 120
+            }
+          }
+        }
+      </script>
+      <div class="swiper-wrapper align-items-center">
+        <div class="swiper-slide">
+          <img
+            src="assets/img/clients/client-1.png"
+            class="img-fluid"
+            alt="Client 1 Logo"
+          />
+        </div>
+        <div class="swiper-slide">
+          <img
+            src="assets/img/clients/client-2.png"
+            class="img-fluid"
+            alt="Client 2 Logo"
+          />
+        </div>
+        <div class="swiper-slide">
+          <img
+            src="assets/img/clients/client-3.png"
+            class="img-fluid"
+            alt="Client 3 Logo"
+          />
+        </div>
+        <div class="swiper-slide">
+          <img
+            src="assets/img/clients/client-4.png"
+            class="img-fluid"
+            alt="Client 4 Logo"
+          />
+        </div>
+        <div class="swiper-slide">
+          <img
+            src="assets/img/clients/client-5.png"
+            class="img-fluid"
+            alt="Client 5 Logo"
+          />
+        </div>
+        <div class="swiper-slide">
+          <img
+            src="assets/img/clients/client-6.png"
+            class="img-fluid"
+            alt="Client 6 Logo"
+          />
+        </div>
+        <div class="swiper-slide">
+          <img
+            src="assets/img/clients/client-7.png"
+            class="img-fluid"
+            alt="Client 7 Logo"
+          />
+        </div>
+        <div class="swiper-slide">
+          <img
+            src="assets/img/clients/client-8.png"
+            class="img-fluid"
+            alt="Client 8 Logo"
+          />
+        </div>
+      </div>
+      <div class="swiper-pagination"></div>
+    </div>
+  </div>
+</section> -->
+    <!-- /Clients Section -->
+
+    <!-- Features Section (see here) -->
+    <!-- <section id="features" class="features section">
+      <div class="container">
+        <div class="row gy-4">
+          <div class="features-image col-lg-6" data-aos="fade-up" data-aos-delay="100">
+            <img src="assets/img/features-bg.jpg" alt="Our Features" />
+          </div>
+          <div class="col-lg-6">
+            <div class="features-item d-flex ps-0 ps-lg-3 pt-4 pt-lg-0" data-aos="fade-up" data-aos-delay="200">
+              <i class="bi bi-archive flex-shrink-0"></i>
+              <div>
+                <h4>Custom Solutions</h4>
+                <p>
+                  We design and develop tailored solutions that align with
+                  your unique business needs and goals.
+                </p>
+              </div>
+            </div>
+
+            <div class="features-item d-flex mt-5 ps-0 ps-lg-3" data-aos="fade-up" data-aos-delay="300">
+              <i class="bi bi-basket flex-shrink-0"></i>
+              <div>
+                <h4>User-Centric Design</h4>
+                <p>
+                  Our designs prioritize user experience, ensuring seamless
+                  navigation and engagement for your audience.
+                </p>
+              </div>
+            </div>
+
+            <div class="features-item d-flex mt-5 ps-0 ps-lg-3" data-aos="fade-up" data-aos-delay="400">
+              <i class="bi bi-broadcast flex-shrink-0"></i>
+              <div>
+                <h4>Scalable Technology</h4>
+                <p>
+                  We build scalable and future-ready solutions that grow with
+                  your business.
+                </p>
+              </div>
+            </div>
+
+            <div class="features-item d-flex mt-5 ps-0 ps-lg-3" data-aos="fade-up" data-aos-delay="500">
+              <i class="bi bi-camera-reels flex-shrink-0"></i>
+              <div>
+                <h4>Data-Driven Insights</h4>
+                <p>
+                  Leverage data analytics and insights to make informed
+                  decisions and drive business growth.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section> -->
+    <!-- /Features Section -->
+    <style>
+      /* Case Studies Section */
+      .case-studies {
+        padding: 80px 0;
+        background-color: #f8f9fa;
+      }
+
+      .case-studies h2 {
+        font-size: 2.5rem;
+        font-weight: 700;
+        margin-bottom: 20px;
+      }
+
+      .case-studies .lead {
+        font-size: 1.1rem;
+        color: #6c757d;
+        margin-bottom: 40px;
+      }
+
+      /* Case Studies Carousel */
+      .case-studies-carousel {
+        display: flex;
+        overflow-x: auto;
+        scroll-behavior: smooth;
+        padding: 20px 0;
+        gap: 20px;
+      }
+
+      .case-studies-carousel::-webkit-scrollbar {
+        display: none;
+        /* Hide scrollbar */
+      }
+
+      .case-study-card {
+        flex: 0 0 300px;
+        background: #fff;
+        border-radius: 10px;
+        overflow: hidden;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+      }
+
+      .case-study-card:hover {
+        transform: scale(1.05);
+        box-shadow: 0 8px 12px rgba(0, 0, 0, 0.15);
+      }
+
+      .case-study-card .card-image {
+        overflow: hidden;
+        height: 200px;
+      }
+
+      .case-study-card .card-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.3s ease;
+      }
+
+      .case-study-card:hover .card-image img {
+        transform: scale(1.1);
+      }
+
+      .case-study-card .card-content {
+        padding: 20px;
+        text-align: center;
+      }
+
+      .case-study-card h3 {
+        font-size: 1.5rem;
+        font-weight: 600;
+        margin-bottom: 10px;
+      }
+
+      .case-study-card p {
+        font-size: 0.95rem;
+        color: #6c757d;
+      }
+
+      /* Arrows */
+      .arrow {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        background: #007bff;
+        color: #fff;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        z-index: 10;
+        transition: background 0.3s ease;
+      }
+
+      .arrow:hover {
+        background: #0056b3;
+      }
+
+      .left-arrow {
+        left: -20px;
+      }
+
+      .right-arrow {
+        right: -20px;
+      }
+    </style>
+    <!-- New part 2 -->
+    <section id="case-studies" class="case-studies section">
+      <div class="container">
+        <div class="row justify-content-center text-center" data-aos="fade-up" data-aos-delay="100">
+          <div class="col-xl-8 col-lg-10">
+            <h2>Case Studies</h2>
+            <p class="lead">
+              How digital makes a difference for Institutions and their stakeholders.
+            </p>
+          </div>
+        </div>
+
+        <div class="row mt-5 position-relative">
+          <!-- Left Arrow -->
+          <div class="arrow left-arrow" onclick="scrollCards(-1)">
+            <i class="bi bi-chevron-left"></i>
+          </div>
+
+          <!-- Case Studies Carousel -->
+          <div class="col-12">
+            <div class="case-studies-carousel">
+              <!-- Case Study 1 -->
+              <div class="case-study-card" data-aos="fade-up" data-aos-delay="200">
+                <div class="card-image">
+                  <img src="https://th.bing.com/th/id/OIP.ypXIdrCeMKnQihqfiLcDjAHaHa?rs=1&pid=ImgDetMain"
+                    alt="Jan Nigrami - Grievance Redressal" />
+                </div>
+                <div class="card-content">
+                  <h3>Jan Nigrami - Grievance Redressal</h3>
+                  <p>Rural Development Department</p>
+                </div>
+              </div>
+
+              <!-- Case Study 2 -->
+              <div class="case-study-card" data-aos="fade-up" data-aos-delay="300">
+                <div class="card-image">
+                  <img src="https://th.bing.com/th/id/OIP.ypXIdrCeMKnQihqfiLcDjAHaHa?rs=1&pid=ImgDetMain"
+                    alt="Digital Transformation" />
+                </div>
+                <div class="card-content">
+                  <h3>Digital Transformation</h3>
+                  <p>Enhancing Institutional Efficiency</p>
+                </div>
+              </div>
+
+              <!-- Case Study 3 -->
+              <div class="case-study-card" data-aos="fade-up" data-aos-delay="400">
+                <div class="card-image">
+                  <img src="https://th.bing.com/th/id/OIP.ypXIdrCeMKnQihqfiLcDjAHaHa?rs=1&pid=ImgDetMain"
+                    alt="Stakeholder Engagement" />
+                </div>
+                <div class="card-content">
+                  <h3>Stakeholder Engagement</h3>
+                  <p>Improving Communication & Collaboration</p>
+                </div>
+              </div>
+              <!-- Case Study 1 -->
+              <div class="case-study-card" data-aos="fade-up" data-aos-delay="200">
+                <div class="card-image">
+                  <img src="https://th.bing.com/th/id/OIP.ypXIdrCeMKnQihqfiLcDjAHaHa?rs=1&pid=ImgDetMain"
+                    alt="Jan Nigrami - Grievance Redressal" />
+                </div>
+                <div class="card-content">
+                  <h3>Jan Nigrami - Grievance Redressal</h3>
+                  <p>Rural Development Department</p>
+                </div>
+              </div>
+
+              <!-- Case Study 2 -->
+              <div class="case-study-card" data-aos="fade-up" data-aos-delay="300">
+                <div class="card-image">
+                  <img src="https://th.bing.com/th/id/OIP.ypXIdrCeMKnQihqfiLcDjAHaHa?rs=1&pid=ImgDetMain"
+                    alt="Digital Transformation" />
+                </div>
+                <div class="card-content">
+                  <h3>Digital Transformation</h3>
+                  <p>Enhancing Institutional Efficiency</p>
+                </div>
+              </div>
+
+              <!-- Case Study 3 -->
+              <div class="case-study-card" data-aos="fade-up" data-aos-delay="400">
+                <div class="card-image">
+                  <img src="https://th.bing.com/th/id/OIP.ypXIdrCeMKnQihqfiLcDjAHaHa?rs=1&pid=ImgDetMain"
+                    alt="Stakeholder Engagement" />
+                </div>
+                <div class="card-content">
+                  <h3>Stakeholder Engagement</h3>
+                  <p>Improving Communication & Collaboration</p>
+                </div>
+              </div>
+              <!-- Case Study 1 -->
+              <div class="case-study-card" data-aos="fade-up" data-aos-delay="200">
+                <div class="card-image">
+                  <img src="https://th.bing.com/th/id/OIP.ypXIdrCeMKnQihqfiLcDjAHaHa?rs=1&pid=ImgDetMain"
+                    alt="Jan Nigrami - Grievance Redressal" />
+                </div>
+                <div class="card-content">
+                  <h3>Jan Nigrami - Grievance Redressal</h3>
+                  <p>Rural Development Department</p>
+                </div>
+              </div>
+
+              <!-- Case Study 2 -->
+              <div class="case-study-card" data-aos="fade-up" data-aos-delay="300">
+                <div class="card-image">
+                  <img src="https://th.bing.com/th/id/OIP.ypXIdrCeMKnQihqfiLcDjAHaHa?rs=1&pid=ImgDetMain"
+                    alt="Digital Transformation" />
+                </div>
+                <div class="card-content">
+                  <h3>Digital Transformation</h3>
+                  <p>Enhancing Institutional Efficiency</p>
+                </div>
+              </div>
+
+              <!-- Case Study 3 -->
+              <div class="case-study-card" data-aos="fade-up" data-aos-delay="400">
+                <div class="card-image">
+                  <img src="https://th.bing.com/th/id/OIP.ypXIdrCeMKnQihqfiLcDjAHaHa?rs=1&pid=ImgDetMain"
+                    alt="Stakeholder Engagement" />
+                </div>
+                <div class="card-content">
+                  <h3>Stakeholder Engagement</h3>
+                  <p>Improving Communication & Collaboration</p>
+                </div>
+              </div>
+
+              <!-- Add more case studies as needed -->
+            </div>
+          </div>
+
+          <!-- Right Arrow -->
+          <div class="arrow right-arrow" onclick="scrollCards(1)">
+            <i class="bi bi-chevron-right"></i>
+          </div>
+        </div>
+      </div>
+    </section>
+    <script>
+      // Auto-scroll functionality
+      let scrollInterval;
+
+      function startAutoScroll() {
+        scrollInterval = setInterval(() => {
+          const carousel = document.querySelector('.case-studies-carousel');
+          carousel.scrollBy({ left: 300, behavior: 'smooth' });
+
+          if (carousel.scrollLeft + carousel.clientWidth >= carousel.scrollWidth) {
+            carousel.scrollTo({ left: 0, behavior: 'smooth' });
+          }
+        }, 3000); // Adjust scroll interval as needed
+      }
+
+      function stopAutoScroll() {
+        clearInterval(scrollInterval);
+      }
+
+      // Manual scroll functionality
+      function scrollCards(direction) {
+        const carousel = document.querySelector('.case-studies-carousel');
+        carousel.scrollBy({ left: direction * 300, behavior: 'smooth' });
+      }
+
+      // Start auto-scroll on page load
+      document.addEventListener('DOMContentLoaded', startAutoScroll);
+
+      // Pause auto-scroll on hover
+      document.querySelector('.case-studies-carousel').addEventListener('mouseenter', stopAutoScroll);
+      document.querySelector('.case-studies-carousel').addEventListener('mouseleave', startAutoScroll);
+    </script>
+    <!-- New part 2 -->
+    <!-- Services Section -->
+    <section id="services" class="services section">
+      <!-- Section Title -->
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Our Services</h2>
+        <p class="responsive">Explore our comprehensive range of digital solutions</p>
+      </div>
+      <!-- End Section Title -->
+      <style>
+        .service-item {
+          background-image: url(https://www.elegantthemes.com/blog/wp-content/uploads/2013/09/bg-10-full.jpg);
+          border-radius: 25px;
+        }
+
+        .service-item:hover {
+          /* filter: brightness(0.4); */
+          background-image: url(https://th.bing.com/th/id/OIP.SguiOwxKEqpUpRUfAzv7TwHaE8?w=600&h=400&rs=1&pid=ImgDetMain);
+          /* border-radius: 50%; */
+          border: 4px solid aliceblue;
+        }
+
+        .service-item:hover .icon {
+          border-radius: 50%;
+          background-color: aliceblue;
+          padding: 10px;
+        }
+
+        .service-item:hover #container-service-item {
+          background-image: url(https://th.bing.com/th/id/OIP.SguiOwxKEqpUpRUfAzv7TwHaE8?w=600&h=400&rs=1&pid=ImgDetMain);
+        }
+      </style>
+      <div class="container">
+        <div class="row gy-4">
+          <div id="container-service-item" class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+            <div class="service-item position-relative">
+              <div class="icon">
+                <i class="bi bi-activity"></i>
+              </div>
+              <a href="service-details.html" class="stretched-link">
+                <h3>Web Design & Development</h3>
+              </a>
+              <p>
+                We create visually stunning, responsive websites tailored to
+                your brand and business goals.
+              </p>
+            </div>
+          </div>
+          <!-- End Service Item -->
+
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
+            <div class="service-item position-relative">
+              <div class="icon">
+                <i class="bi bi-broadcast"></i>
+              </div>
+              <a href="service-details.html" class="stretched-link">
+                <h3>Digital Marketing</h3>
+              </a>
+              <p>
+                Drive growth with data-driven marketing strategies, including
+                SEO, PPC, and social media campaigns.
+              </p>
+            </div>
+          </div>
+          <!-- End Service Item -->
+
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
+            <div class="service-item position-relative">
+              <div class="icon">
+                <i class="bi bi-easel"></i>
+              </div>
+              <a href="service-details.html" class="stretched-link">
+                <h3>Mobile App Development</h3>
+              </a>
+              <p>
+                Build innovative and user-friendly mobile applications for iOS
+                and Android platforms.
+              </p>
+            </div>
+          </div>
+          <!-- End Service Item -->
+
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="400">
+            <div class="service-item position-relative">
+              <div class="icon">
+                <i class="bi bi-bounding-box-circles"></i>
+              </div>
+              <a href="service-details.html" class="stretched-link">
+                <h3>E-Commerce Solutions</h3>
+              </a>
+              <p>
+                Create high-performing online stores with seamless shopping
+                experiences and secure payment gateways.
+              </p>
+            </div>
+          </div>
+          <!-- End Service Item -->
+
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="500">
+            <div class="service-item position-relative">
+              <div class="icon">
+                <i class="bi bi-calendar4-week"></i>
+              </div>
+              <a href="service-details.html" class="stretched-link">
+                <h3>Branding & Identity</h3>
+              </a>
+              <p>
+                Develop a strong and memorable brand identity that resonates
+                with your target audience.
+              </p>
+            </div>
+          </div>
+          <!-- End Service Item -->
+
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="600">
+            <div class="service-item position-relative">
+              <div class="icon">
+                <i class="bi bi-chat-square-text"></i>
+              </div>
+              <a href="service-details.html" class="stretched-link">
+                <h3>UI/UX Design</h3>
+              </a>
+              <p>
+                Craft intuitive and engaging user interfaces that enhance user
+                satisfaction and drive conversions.
+              </p>
+            </div>
+          </div>
+          <!-- End Service Item -->
+        </div>
+      </div>
+    </section>
+    <!-- /Services Section -->
+
+    <!-- Call To Action Section -->
+    <section id="call-to-action" class="call-to-action section dark-background">
+      <img src="https://images.freecreatives.com/wp-content/uploads/2016/04/Website-Backgrounds-For-Desktop.jpg"
+        alt="Call to Action Background" />
+
+      <div class="container">
+        <div class="row justify-content-center" data-aos="zoom-in" data-aos-delay="100">
+          <div class="col-xl-10">
+            <div class="text-center">
+              <h3>Ready to Transform Your Business?</h3>
+              <p>
+                Let’s create something extraordinary together. Whether you
+                need a stunning website, a powerful app, or a data-driven
+                marketing strategy, we’re here to help you achieve your goals.
+              </p>
+              <a class="cta-btn" href="#">Get Started Today</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- /Call To Action Section -->
+
+    <!-- Portfolio Section -->
+    <!-- Portfolio Section -->
+    <section id="portfolio" class="portfolio section">
+      <!-- Section Title -->
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Our Portfolio</h2>
+        <p class="responsive">
+          Explore our latest projects across institutional, utility, and
+          business sectors.
+        </p>
+      </div>
+      <!-- End Section Title -->
+
+      <div class="container">
+        <div class="isotope-layout" data-default-filter="*" data-layout="masonry" data-sort="original-order">
+          <ul class="portfolio-filters isotope-filters" data-aos="fade-up" data-aos-delay="100">
+            <li data-filter="*" class="filter-active">All</li>
+            <li data-filter=".filter-institutional">Institutional</li>
+            <li data-filter=".filter-utility">Utility</li>
+            <li data-filter=".filter-businesses">Businesses</li>
+          </ul>
+          <!-- End Portfolio Filters -->
+
+          <div class="row gy-4 isotope-container" data-aos="fade-up" data-aos-delay="200">
+            <!-- Institutional Projects -->
+            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-institutional">
+              <img src="assets/img/masonry-portfolio/mathematical-forum.png" class="img-fluid"
+                alt="Mathematical Forum Website" />
+              <div class="portfolio-info">
+                <h4>Journal Management System</h4>
+                <p>
+                  Completely customizable journal submission automation with
+                  an admin panel.
+                </p>
+                <a href="assets/img/masonry-portfolio/mathematical-forum.png" title="Journal Management System"
+                  data-gallery="portfolio-gallery-institutional" class="glightbox preview-link">
+                  <i class="bi bi-zoom-in"></i>
+                </a>
+                <a href="portfolio-details.html" title="More Details" class="details-link">
+                  <i class="bi bi-link-45deg"></i>
+                </a>
+              </div>
+            </div>
+            <!-- End Portfolio Item -->
+
+            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-institutional">
+              <img src="assets/img/masonry-portfolio/csjmc.png" class="img-fluid" alt="Alumni Management System" />
+              <div class="portfolio-info">
+                <h4>Alumni Management System</h4>
+                <p>
+                  Developed a comprehensive system for alumni registration,
+                  profile management, and event management.
+                </p>
+                <a href="assets/img/masonry-portfolio/csjmc.png" title="Alumni Management System"
+                  data-gallery="portfolio-gallery-institutional" class="glightbox preview-link">
+                  <i class="bi bi-zoom-in"></i>
+                </a>
+                <a href="portfolio-details.html" title="More Details" class="details-link">
+                  <i class="bi bi-link-45deg"></i>
+                </a>
+              </div>
+            </div>
+            <!-- End Portfolio Item -->
+
+            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-institutional">
+              <img src="assets/img/masonry-portfolio/pharmasociety.png" class="img-fluid"
+                alt="Pharma Society Alumni System" />
+              <div class="portfolio-info">
+                <h4>Alumni Management System + Admin</h4>
+                <p>
+                  Developed an alumni management system with an admin panel,
+                  allowing alumni and students to create posts and queries.
+                </p>
+                <a href="assets/img/masonry-portfolio/pharmasociety.png" title="Alumni Management System + Admin"
+                  data-gallery="portfolio-gallery-institutional" class="glightbox preview-link">
+                  <i class="bi bi-zoom-in"></i>
+                </a>
+                <a href="portfolio-details.html" title="More Details" class="details-link">
+                  <i class="bi bi-link-45deg"></i>
+                </a>
+              </div>
+            </div>
+            <!-- End Portfolio Item -->
+
+            <!-- Utility Projects -->
+            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-utility">
+              <img src="assets/img/masonry-portfolio/excelitest.png" class="img-fluid" alt="Excelitest Website" />
+              <div class="portfolio-info">
+                <h4>Excelitest</h4>
+                <p>
+                  A test automation platform that allows users to create,
+                  manage, and execute automated tests.
+                </p>
+                <a href="assets/img/masonry-portfolio/excelitest.png" title="Excelitest"
+                  data-gallery="portfolio-gallery-utility" class="glightbox preview-link">
+                  <i class="bi bi-zoom-in"></i>
+                </a>
+                <a href="portfolio-details.html" title="More Details" class="details-link">
+                  <i class="bi bi-link-45deg"></i>
+                </a>
+              </div>
+            </div>
+            <!-- End Portfolio Item -->
+
+            <!-- Businesses Projects -->
+            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-businesses">
+              <img src="assets/img/masonry-portfolio/urbanhype.png" class="img-fluid"
+                alt="Modern E-Commerce Platform for Clothing" />
+              <div class="portfolio-info">
+                <h4>Modern E-Commerce Platform for Clothing</h4>
+                <p>Built a scalable online store for a clothing business.</p>
+                <a href="assets/img/masonry-portfolio/urbanhype.png" title="Modern E-Commerce Platform for Clothing"
+                  data-gallery="portfolio-gallery-businesses" class="glightbox preview-link">
+                  <i class="bi bi-zoom-in"></i>
+                </a>
+                <a href="portfolio-details.html" title="More Details" class="details-link">
+                  <i class="bi bi-link-45deg"></i>
+                </a>
+              </div>
+            </div>
+            <!-- End Portfolio Item -->
+
+            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-businesses">
+              <img src="assets/img/masonry-portfolio/solar-x.png" class="img-fluid" alt="Solar Designing Agency" />
+              <div class="portfolio-info">
+                <h4>Sustainable Solar Solutions Agency</h4>
+                <p>
+                  Built a platform for data-driven decision-making in
+                  businesses, created a website for hiring interns and client
+                  acquisition, and provided services such as solar design and
+                  CAD solutions.
+                </p>
+                <a href="assets/img/masonry-portfolio/solar-x.png" title="Sustainable Solar Solutions Agency"
+                  data-gallery="portfolio-gallery-businesses" class="glightbox preview-link">
+                  <i class="bi bi-zoom-in"></i>
+                </a>
+                <a href="portfolio-details.html" title="More Details" class="details-link">
+                  <i class="bi bi-link-45deg"></i>
+                </a>
+              </div>
+            </div>
+            <!-- End Portfolio Item -->
+          </div>
+          <!-- End Portfolio Container -->
+        </div>
+      </div>
+    </section>
+    <!-- /Portfolio Section -->
+    <!-- /Portfolio Section -->
+
+    <!-- Stats Section -->
+    <section id="stats" class="stats section">
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+        <div class="row gy-4 align-items-center justify-content-between">
+          <div class="col-lg-5">
+            <video autoplay muted loop src="assets/video/timelapse-devplexity.mp4" alt="Our Achievements"
+              class="img-fluid" />
+          </div>
+
+          <div class="col-lg-6">
+            <h3 class="fw-bold fs-2 mb-3">
+              Driving Success Through Innovation
+            </h3>
+            <p>
+              At Devplexity, we are committed to delivering exceptional
+              results. Our expertise and dedication have helped us achieve
+              remarkable milestones for our clients and our team.
+            </p>
+
+            <div class="row gy-4">
+              <div class="col-lg-6">
+                <div class="stats-item d-flex">
+                  <i class="bi bi-emoji-smile flex-shrink-0"></i>
+                  <div>
+                    <span data-purecounter-start="0" data-purecounter-end="15" data-purecounter-duration="3"
+                      class="purecounter"></span>
+                    <p>
+                      <strong>Happy Clients</strong>
+                      <!-- <span>Trusted by </span> -->
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <!-- End Stats Item -->
+
+              <div class="col-lg-6">
+                <div class="stats-item d-flex">
+                  <i class="bi bi-journal-richtext flex-shrink-0"></i>
+                  <div>
+                    <span data-purecounter-start="0" data-purecounter-end="15" data-purecounter-duration="6"
+                      class="purecounter"></span>
+                    <p>
+                      <strong>Projects Completed</strong>
+                      <span>Delivering excellence every time</span>
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <!-- End Stats Item -->
+
+              <div class="col-lg-6">
+                <div class="stats-item d-flex">
+                  <i class="bi bi-headset flex-shrink-0"></i>
+                  <div>
+                    <span data-purecounter-start="0" data-purecounter-end="2000" data-purecounter-duration="6"
+                      class="purecounter"></span>
+                    <p>
+                      <strong>Hours of Support</strong>
+                      <span>Dedicated to client success</span>
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <!-- End Stats Item -->
+
+              <div class="col-lg-6">
+                <div class="stats-item d-flex">
+                  <i class="bi bi-people flex-shrink-0"></i>
+                  <div>
+                    <span data-purecounter-start="0" data-purecounter-end="4" data-purecounter-duration="4"
+                      class="purecounter"></span>
+                    <p>
+                      <strong>Expert Team Members</strong>
+                      <span>Passionate about innovation</span>
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <!-- End Stats Item -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- /Stats Section -->
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="testimonials section dark-background">
+      <img
+        src="https://img.freepik.com/premium-vector/minimal-geometric-background-dynamic-shapes-composition-full-color_573652-174.jpg?w=1060"
+        class="testimonials-bg" alt="Testimonials Background" />
+
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+        <div class="swiper init-swiper">
+          <script type="application/json" class="swiper-config">
+              {
+                "loop": true,
+                "speed": 600,
+                "autoplay": {
+                  "delay": 5000
+                },
+                "slidesPerView": "auto",
+                "pagination": {
+                  "el": ".swiper-pagination",
+                  "type": "bullets",
+                  "clickable": true
+                }
+              }
+            </script>
+          <div class="swiper-wrapper">
+            <div class="swiper-slide">
+              <div class="testimonial-item">
+                <img
+                  src="https://i1.rgstatic.net/ii/profile.image/11431281104196663-1669970403724_Q512/Rizwan-Rehman-2.jpg"
+                  class="testimonial-img" alt="John Doe" />
+                <h3>Dr. Rizwan Rehman</h3>
+                <h4>Asst. Professor, Dibrugarh University</h4>
+                <div class="stars">
+                  <i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-fill"></i>
+                </div>
+                <p>
+                  <i class="bi bi-quote quote-icon-left"></i>
+                  <span>Devplexity transformed our online presence for
+                    Digital Solutions Cell, with a stunning website and
+                    effective digital marketing strategies. Highly recommend
+                    their expertise!</span>
+                  <i class="bi bi-quote quote-icon-right"></i>
+                </p>
+              </div>
+            </div>
+            <!-- End testimonial item -->
+
+            <div class="swiper-slide">
+              <div class="testimonial-item">
+                <img
+                  src="https://files.elfsightcdn.com/10f57fcd-29bb-4da4-9c09-61ea49a5bf6e/63dfd52f-f340-4e29-8cb8-11a65a5a79f9/PPP-New-HD.jpg"
+                  class="testimonial-img" alt="Jane Smith" />
+                <h3>Abhilash Boruah</h3>
+                <h4>Asst. Professor, Dibrugarh University</h4>
+                <div class="stars">
+                  <i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-fill"></i>
+                </div>
+                <p>
+                  <i class="bi bi-quote quote-icon-left"></i>
+                  <span>The Devplexity team delivered a seamless Alumni Portal that
+                    automated and enhanced our Alumni registration. Truly a
+                    partner in innovation and growth.</span>
+                  <i class="bi bi-quote quote-icon-right"></i>
+                </p>
+              </div>
+            </div>
+            <!-- End testimonial item -->
+
+            <div class="swiper-slide">
+              <div class="testimonial-item">
+                <img
+                  src="https://instagram.fgau1-3.fna.fbcdn.net/v/t51.2885-19/269884068_1119143455490065_1910673412901612636_n.jpg?stp=dst-jpg_s150x150_tt6&_nc_ht=instagram.fgau1-3.fna.fbcdn.net&_nc_cat=101&_nc_ohc=uf0fxKi_Qp0Q7kNvgHMJYv-&_nc_gid=e59d70425f0e445c8b6773c1905df08f&edm=AOQ1c0wBAAAA&ccb=7-5&oh=00_AYAlwHLcvVmsd-9mKfjItKPt2GaXnjCG35KXW2x-RHvaxg&oe=67872DF5&_nc_sid=8b3546"
+                  class="testimonial-img" alt="Michael Brown" />
+                <h3>Sudipta Pran Bhattacharjee</h3>
+                <h4>CTO, Little Box India</h4>
+                <div class="stars">
+                  <i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-fill"></i>
+                </div>
+                <p>
+                  <i class="bi bi-quote quote-icon-left"></i>
+                  <span>He saw the website of Urbanhype, an e-commerce design, to
+                    be very engaging and congratulated us for winning 2nd
+                    prize at the hackathon.</span>
+                  <i class="bi bi-quote quote-icon-right"></i>
+                </p>
+              </div>
+            </div>
+            <!-- End testimonial item -->
+
+            <div class="swiper-slide">
+              <div class="testimonial-item">
+                <img src="https://th.bing.com/th/id/OIP.wsM6HBD8xJGTWCuATBeAJAHaHa?w=152&h=180&c=7&r=0&o=5&pid=1.7"
+                  class="testimonial-img" alt="Sarah Johnson" />
+                <h3>Prof. Ankur Bharali</h3>
+                <h4>Director, IQAC at Dibrugarh University</h4>
+                <div class="stars">
+                  <i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-fill"></i>
+                </div>
+                <p>
+                  <i class="bi bi-quote quote-icon-left"></i>
+                  <span>Their mathematical forum website exceeded our
+                    expectations, and we appreciate the innovative solutions
+                    they developed for journal automation, making the entire
+                    process comprehensive and efficient. Highly professional
+                    and reliable team.</span>
+                  <i class="bi bi-quote quote-icon-right"></i>
+                </p>
+              </div>
+            </div>
+            <!-- End testimonial item -->
+
+            <div class="swiper-slide">
+              <div class="testimonial-item">
+                <img src="assets/img/testimonials/testimonials-5.jpg" class="testimonial-img" alt="David Wilson" />
+                <h3>Adnan Farooq</h3>
+                <h4>Co-founder, Solar-X</h4>
+                <div class="stars">
+                  <i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-fill"></i>
+                </div>
+                <p>
+                  <i class="bi bi-quote quote-icon-left"></i>
+                  <span>The Solar-X website is looking very beautiful and we are
+                    excited for its launch soon. Thanks to Devplexity for
+                    the ongoing design and changes we addressed. Their
+                    attention to detail and commitment to quality are
+                    exceptional.</span>
+                  <i class="bi bi-quote quote-icon-right"></i>
+                </p>
+              </div>
+            </div>
+            <!-- End testimonial item -->
+          </div>
+          <div class="swiper-pagination"></div>
+        </div>
+      </div>
+    </section>
+    <!-- /Testimonials Section -->
+
+    <!-- Team Section -->
+    <!-- <section id="team" class="team section">
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Our Team</h2>
+        <p>Meet the team behind the Agency.</p>
+      </div>
+
+      <div class="container">
+        <div class="row gy-4">
+          <div class="col-lg-3 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="100">
+            <div class="team-member">
+              <div class="member-img">
+                <img src="assets/img/team/aditya.png" class="img-fluid" alt="John Doe" />
+                <div class="social">
+                  <a href="#"><i class="bi bi-twitter-x"></i></a>
+                  <a href="#"><i class="bi bi-facebook"></i></a>
+                  <a href="#"><i class="bi bi-instagram"></i></a>
+                  <a href="#"><i class="bi bi-linkedin"></i></a>
+                </div>
+              </div>
+              <div class="member-info">
+                <h4>Aditya Karmakar</h4>
+                <span>Full Stack Developer</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="200">
+            <div class="team-member">
+              <div class="member-img">
+                <img src="assets/img/team/arghajit.jpg" class="img-fluid" alt="Jane Smith" />
+                <div class="social">
+                  <a href="#"><i class="bi bi-twitter-x"></i></a>
+                  <a href="#"><i class="bi bi-facebook"></i></a>
+                  <a href="#"><i class="bi bi-instagram"></i></a>
+                  <a href="#"><i class="bi bi-linkedin"></i></a>
+                </div>
+              </div>
+              <div class="member-info">
+                <h4>Arghajit Saha</h4>
+                <span>Full Stack Developer</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="300">
+            <div class="team-member">
+              <div class="member-img">
+                <img src="assets/img/team/kalyan.png" class="img-fluid" alt="Michael Brown" />
+                <div class="social">
+                  <a href="#"><i class="bi bi-twitter-x"></i></a>
+                  <a href="#"><i class="bi bi-facebook"></i></a>
+                  <a href="#"><i class="bi bi-instagram"></i></a>
+                  <a href="#"><i class="bi bi-linkedin"></i></a>
+                </div>
+              </div>
+              <div class="member-info">
+                <h4>Kalyan Gupta</h4>
+                <span>Full Stack Developer</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="400">
+            <div class="team-member">
+              <div class="member-img">
+                <img src="assets/img/team/sahebullah.jpg" class="img-fluid" alt="Sarah Johnson" />
+                <div class="social">
+                  <a href="#"><i class="bi bi-twitter-x"></i></a>
+                  <a href="#"><i class="bi bi-facebook"></i></a>
+                  <a href="#"><i class="bi bi-instagram"></i></a>
+                  <a href="#"><i class="bi bi-linkedin"></i></a>
+                </div>
+              </div>
+              <div class="member-info">
+                <h4>Md Sahebullah</h4>
+                <span>Full Stack Developer</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section> -->
+    <!-- /Team Section -->
+    <!-- Team -II Section -->
+    <style>
+      #team {
+        background: linear-gradient(to bottom, #020314, #0F0B3A);
+        min-height: 100vh;
+        color: white;
+      }
+
+      .team-card {
+
+        h3,
+        p {
+          color: white;
+        }
+      }
+
+      .team-card {
+        position: relative;
+        height: 400px;
+        width: 300px;
+        border-radius: 1rem;
+        overflow: hidden;
+        cursor: pointer;
+        margin: 0 10px;
+      }
+
+      .team-card img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      .team-card .overlay {
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(to bottom, transparent, rgba(49, 46, 129, 0.7), rgba(49, 46, 129, 0.9));
+        transform: translateY(100%);
+        transition: transform 0.3s ease-in-out;
+      }
+
+      .team-card:hover .overlay {
+        transform: translateY(0);
+      }
+
+      .team-card .content {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        padding: 1.5rem;
+      }
+
+      .carousel-container {
+        overflow: hidden;
+      }
+
+      .carousel-inner {
+        display: flex;
+        transition: transform 0.5s ease-in-out;
+      }
+
+      .carousel-item {
+        flex: 0 0 auto;
+        margin-right: 1.5rem;
+      }
+
+      .carousel-control-prev,
+      .carousel-control-next {
+        width: 3rem;
+        height: 3rem;
+        background-color: #333;
+        border-radius: 50%;
+        top: 50%;
+        transform: translateY(-50%);
+      }
+
+      .carousel-control-prev {
+        left: -4rem;
+      }
+
+      .carousel-control-next {
+        right: -4rem;
+      }
+
+      .carousel-indicators {
+        position: static;
+        margin-top: 2rem;
+      }
+
+      .carousel-indicators [data-bs-target] {
+        width: 0.5rem;
+        height: 0.5rem;
+        border-radius: 50%;
+        background-color: #333;
+      }
+
+      .carousel-indicators .active {
+        background-color: #333;
+      }
+    </style>
+    <section class="py-5" id="team" class="team section" data-aos="fade-up">
+      <div class="container" data-aos="fade-up">
+        <div class="text-center mb-5">
+          <!-- <h2 class="display-4 fw-bold mb-3">Meet our team</h2> -->
+          <p class="fs-2 text-indigo-400 fst-italic">Meet our team</p>
+        </div>
+
+        <div class="position-relative" data-aos="fade-up">
+          <div id="teamCarousel" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                <div class="d-flex justify-content-center" data-aos="fade-up">
+                  <div class="team-card">
+                    <img src="./assets/img/team/sahebullah.jpg" alt="Md. Sahebullah">
+                    <div class="overlay">
+                      <div class="content">
+                        <h3 class="fs-4 fw-semibold mb-1">Md. Sahebullah</h3>
+                        <p class="text-indigo-300 small mb-4">Coder</p>
+                        <p class="small text-light">I was in high school then it struck that I needed to understand the
+                          team behind games I played. That's when I discovered the magic of programming.</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="team-card">
+                    <img src="./assets/img/team/arghajit.jpg" alt="Arghajit Saha">
+                    <div class="overlay">
+                      <div class="content">
+                        <h3 class="fs-4 fw-semibold mb-1">Arghajit Saha</h3>
+                        <p class="text-indigo-300 small mb-4">Code Fetish</p>
+                        <p class="small text-light">I was in high school then it struck that I needed to understand the
+                          team behind games I played. That's when I discovered the magic of programming.</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="team-card">
+                    <img src="./assets/img/team/kalyan.png" alt="Kalyan Gupta">
+                    <div class="overlay">
+                      <div class="content">
+                        <h3 class="fs-4 fw-semibold mb-1">Kalyan Gupta</h3>
+                        <p class="text-indigo-300 small mb-4">Hard Core Coder </p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="team-card">
+                    <img src="./assets/img/team/aditya.jpg" alt="Aditya Karmakar">
+                    <div class="overlay">
+                      <div class="content">
+                        <h3 class="fs-4 fw-semibold mb-1">Aditya Karmakar</h3>
+                        <p class="text-indigo-300 small mb-4">Procoder</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <button data-aos="fade-up" class="carousel-control-prev" type="button" data-bs-target="#teamCarousel"
+              data-bs-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Previous</span>
+            </button>
+            <button data-aos="fade-up" class="carousel-control-next" type="button" data-bs-target="#teamCarousel"
+              data-bs-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Next</span>
+            </button>
+            <div data-aos="fade-up" class="carousel-indicators">
+              <button type="button" data-bs-target="#teamCarousel" data-bs-slide-to="0" class="active"
+                aria-current="true" aria-label="Slide 1"></button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+      document.addEventListener('DOMContentLoaded', function () {
+        const carousel = new bootstrap.Carousel(document.getElementById('teamCarousel'), {
+          interval: false,
+          wrap: true
+        });
+      });
+    </script>
+    <!-- Team -II Section -->
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact section">
+      <!-- Section Title -->
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Contact</h2>
+        <p>Get in Touch with Us</p>
+      </div>
+      <!-- End Section Title -->
+
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+        <div class="mb-4" data-aos="fade-up" data-aos-delay="200">
+          <iframe style="border: 0; width: 100%; height: 270px"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3540.634749140504!2d94.89528137609273!3d27.449491576331308!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3740a2daaaaaaaab%3A0x3c0d978a22c76583!2sDibrugarh%20University!5e0!3m2!1sen!2sin!4v1736317030403!5m2!1sen!2sin"
+            frameborder="0" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+        <!-- End Google Maps -->
+
+        <div class="row gy-4">
+          <div class="col-lg-4">
+            <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="300">
+              <i class="bi bi-geo-alt flex-shrink-0"></i>
+              <div>
+                <h3>Address</h3>
+                <p>Near Dibrugarh University, 786004</p>
+              </div>
+            </div>
+            <!-- End Info Item -->
+
+            <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="400">
+              <i class="bi bi-telephone flex-shrink-0"></i>
+              <div>
+                <h3>Call Us</h3>
+                <p>+91 8099400768</p>
+              </div>
+            </div>
+            <!-- End Info Item -->
+
+            <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="500">
+              <i class="bi bi-envelope flex-shrink-0"></i>
+              <div>
+                <h3>Email Us</h3>
+                <p>contactdevteamindia@gmail.com</p>
+              </div>
+            </div>
+            <!-- End Info Item -->
+          </div>
+
+          <div class="col-lg-8">
+            <form action="https://formspree.io/f/xannlgnq" method="post" class="php-email-form" data-aos="fade-up"
+              data-aos-delay="200">
+              <div class="row gy-4">
+                <div class="col-md-6">
+                  <input type="text" name="name" class="form-control" placeholder="Your Name" required="" />
+                </div>
+
+                <div class="col-md-6">
+                  <input type="email" class="form-control" name="email" placeholder="Your Email" required="" />
+                </div>
+
+                <div class="col-md-12">
+                  <input type="text" class="form-control" name="subject" placeholder="Subject" required="" />
+                </div>
+
+                <div class="col-md-12">
+                  <textarea class="form-control" name="message" rows="6" placeholder="Message" required=""></textarea>
+                </div>
+
+                <div class="col-md-12 text-center">
+                  <div class="loading">Loading</div>
+                  <div class="error-message"></div>
+                  <div class="sent-message">
+                    Your message has been sent. Thank you!
+                  </div>
+
+                  <button type="submit">Send Message</button>
+                </div>
+              </div>
+            </form>
+          </div>
+          <!-- End Contact Form -->
+        </div>
+      </div>
+    </section>
+    <!-- /Contact Section -->
+  </main>
+
+  <footer id="footer" class="footer dark-background">
+    <div class="footer-top">
+      <div class="container">
+        <div class="row gy-4">
+          <div class="col-lg-4 col-md-6 footer-about">
+            <a href="index.html" class="logo d-flex align-items-center">
+              <span class="sitename">Devplexity</span>
+            </a>
+            <div class="footer-contact pt-3">
+              <p>Near Dibrugarh University</p>
+              <p>Dibrugarh, 786004</p>
+              <p class="mt-3">
+                <strong>Phone:</strong> <span>+91 8099400768</span>
+              </p>
+              <p>
+                <strong>Email:</strong>
+                <span>contactdevteamindia@gmail.com</span>
+              </p>
+            </div>
+            <div class="social-links d-flex mt-4">
+              <a href="#"><i class="bi bi-twitter-x"></i></a>
+              <a href="#"><i class="bi bi-facebook"></i></a>
+              <a href="#"><i class="bi bi-instagram"></i></a>
+              <a href="#"><i class="bi bi-linkedin"></i></a>
+            </div>
+          </div>
+
+          <div class="col-lg-2 col-md-3 footer-links">
+            <h4>Useful Links</h4>
+            <ul>
+              <li>
+                <i class="bi bi-chevron-right"></i> <a href="#">Home</a>
+              </li>
+              <li>
+                <i class="bi bi-chevron-right"></i> <a href="#">About Us</a>
+              </li>
+              <li>
+                <i class="bi bi-chevron-right"></i> <a href="#">Services</a>
+              </li>
+              <li>
+                <i class="bi bi-chevron-right"></i>
+                <a href="#">Case Studies</a>
+              </li>
+              <li>
+                <i class="bi bi-chevron-right"></i> <a href="#">Contact Us</a>
+              </li>
+            </ul>
+          </div>
+
+          <div class="col-lg-2 col-md-3 footer-links">
+            <h4>Our Services</h4>
+            <ul>
+              <li>
+                <i class="bi bi-chevron-right"></i> <a href="#">Web Design</a>
+              </li>
+              <li>
+                <i class="bi bi-chevron-right"></i>
+                <a href="#">App Development</a>
+              </li>
+              <li>
+                <i class="bi bi-chevron-right"></i>
+                <a href="#">Digital Marketing</a>
+              </li>
+              <li>
+                <i class="bi bi-chevron-right"></i>
+                <a href="#">SEO & Analytics</a>
+              </li>
+              <li>
+                <i class="bi bi-chevron-right"></i> <a href="#">Branding</a>
+              </li>
+            </ul>
+          </div>
+
+          <div class="col-lg-4 col-md-12 footer-newsletter">
+            <h4>Join Our Newsletter</h4>
+            <p>
+              Stay updated with the latest trends, insights, and news from DEV
+              TEAM INDIA. Subscribe now!
+            </p>
+            <form action="forms/newsletter.php" method="post" class="php-email-form">
+              <div class="newsletter-form">
+                <input type="email" name="email" placeholder="Enter your email" required />
+                <input type="submit" value="Subscribe" />
+              </div>
+              <div class="loading">Loading</div>
+              <div class="error-message"></div>
+              <div class="sent-message">Thank you for subscribing!</div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="copyright">
+      <div class="container text-center">
+        <!-- <p>
+            © <span>Copyright</span> <strong class="px-1 sitename">Devplexity</strong>
+            <span>All Rights Reserved</span>
+          </p> -->
+        <div class="credits">
+          Designed by <a href="https://devplexity.vercel.app/">Team Devplexity</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scroll Top -->
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i
+      class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Preloader -->
+  <!-- <div id="preloader"></div> -->
+  <style>
+    /* Preloader Styles */
+    #custom-preloader {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 9999;
+    }
+
+    #custom-preloader::after {
+      content: '';
+      width: 50px;
+      height: 50px;
+      
+    }
+
+    /* Spinner Animation */
+    @keyframes spin {
+      from {
+        transform: rotate(0deg);
+      }
+
+      to {
+        transform: rotate(360deg);
+      }
+    }
+
+    /* Hide the preloader after duration */
+    body.loaded #custom-preloader {
+      display: none;
+    }
+  </style>
+  <div id="custom-preloader">
+    <iframe src="./creative-button-2.html" frameborder="0" scrolling="no" width="100%" height="100%"
+      style="border: none;"></iframe>
+  </div>
+  <script>
+    // Show preloader for at least 3 seconds, then remove it
+    window.addEventListener('load', () => {
+      // Wait for a minimum of 3 seconds before hiding the preloader
+      setTimeout(() => {
+        document.body.classList.add('loaded'); // Hide preloader
+      }, 3000); // 3 seconds
+    });
+  </script>
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
+  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
+
+  <!-- Main JS File -->
+  <script src="assets/js/main.js"></script>
+</body>
+
+</html>

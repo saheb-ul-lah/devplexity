@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - DevPlexity</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(to bottom, #020314, #0F0B3A);
+        }
+
+        .video-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0.8;
+            filter: brightness(0.9) contrast(1.8);
+        }
+
+        .form-control {
+            background-color: transparent;
+            border: none;
+            border-bottom: 1px solid #333;
+            border-radius: 0;
+            color: white;
+            padding-left: 0;
+        }
+
+        .form-control:focus {
+            background-color: transparent;
+            border-color: white;
+            box-shadow: none;
+            color: white;
+        }
+
+        .form-control::placeholder {
+            color: rgba(255, 255, 255, 0.5);
+        }
+
+        .btn-custom {
+            background-color: #7d2ae8;
+            border: none;
+            color: #fff;
+            transition: all 0.3s ease;
+        }
+
+        .btn-custom:hover {
+            background-color: #6a1fd6;
+            transform: scale(1.05);
+        }
+
+        .attachment-label:hover {
+            color: #17a2b8 !important;
+        }
+
+        /* for the button part */
+        .button {
+            position: relative;
+            padding: 10px 22px;
+            border-radius: 6px;
+            border: none;
+            color: #fff;
+            cursor: pointer;
+            background-color: #7d2ae8;
+            transition: all 0.2s ease;
+        }
+
+        .button:active {
+            transform: scale(0.96);
+        }
+
+        .button:before,
+        .button:after {
+            position: absolute;
+            content: "";
+            width: 150%;
+            left: 50%;
+            height: 100%;
+            transform: translateX(-50%);
+            z-index: -1000;
+            background-repeat: no-repeat;
+        }
+
+        .button:hover:before {
+            top: -70%;
+            background-image: radial-gradient(circle, #7d2ae8 20%, transparent 20%),
+                radial-gradient(circle, transparent 20%, #7d2ae8 20%, transparent 30%),
+                radial-gradient(circle, #7d2ae8 20%, transparent 20%),
+                radial-gradient(circle, #7d2ae8 20%, transparent 20%),
+                radial-gradient(circle, transparent 10%, #7d2ae8 15%, transparent 20%),
+                radial-gradient(circle, #7d2ae8 20%, transparent 20%),
+                radial-gradient(circle, #7d2ae8 20%, transparent 20%),
+                radial-gradient(circle, #7d2ae8 20%, transparent 20%),
+                radial-gradient(circle, #7d2ae8 20%, transparent 20%);
+            background-size: 10% 10%, 20% 20%, 15% 15%, 20% 20%, 18% 18%, 10% 10%, 15% 15%,
+                10% 10%, 18% 18%;
+            background-position: 50% 120%;
+            animation: greentopBubbles 0.6s ease;
+        }
+
+        @keyframes greentopBubbles {
+            0% {
+                background-position: 5% 90%, 10% 90%, 10% 90%, 15% 90%, 25% 90%, 25% 90%,
+                    40% 90%, 55% 90%, 70% 90%;
+            }
+
+            50% {
+                background-position: 0% 80%, 0% 20%, 10% 40%, 20% 0%, 30% 30%, 22% 50%,
+                    50% 50%, 65% 20%, 90% 30%;
+            }
+
+            100% {
+                background-position: 0% 70%, 0% 10%, 10% 30%, 20% -10%, 30% 20%, 22% 40%,
+                    50% 40%, 65% 10%, 90% 20%;
+                background-size: 0% 0%, 0% 0%, 0% 0%, 0% 0%, 0% 0%, 0% 0%;
+            }
+        }
+
+        .button:hover::after {
+            bottom: -70%;
+            background-image: radial-gradient(circle, #2a3ae8 20%, transparent 20%),
+                radial-gradient(circle, #2aa9e8 20%, transparent 20%),
+                radial-gradient(circle, transparent 10%, #1a63f4 15%, transparent 20%),
+                radial-gradient(circle, #2aace8 20%, transparent 20%),
+                radial-gradient(circle, #2ad8e8 20%, transparent 20%),
+                radial-gradient(circle, #2a2de8 20%, transparent 20%),
+                radial-gradient(circle, #3990f4 20%, transparent 20%);
+            background-size: 15% 15%, 20% 20%, 18% 18%, 20% 20%, 15% 15%, 20% 20%, 18% 18%;
+            background-position: 50% 0%;
+            animation: greenbottomBubbles 0.6s ease;
+        }
+
+        @keyframes greenbottomBubbles {
+            0% {
+                background-position: 10% -10%, 30% 10%, 55% -10%, 70% -10%, 85% -10%,
+                    70% -10%, 70% 0%;
+            }
+
+            50% {
+                background-position: 0% 80%, 20% 80%, 45% 60%, 60% 100%, 75% 70%, 95% 60%,
+                    105% 0%;
+            }
+
+            100% {
+                background-position: 0% 90%, 20% 90%, 45% 70%, 60% 110%, 75% 80%, 95% 70%,
+                    110% 10%;
+                background-size: 0% 0%, 0% 0%, 0% 0%, 0% 0%, 0% 0%, 0% 0%;
+            }
+        }
+
+        .input-container {
+            position: relative;
+            margin: 20px;
+        }
+
+        /* Input field */
+        .input-field {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            font-size: 16px;
+            border: none;
+            border-bottom: 2px solid #ccc;
+            outline: none;
+            background-color: transparent;
+        }
+
+        /* Input label */
+        .input-label {
+            position: absolute;
+            top: 0;
+            left: 0;
+            font-size: 16px;
+            color: rgba(204, 204, 204, 0);
+            pointer-events: none;
+            transition: all 0.3s ease;
+        }
+
+        /* Input highlight */
+        .input-highlight {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            height: 2px;
+            width: 0;
+            background-color: #007bff;
+            transition: all 0.3s ease;
+        }
+
+        /* Input field:focus styles */
+        .input-field:focus+.input-label {
+            top: -20px;
+            font-size: 12px;
+            color: #007bff;
+        }
+
+        .input-field:focus+.input-label+.input-highlight {
+            width: 100%;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container-fluid min-vh-100 d-flex align-items-center justify-content-center py-5">
+        <div class="row w-100">
+            <!-- Left Section with Video Background -->
+            <div class="col-lg-6 p-0 position-relative overflow-hidden rounded-start">
+                <video autoplay muted loop playsinline class="video-bg">
+                    <source src="./testvideo2.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+                <div class="position-relative z-1 p-4 text-white">
+                    <h1 class="fw-bold display-4 mb-4">DevPlexity</h1>
+                    <div class="mt-5">
+                        <h2 class="display-3 fw-bold">
+                            Don't be Shy,<br>
+                            Say Hi!...<br>
+                        </h2>
+                    </div>
+                </div>
+            </div>
+            <!-- Right Section -->
+            <div class="col-lg-6 p-5 bg-black text-white rounded-end">
+                <h2 class="text-white display-6 fw-bold mb-4">Share what's in your Brain</h2>
+                <form>
+                    <div class="mb-4 input-container">
+                        <input type="text" class="form-control input-field" placeholder="Enter Your Name">
+                        <label for="input-field" class="input-label">Enter You Name</label>
+                        <span class="input-highlight"></span>
+                    </div>
+                    <div class="mb-4 input-container">
+                        <input type="email" class="form-control input-field" placeholder="Enter Your Email">
+                        <label for="input-field" class="input-label">Enter Your Email</label>
+                        <span class="input-highlight"></span>
+                    </div>
+                    <div class="mb-4">
+                        <textarea class="form-control" rows="3" placeholder="Tell us about your Issue"></textarea>
+                    </div>
+                    <!-- <div class="mb-4">
+                        <label class="text-muted attachment-label" style="cursor: pointer;">
+                            <i class="bi bi-paperclip me-2"></i>
+                            <span id="file-name">Add attachment</span>
+                            <input type="file" class="d-none" id="file-input">
+                        </label>
+                    </div> -->
+                    <button type="submit" class="btn btn-custom rounded-pill px-4 py-2 button">Send request</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        document.getElementById('file-input').addEventListener('change', function (e) {
+            const fileName = e.target.files[0]?.name;
+            if (fileName) {
+                document.getElementById('file-name').textContent = fileName;
+            }
+        });
+
+        document.querySelector('form').addEventListener('submit', function (e) {
+            e.preventDefault();
+            console.log('Form submitted!');
+            // Add your form submission logic here
+        });
+    </script>
+</body>
+
+</html>
