@@ -1557,7 +1557,7 @@
 
     <!-- ..................................................................................................................... -->
 
-    
+
 
 
     <!-- ..................................................................................................................... -->
@@ -2362,9 +2362,16 @@
       #services-3d {
         transition: all 0.5s ease-in-out;
       }
+
       /* Fade animations */
       .case-studies,
       .case-studies-2 {
+        transition: all 0.5s ease-in-out;
+      }
+
+      /* Fade animations */
+      .call-to-action,
+      .call-to-action-2 {
         transition: all 0.5s ease-in-out;
       }
     </style>
@@ -2375,7 +2382,9 @@
       const services3D = document.getElementById('services-3d');
       const caseStudiesV1 = document.getElementsByClassName('case-studies');
       const caseStudiesV2 = document.getElementsByClassName('case-studies-2');
-    
+      const callToActionV1 = document.getElementsByClassName('call-to-action');
+      const callToActionV2 = document.getElementsByClassName('call-to-action-2');
+
       // Add event listener to the toggle
       toggle.addEventListener('change', function () {
         if (this.checked) {
@@ -2386,17 +2395,20 @@
           fadeOutCollection(caseStudiesV1, () => {
             fadeInCollection(caseStudiesV2);
           });
+          fadeOutCollection(callToActionV1, () => {
+            fadeInCollection(callToActionV2);
+          });
         } else {
           // Cosmic mode is OFF
           fadeOut(services3D, () => {
             fadeIn(servicesV1);
           });
-          fadeOutCollection(caseStudiesV2, () => {
-            fadeInCollection(caseStudiesV1);
+          fadeOutCollection(callToActionV2, () => {
+            fadeInCollection(callToActionV1);
           });
         }
       });
-    
+
       // Fade-out function for single element
       function fadeOut(element, callback) {
         if (!element) return; // Ensure element exists
@@ -2412,7 +2424,7 @@
           opacity -= 0.05; // Adjust speed of fade-out
         }, 20); // Adjust interval for smoother animation
       }
-    
+
       // Fade-in function for single element
       function fadeIn(element) {
         if (!element) return; // Ensure element exists
@@ -2427,7 +2439,7 @@
           opacity += 0.05; // Adjust speed of fade-in
         }, 20); // Adjust interval for smoother animation
       }
-    
+
       // Fade-out function for HTMLCollection
       function fadeOutCollection(collection, callback) {
         if (!collection || collection.length === 0) return; // Ensure collection exists
@@ -2441,7 +2453,7 @@
           });
         });
       }
-    
+
       // Fade-in function for HTMLCollection
       function fadeInCollection(collection) {
         if (!collection || collection.length === 0) return; // Ensure collection exists
@@ -2556,8 +2568,6 @@
           transform: scale(1) rotate(-5deg);
         }
       }
-
-      
     </style>
 
     <section id="call-to-action" class="call-to-action section dark-background">
@@ -2732,7 +2742,7 @@
     </style>
 
 
-    <section id="call-to-action" class="call-to-action section dark-background">
+    <section id="call-to-action" class="call-to-action call-to-action-2 section dark-background" style="display:none;">
       <!-- <img src="https://images.freecreatives.com/wp-content/uploads/2016/04/Website-Backgrounds-For-Desktop.jpg"
         alt="Call to Action Background" /> -->
       <img src="https://i.pinimg.com/originals/85/31/5d/85315dfc4cce06ca2c5af1048eddd54e.gif"
@@ -3193,6 +3203,167 @@
     <!-- ..................................................................................................................... -->
 
 
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="testimonials section bg-black">
+      <img
+        src="https://img.freepik.com/premium-vector/minimal-geometric-background-dynamic-shapes-composition-full-color_573652-174.jpg?w=1060"
+        class="testimonials-bg" alt="Testimonials Background" />
+
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+        <div class="swiper init-swiper">
+          <script type="application/json" class="swiper-config">
+              {
+                "loop": true,
+                "speed": 600,
+                "autoplay": {
+                  "delay": 5000
+                },
+                "slidesPerView": "auto",
+                "pagination": {
+                  "el": ".swiper-pagination",
+                  "type": "bullets",
+                  "clickable": true
+                }
+              }
+          </script>
+          <div class="swiper-wrapper">
+            <div class="swiper-slide">
+              <div class="testimonial-item">
+                <img
+                  src="https://i1.rgstatic.net/ii/profile.image/11431281104196663-1669970403724_Q512/Rizwan-Rehman-2.jpg"
+                  class="testimonial-img" alt="John Doe" />
+                <h3>Dr. Rizwan Rehman</h3>
+                <h4>Asst. Professor, Dibrugarh University</h4>
+                <div class="stars">
+                  <i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-fill"></i>
+                </div>
+                <p>
+                  <i class="bi bi-quote quote-icon-left"></i>
+                  <span>Devplexity transformed our online presence for
+                    Digital Solutions Cell, with a stunning website and
+                    effective digital marketing strategies. Highly recommend
+                    their expertise!</span>
+                  <i class="bi bi-quote quote-icon-right"></i>
+                </p>
+              </div>
+            </div>
+            <!-- End testimonial item -->
+
+            <div class="swiper-slide">
+              <div class="testimonial-item">
+                <img
+                  src="https://files.elfsightcdn.com/10f57fcd-29bb-4da4-9c09-61ea49a5bf6e/63dfd52f-f340-4e29-8cb8-11a65a5a79f9/PPP-New-HD.jpg"
+                  class="testimonial-img" alt="Jane Smith" />
+                <h3>Abhilash Boruah</h3>
+                <h4>Asst. Professor, Dibrugarh University</h4>
+                <div class="stars">
+                  <i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-fill"></i>
+                </div>
+                <p>
+                  <i class="bi bi-quote quote-icon-left"></i>
+                  <span>The Devplexity team delivered a seamless Alumni Portal that
+                    automated and enhanced our Alumni registration. Truly a
+                    partner in innovation and growth.</span>
+                  <i class="bi bi-quote quote-icon-right"></i>
+                </p>
+              </div>
+            </div>
+            <!-- End testimonial item -->
+
+            <div class="swiper-slide">
+              <div class="testimonial-item">
+                <img
+                  src="https://instagram.fgau1-3.fna.fbcdn.net/v/t51.2885-19/269884068_1119143455490065_1910673412901612636_n.jpg?stp=dst-jpg_s150x150_tt6&_nc_ht=instagram.fgau1-3.fna.fbcdn.net&_nc_cat=101&_nc_ohc=uf0fxKi_Qp0Q7kNvgHMJYv-&_nc_gid=e59d70425f0e445c8b6773c1905df08f&edm=AOQ1c0wBAAAA&ccb=7-5&oh=00_AYAlwHLcvVmsd-9mKfjItKPt2GaXnjCG35KXW2x-RHvaxg&oe=67872DF5&_nc_sid=8b3546"
+                  class="testimonial-img" alt="Michael Brown" />
+                <h3>Sudipta Pran Bhattacharjee</h3>
+                <h4>CTO, Little Box India</h4>
+                <div class="stars">
+                  <i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-fill"></i>
+                </div>
+                <p>
+                  <i class="bi bi-quote quote-icon-left"></i>
+                  <span>He saw the website of Urbanhype, an e-commerce design, to
+                    be very engaging and congratulated us for winning 2nd
+                    prize at the hackathon.</span>
+                  <i class="bi bi-quote quote-icon-right"></i>
+                </p>
+              </div>
+            </div>
+            <!-- End testimonial item -->
+
+            <div class="swiper-slide">
+              <div class="testimonial-item">
+                <img src="https://th.bing.com/th/id/OIP.wsM6HBD8xJGTWCuATBeAJAHaHa?w=152&h=180&c=7&r=0&o=5&pid=1.7"
+                  class="testimonial-img" alt="Sarah Johnson" />
+                <h3>Prof. Ankur Bharali</h3>
+                <h4>Director, IQAC at Dibrugarh University</h4>
+                <div class="stars">
+                  <i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-fill"></i>
+                </div>
+                <p>
+                  <i class="bi bi-quote quote-icon-left"></i>
+                  <span>Their mathematical forum website exceeded our
+                    expectations, and we appreciate the innovative solutions
+                    they developed for journal automation, making the entire
+                    process comprehensive and efficient. Highly professional
+                    and reliable team.</span>
+                  <i class="bi bi-quote quote-icon-right"></i>
+                </p>
+              </div>
+            </div>
+            <!-- End testimonial item -->
+
+            <div class="swiper-slide">
+              <div class="testimonial-item">
+                <img src="assets/img/testimonials/testimonials-5.jpg" class="testimonial-img" alt="David Wilson" />
+                <h3>Adnan Farooq</h3>
+                <h4>Co-founder, Solar-X</h4>
+                <div class="stars">
+                  <i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-fill"></i>
+                </div>
+                <p>
+                  <i class="bi bi-quote quote-icon-left"></i>
+                  <span>The Solar-X website is looking very beautiful and we are
+                    excited for its launch soon. Thanks to Devplexity for
+                    the ongoing design and changes we addressed. Their
+                    attention to detail and commitment to quality are
+                    exceptional.</span>
+                  <i class="bi bi-quote quote-icon-right"></i>
+                </p>
+              </div>
+            </div>
+            <!-- End testimonial item -->
+          </div>
+          <div class="swiper-pagination"></div>
+        </div>
+      </div>
+    </section>
+    <!-- /Testimonials Section -->
+
+
+    <!-- ..................................................................................................................... -->
+
+
     <!-- Team -II Section -->
     <style>
       #team {
@@ -3379,7 +3550,321 @@
     </script>
     <!-- Team -II Section -->
 
+
     <!-- ..................................................................................................................... -->
+
+
+    <!-- Team -II Section (With Devplexity) -->
+
+    <style>
+      #team {
+        background: linear-gradient(to bottom, #020314, #0F0B3A);
+        min-height: 100vh;
+        color: white;
+      }
+
+      .team-card {
+        width: 260px;
+        height: 280px;
+        background: #000;
+        border-radius: 32px;
+        padding: 3px;
+        position: relative;
+        box-shadow: #604b4a30 0px 70px 30px -50px;
+        transition: all 0.5s ease-in-out;
+        margin: 0 10px;
+        overflow: hidden;
+      }
+
+      .team-card .mail {
+        position: absolute;
+        right: 2rem;
+        top: 1.4rem;
+        background: transparent;
+        border: none;
+      }
+
+      .team-card .mail svg {
+        stroke: #fbb9b6;
+        stroke-width: 3px;
+      }
+
+      .team-card .mail svg:hover {
+        stroke: #f55d56;
+      }
+
+      .team-card .profile-pic {
+        position: absolute;
+        width: calc(100% - 6px);
+        height: calc(100% - 6px);
+        top: 3px;
+        left: 3px;
+        border-radius: 29px;
+        z-index: 1;
+        border: 0px solid #fbb9b6;
+        overflow: hidden;
+        transition: all 0.5s ease-in-out 0.2s, z-index 0.5s ease-in-out 0.2s;
+      }
+
+      .team-card .profile-pic img {
+        object-fit: cover;
+        width: 100%;
+        height: 100%;
+        object-position: 0px 0px;
+        transition: all 0.5s ease-in-out 0s;
+      }
+
+      .team-card .bottom {
+        position: absolute;
+        bottom: 3px;
+        left: 3px;
+        right: 3px;
+        background: #0F0B3A;
+        top: 80%;
+        border-radius: 29px;
+        z-index: 2;
+        box-shadow: rgba(96, 75, 74, 0.1882352941) 0px 5px 5px 0px inset;
+        overflow: hidden;
+        transition: all 0.5s cubic-bezier(0.645, 0.045, 0.355, 1) 0s;
+      }
+
+      .team-card .bottom .content {
+        position: absolute;
+        bottom: 0;
+        left: 1.5rem;
+        right: 1.5rem;
+        height: 160px;
+      }
+
+      .team-card .bottom .content .name {
+        display: block;
+        font-size: 1.2rem;
+        color: white;
+        font-weight: bold;
+      }
+
+      .team-card .bottom .content .about-me {
+        display: block;
+        font-size: 0.9rem;
+        color: white;
+        margin-top: 1rem;
+      }
+
+      .team-card .bottom .bottom-bottom {
+        position: absolute;
+        bottom: 1rem;
+        left: 1.5rem;
+        right: 1.5rem;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+
+      .team-card .bottom .bottom-bottom .social-links-container {
+        display: flex;
+        gap: 1rem;
+      }
+
+      .team-card .bottom .bottom-bottom .social-links-container svg {
+        height: 20px;
+        fill: white;
+        filter: drop-shadow(0 5px 5px rgba(165, 132, 130, 0.1333333333));
+      }
+
+      .team-card .bottom .bottom-bottom .social-links-container svg:hover {
+        fill: #f55d56;
+        transform: scale(1.2);
+      }
+
+      .team-card .bottom .bottom-bottom .button {
+        background: #E4E4E4;
+        color: #0F0B3A;
+        border: none;
+        border-radius: 20px;
+        font-size: 0.6rem;
+        font-weight: 700;
+        padding: 0.4rem 0.6rem;
+        box-shadow: rgba(165, 132, 130, 0.1333333333) 0px 5px 5px 0px;
+      }
+
+      .team-card .bottom .bottom-bottom .button:hover {
+        background: #fff;
+        color: #0F0B3A;
+      }
+
+      .team-card:hover {
+        border-top-left-radius: 55px;
+      }
+
+      .team-card:hover .bottom {
+        top: 20%;
+        border-radius: 80px 29px 29px 29px;
+        transition: all 0.5s cubic-bezier(0.645, 0.045, 0.355, 1) 0.2s;
+      }
+
+      .team-card:hover .profile-pic {
+        width: 100px;
+        height: 100px;
+        aspect-ratio: 1;
+        top: 10px;
+        left: 10px;
+        border-radius: 50%;
+        z-index: 3;
+        border: 2px solid #EEEEEE;
+        box-shadow: rgba(96, 75, 74, 0.1882352941) 0px 5px 5px 0px;
+        transition: all 0.5s ease-in-out, z-index 0.5s ease-in-out 0.1s;
+        object-fit: cover;
+      }
+
+      .team-card:hover .profile-pic:hover {
+        border-radius: 18px;
+      }
+
+      .team-card:hover .profile-pic img {
+        transform: scale(2.5);
+        transition: all 0.5s ease-in-out 0.5s;
+        object-fit: cover;
+      }
+
+      .carousel-container {
+        overflow: hidden;
+      }
+
+      .carousel-inner {
+        display: flex;
+        transition: transform 0.5s ease-in-out;
+      }
+
+      .carousel-item {
+        flex: 0 0 auto;
+        margin-right: 1.5rem;
+      }
+
+      .carousel-control-prev,
+      .carousel-control-next {
+        width: 3rem;
+        height: 3rem;
+        background-color: #333;
+        border-radius: 50%;
+        top: 50%;
+        transform: translateY(-50%);
+      }
+
+      .carousel-control-prev {
+        left: -4rem;
+      }
+
+      .carousel-control-next {
+        right: -4rem;
+      }
+
+      .carousel-indicators {
+        position: static;
+        margin-top: 2rem;
+      }
+
+      .carousel-indicators [data-bs-target] {
+        width: 0.5rem;
+        height: 0.5rem;
+        border-radius: 50%;
+        background-color: #333;
+      }
+
+      .carousel-indicators .active {
+        background-color: #333;
+      }
+    </style>
+
+    <section class="py-5" id="team" class="team section" data-aos="fade-up">
+      <div class="container" data-aos="fade-up">
+        <div class="text-center mb-5">
+          <p class="fs-2 text-indigo-400 ">Meet our team of ❄ <strong class="fst-italic">web artisans</strong> ❄</p>
+        </div>
+
+        <div class="position-relative" data-aos="fade-up">
+          <div id="teamCarousel" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                <div class="d-flex justify-content-center" data-aos="fade-up">
+                  <div class="team-card">
+                    <button class="mail">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                        class="lucide lucide-mail">
+                        <rect width="20" height="16" x="2" y="4" rx="2"></rect>
+                        <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path>
+                      </svg>
+                    </button>
+                    <div class="profile-pic">
+                      <img src="./assets/img/team/sahebullah.jpg" alt="Md. Sahebullah">
+                    </div>
+                    <div class="bottom">
+                      <div class="content">
+                        <span class="name">Md. Sahebullah</span>
+                        <span class="about-me">Frontend Designer</span>
+                      </div>
+                      <div class="bottom-bottom">
+                        <div class="social-links-container">
+                          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="15.999" viewBox="0 0 16 15.999">
+                            <path id="Subtraction_4" data-name="Subtraction 4"
+                              d="M6-582H-2a4,4,0,0,1-4-4v-8a4,4,0,0,1,4-4H6a4,4,0,0,1,4,4v8A4,4,0,0,1,6-582ZM2-594a4,4,0,0,0-4,4,4,4,0,0,0,4,4,4,4,0,0,0,4-4A4.005,4.005,0,0,0,2-594Zm4.5-2a1,1,0,0,0-1,1,1,1,0,0,0,1,1,1,1,0,0,0,1-1A1,1,0,0,0,6.5-596ZM2-587.5A2.5,2.5,0,0,1-.5-590,2.5,2.5,0,0,1,2-592.5,2.5,2.5,0,0,1,4.5-590,2.5,2.5,0,0,1,2-587.5Z"
+                              transform="translate(6 598)"></path>
+                          </svg>
+                          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                            <path
+                              d="M389.2 48h70.6L305.6 224.2 487 464H345L233.7 318.6 106.5 464H35.8L200.7 275.5 26.8 48H172.4L272.9 180.9 389.2 48zM364.4 421.8h39.1L151.1 88h-42L364.4 421.8z">
+                            </path>
+                          </svg>
+                          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512">
+                            <path
+                              d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z">
+                            </path>
+                          </svg>
+                        </div>
+                        <button class="button">Contact Me</button>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- Repeat for other team members -->
+                </div>
+              </div>
+            </div>
+            <button data-aos="fade-up" class="carousel-control-prev" type="button" data-bs-target="#teamCarousel"
+              data-bs-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Previous</span>
+            </button>
+            <button data-aos="fade-up" class="carousel-control-next" type="button" data-bs-target="#teamCarousel"
+              data-bs-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Next</span>
+            </button>
+            <div data-aos="fade-up" class="carousel-indicators">
+              <button type="button" data-bs-target="#teamCarousel" data-bs-slide-to="0" class="active"
+                aria-current="true" aria-label="Slide 1"></button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+      document.addEventListener('DOMContentLoaded', function () {
+        const carousel = new bootstrap.Carousel(document.getElementById('teamCarousel'), {
+          interval: false,
+          wrap: true
+        });
+      });
+    </script>
+
+
+
+    <!-- Team -II Section (With Devplexity) -->
+
+
+    <!-- ..................................................................................................................... -->
+
 
     <!-- Without Devplexity Mode Contact Section -v3 -->
 
@@ -3956,11 +4441,11 @@
         </div>
         <!-- Right Section -->
         <div class="col-lg-6 p-5 bg-black text-white rounded-end">
-          <h2 class="text-white display-6 fw-bold mb-4">Share what's in your Brain</h2>
+          <h2 class="text-white display-6 fw-bold mb-4">Share what's in your mind</h2>
           <form>
             <div class="mb-4 input-container">
               <input type="text" class="form-control input-field" placeholder="Enter Your Name">
-              <label for="input-field" class="input-label">Enter You Name</label>
+              <label for="input-field" class="input-label">Enter Your Name</label>
               <span class="input-highlight"></span>
             </div>
             <div class="mb-4 input-container">
@@ -4050,14 +4535,18 @@
         // Add your form submission logic here
       });
     </script>
-    <!-- Without Devplexity Mode Contact Section -v3 -->
+
+
+    <!-- /Without Devplexity Mode Contact Section -v3 -->
+
+
+    <!-- ----------------------------------------------------------------------------------------------------------- -->
 
 
     <!-- With Devplexity Mode Contact Section -v3 -->
 
 
     <style>
-
       #contact-us-parent {
         font-family: 'Poppins', sans-serif;
         background-color: #0a0a0a;
@@ -4683,10 +5172,12 @@
                 <span style="transition-delay:100ms">t</span>
                 <span style="transition-delay:150ms">e</span>
                 <span style="transition-delay:200ms">r</span>
+                <span style="transition-delay:200ms"> </span>
                 <span style="transition-delay:250ms">Y</span>
                 <span style="transition-delay:300ms">o</span>
                 <span style="transition-delay:350ms">u</span>
                 <span style="transition-delay:400ms">r</span>
+                <span style="transition-delay:400ms"> </span>
                 <span style="transition-delay:450ms">N</span>
                 <span style="transition-delay:500ms">a</span>
                 <span style="transition-delay:550ms">m</span>
@@ -4702,10 +5193,12 @@
                 <span style="transition-delay:100ms">t</span>
                 <span style="transition-delay:150ms">e</span>
                 <span style="transition-delay:200ms">r</span>
+                <span style="transition-delay:200ms"> </span>
                 <span style="transition-delay:250ms">Y</span>
                 <span style="transition-delay:300ms">o</span>
                 <span style="transition-delay:350ms">u</span>
                 <span style="transition-delay:400ms">r</span>
+                <span style="transition-delay:400ms"> </span>
                 <span style="transition-delay:450ms">E</span>
                 <span style="transition-delay:500ms">m</span>
                 <span style="transition-delay:550ms">a</span>
@@ -4795,8 +5288,10 @@
         // Add your form submission logic here
       });
     </script>
+
+
     <!-- /With Devplexity Mode Contact Section -v3 -->
-    
+
 
     <!-- Ratings Section -->
 
@@ -4819,8 +5314,8 @@
       }
 
       .rating svg {
-        width: 2rem;
-        height: 2rem;
+        width: 4rem;
+        height: 4rem;
         overflow: visible;
         fill: transparent;
         stroke: var(--stroke);
@@ -4887,7 +5382,8 @@
         }
       }
     </style>
-    <section style="background-color: #0a0a0a;display: flex;align-items: center;justify-content: center;" class="section">
+    <section style="background-color: #0a0a0a;display: flex;align-items: center;justify-content: center;"
+      class="section">
       <div class="rating">
         <input type="radio" id="star-1" name="star-radio" value="star-1">
         <label for="star-1">
@@ -4933,12 +5429,100 @@
     </section>
 
 
-    <!-- Ratings Section -->
+    <!-- /Ratings Section -->
 
 
   </main>
 
+  <style>
+    /* Existing styles for the footer */
+    #footer {
+      position: relative;
+      overflow: hidden;
+      background: #0a0a0a;
+      /* Dark background for the footer */
+      color: white;
+      /* Light text color for contrast */
+      /* Add padding to avoid overlap with waves */
+    }
+
+    .footer-top {
+      position: relative;
+      z-index: 2;
+      /* Ensure content is above the waves */
+    }
+
+    .copyright {
+      position: relative;
+      z-index: 2;
+      /* Ensure content is above the waves */
+    }
+
+    /* Wave animation styles */
+    html,
+    body {
+      height: 100%;
+    }
+
+    .ocean {
+      height: 100px;
+      /* Adjust height of the ocean/wave section */
+      width: 100%;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      background: #015871;
+      z-index: 1;
+      /* Place waves below the footer content */
+    }
+
+    .wave {
+      background: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/85486/wave.svg) repeat-x;
+      position: absolute;
+      top: -198px;
+      width: 6400px;
+      height: 198px;
+      animation: wave 7s cubic-bezier(0.36, 0.45, 0.63, 0.53) infinite;
+      transform: translate3d(0, 0, 0);
+    }
+
+    .wave:nth-of-type(2) {
+      top: -175px;
+      animation: wave 7s cubic-bezier(0.36, 0.45, 0.63, 0.53) -.125s infinite, swell 7s ease -1.25s infinite;
+      opacity: 1;
+    }
+
+    @keyframes wave {
+      0% {
+        margin-left: 0;
+      }
+
+      100% {
+        margin-left: -1600px;
+      }
+    }
+
+    @keyframes swell {
+
+      0%,
+      100% {
+        transform: translate3d(0, -25px, 0);
+      }
+
+      50% {
+        transform: translate3d(0, 5px, 0);
+      }
+    }
+  </style>
+
   <footer id="footer" class="footer dark-background">
+    <!-- Wave animation -->
+    <div class="ocean">
+      <div class="wave"></div>
+      <div class="wave"></div>
+    </div>
+
+    <!-- Footer content -->
     <div class="footer-top">
       <div class="container">
         <div class="row gy-4">
@@ -5033,10 +5617,6 @@
 
     <div class="copyright">
       <div class="container text-center">
-        <!-- <p>
-            © <span>Copyright</span> <strong class="px-1 sitename">Devplexity</strong>
-            <span>All Rights Reserved</span>
-          </p> -->
         <div class="credits">
           Designed by <a href="https://devplexity.vercel.app/">Team Devplexity</a>
         </div>
