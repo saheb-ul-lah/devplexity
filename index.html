@@ -268,7 +268,6 @@
 
     <!-- ..................................................................................................................... -->
 
-
     <!-- Hero Section -->
     <section id="hero" class="hero section dark-background">
       <!-- <img src="assets/img/hero-bg.jpg" alt="" data-aos="fade-in" /> -->
@@ -1558,8 +1557,6 @@
     <!-- ..................................................................................................................... -->
 
 
-
-
     <!-- ..................................................................................................................... -->
 
 
@@ -2467,6 +2464,645 @@
     <!-- ..................................................................................................................... -->
 
 
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      h2.grid-h2 {
+        font-optical-sizing: auto;
+        font-weight: 400;
+        font-style: normal;
+      }
+
+      .grid-card {
+        position: relative;
+        background-color: #020314;
+      }
+
+      .grid-card::before {
+        position: absolute;
+        content: "";
+        width: 100%;
+        height: 100%;
+        transition: 0.6s;
+        z-index: 0;
+        /* background-color: #4f46e5; */
+        background: conic-gradient(at bottom right, #ef4444, #1e3a8a);
+
+      }
+
+      .grid-card:hover {
+        box-shadow: 0.063rem 0.063rem 1.25rem 0.375rem rgba(0, 0, 0, 0.53);
+      }
+
+      .grid-card:nth-child(1)::before {
+        bottom: 0;
+        right: 0;
+        clip-path: circle(calc(6.25rem + 7.5vw) at 100% 100%);
+        border-radius: 15px 15px 0 15px;
+      }
+
+      .grid-card:nth-child(2)::before {
+        bottom: 0;
+        left: 0;
+        clip-path: circle(calc(6.25rem + 7.5vw) at 0% 100%);
+        border-radius: 15px 15px 15px 0;
+      }
+
+      .grid-card:nth-child(3)::before {
+        top: 0;
+        right: 0;
+        clip-path: circle(calc(6.25rem + 7.5vw) at 100% 0%);
+        border-radius: 0 15px 15px 15px;
+      }
+
+      .grid-card:nth-child(4)::before {
+        top: 0;
+        left: 0;
+        clip-path: circle(calc(6.25rem + 7.5vw) at 0% 0%);
+        border-radius: 15px 0 15px 15px;
+      }
+
+      .grid-card p {
+        transition: 0.8s;
+      }
+
+      .grid-card:hover::before {
+        clip-path: circle(110vw at 100% 100%);
+      }
+
+      .grid-card:hover p {
+        color: #fff;
+      }
+
+      @media screen and (min-width: 62.5rem) {
+        .grid-circle {
+          position: absolute;
+          width: 100%;
+          height: 100%;
+          z-index: 0;
+        }
+      }
+
+      .grid-card:nth-child(1) {
+        border-radius: 15px 15px 0 15px;
+      }
+
+      .grid-card:nth-child(2) {
+        border-radius: 15px 15px 15px 0;
+      }
+
+      .grid-card:nth-child(3) {
+        border-radius: 0 15px 15px 15px;
+      }
+
+      .grid-card:nth-child(4) {
+        border-radius: 15px 0 15px 15px;
+      }
+
+      .grid-card:nth-child(1) .grid-circle {
+        background: url("https://images.unsplash.com/photo-1587440871875-191322ee64b0?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D") no-repeat 50% 50%/cover;
+        bottom: 0;
+        right: 0;
+        clip-path: circle(calc(6.25rem + 7.5vw) at 100% 100%);
+      }
+
+      .grid-card:nth-child(2) .grid-circle {
+        background: url("https://images.unsplash.com/photo-1499951360447-b19be8fe80f5?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D") no-repeat 50% 50%/cover;
+        bottom: 0;
+        left: 0;
+        clip-path: circle(calc(6.25rem + 7.5vw) at 0% 100%);
+      }
+
+      .grid-card:nth-child(3) .grid-circle {
+        background: url("https://images.unsplash.com/photo-1557804506-669a67965ba0?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D") no-repeat 50% 50%/cover;
+        top: 0;
+        right: 0;
+        clip-path: circle(calc(6.25rem + 7.5vw) at 100% 0%);
+      }
+
+      .grid-card:nth-child(4) .grid-circle {
+        background: url("https://images.unsplash.com/photo-1600880292203-757bb62b4baf?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D") no-repeat 50% 50%/cover;
+        top: 0;
+        left: 0;
+        clip-path: circle(calc(6.25rem + 7.5vw) at 0% 0%);
+      }
+    </style>
+    <section class="min-h-screen bg-gray-900 text-center py-20 px-8 xl:px-0 flex flex-col justify-center">
+      <span class="text-gray-400 text-lg max-w-lg mx-auto mb-2 capitalize flex items-center">what we're offering <svg
+          xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
+          class="text-indigo-600 ml-3 w-6 h-6">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M17.25 8.25 21 12m0 0-3.75 3.75M21 12H3" />
+        </svg>
+      </span>
+      <h1 class="text-white text-4xl md:text-5xl xl:text-6xl font-semibold max-w-3xl mx-auto mb-16 leading-snug">
+        Services Built Specifically for your Business</h1>
+      <div class="grid-offer text-left grid sm:grid-cols-2 md:grid-cols-2 gap-5 max-w-5xl mx-auto">
+        <div class="grid-card bg-gray-800 p-10 relative">
+          <div class="grid-circle">
+          </div>
+          <div class="relative lg:pr-52">
+            <h2 class="grid-h2 capitalize text-white mb-4 text-2xl xl:text-3xl">uI/uX <br /> creative design</h2>
+            <p class="text-gray-400">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Pellentesque habitant
+              morbi tristique senectus et netus et malesuada fames.</p>
+          </div>
+          <div class="icon"></div>
+        </div>
+        <div class="grid-card bg-gray-800 p-10 relative">
+          <div class="grid-circle">
+          </div>
+          <div class="relative lg:pl-48">
+            <h2 class="grid-h2 capitalize text-white mb-4 text-2xl xl:text-3xl">visual <br /> graphic design</h2>
+            <p class="text-gray-400">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Pellentesque habitant
+              morbi tristique senectus et netus et malesuada fames.</p>
+          </div>
+        </div>
+        <div class="grid-card bg-gray-800 p-10 relative">
+          <div class="grid-circle">
+          </div>
+          <div class="relative lg:pr-44">
+            <h2 class="grid-h2 capitalize text-white mb-4 text-2xl xl:text-3xl">strategy & <br />digital marketing</h2>
+            <p class="text-gray-400">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Pellentesque habitant
+              morbi tristique senectus et netus et malesuada fames.</p>
+          </div>
+        </div>
+        <div class="grid-card bg-gray-800 p-10 relative">
+          <div class="grid-circle">
+          </div>
+          <div class="relative lg:pl-48">
+            <h2 class="grid-h2 capitalize text-white mb-4 text-2xl xl:text-3xl">effective<br /> business growth</h2>
+            <p class="text-gray-400">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Pellentesque habitant
+              morbi tristique senectus et netus et malesuada fames.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ..................................................................................................................... -->
+
+
+    <style>
+      * {
+        border: 0;
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      :root {
+        --hue: 223;
+        --bg: hsl(var(--hue), 10%, 90%);
+        --fg: hsl(var(--hue), 10%, 10%);
+        --primary: hsl(var(--hue), 90%, 50%);
+        --trans-dur: 0.3s;
+        --trans-timing: cubic-bezier(0.65, 0, 0.35, 1);
+        font-size: calc(16px + (24 - 16) * (100vw - 320px) / (2560 - 320));
+      }
+
+      a {
+        color: var(--primary);
+        transition: color var(--trans-dur);
+      }
+
+      body,
+      button {
+        color: var(--fg);
+        font: 1em/1.5 "IBM Plex Sans", sans-serif;
+      }
+
+      body {
+        background-color: var(--bg);
+        height: 100vh;
+        transition:
+          background-color var(--trans-dur),
+          color var(--trans-dur);
+      }
+
+      h1 {
+        font-size: 2em;
+        margin: 0 0 3rem;
+        padding-top: 1.5rem;
+        text-align: center;
+      }
+
+      .btn {
+        background-color: var(--fg);
+        border-radius: 0.25em;
+        color: var(--bg);
+        cursor: pointer;
+        padding: 0.375em 0.75em;
+        transition:
+          background-color calc(var(--trans-dur) / 2) linear,
+          color var(--trans-dur);
+        -webkit-tap-highlight-color: transparent;
+      }
+
+      .btn:hover {
+        background-color: hsl(var(--hue), 10%, 50%);
+      }
+
+      .btn-group {
+        display: flex;
+        gap: 0.375em;
+        margin-bottom: 1.5em;
+      }
+
+      .timeline {
+        margin: auto;
+        padding: 0 1.5em;
+        width: 100%;
+        max-width: 36em;
+      }
+
+      .timeline__arrow {
+        background-color: transparent;
+        border-radius: 0.25em;
+        cursor: pointer;
+        flex-shrink: 0;
+        margin-inline-end: 0.25em;
+        outline: transparent;
+        width: 2em;
+        height: 2em;
+        transition:
+          background-color calc(var(--trans-dur) / 2) linear,
+          color var(--trans-dur);
+        -webkit-appearance: none;
+        appearance: none;
+        -webkit-tap-highlight-color: transparent;
+      }
+
+      .timeline__arrow:focus-visible,
+      .timeline__arrow:hover {
+        background-color: hsl(var(--hue), 10%, 50%, 0.4);
+      }
+
+      .timeline__arrow-icon {
+        display: block;
+        pointer-events: none;
+        transform: rotate(-90deg);
+        transition: transform var(--trans-dur) var(--trans-timing);
+        width: 100%;
+        height: auto;
+      }
+
+      .timeline__date {
+        font-size: 0.833em;
+        line-height: 2.4;
+      }
+
+      .timeline__dot {
+        background-color: currentColor;
+        border-radius: 50%;
+        display: inline-block;
+        flex-shrink: 0;
+        margin: 0.625em 0;
+        margin-inline-end: 1em;
+        position: relative;
+        width: 0.75em;
+        height: 0.75em;
+      }
+
+      .timeline__item {
+        position: relative;
+        padding-bottom: 2.25em;
+      }
+
+      .timeline__item:not(:last-child):before {
+        background-color: currentColor;
+        content: "";
+        display: block;
+        position: absolute;
+        top: 1em;
+        left: 2.625em;
+        width: 0.125em;
+        height: 100%;
+        transform: translateX(-50%);
+      }
+
+      [dir="rtl"] .timeline__arrow-icon {
+        transform: rotate(90deg);
+      }
+
+      [dir="rtl"] .timeline__item:not(:last-child):before {
+        right: 2.625em;
+        left: auto;
+        transform: translateX(50%);
+      }
+
+      .timeline__item-header {
+        display: flex;
+      }
+
+      .timeline__item-body {
+        border-radius: 0.375em;
+        overflow: hidden;
+        margin-top: 0.5em;
+        margin-inline-start: 4em;
+        height: 0;
+      }
+
+      .timeline__item-body-content {
+        background-color: hsl(var(--hue), 10%, 50%, 0.2);
+        opacity: 0;
+        padding: 0.5em 0.75em;
+        visibility: hidden;
+        transition:
+          opacity var(--trans-dur) var(--trans-timing),
+          visibility var(--trans-dur) steps(1, end);
+      }
+
+      .timeline__meta {
+        width: 100%;
+      }
+
+      .timeline__title {
+        font-size: 1.5em;
+        line-height: 1.333;
+      }
+
+      /* Expanded state */
+      .timeline__item-body--expanded {
+        height: auto;
+      }
+
+      .timeline__item-body--expanded .timeline__item-body-content {
+        opacity: 1;
+        visibility: visible;
+        transition-delay: var(--trans-dur), 0s;
+      }
+
+      .timeline__arrow[aria-expanded="true"] .timeline__arrow-icon {
+        transform: rotate(0);
+      }
+
+      /* Dark theme */
+      @media (prefers-color-scheme: dark) {
+        :root {
+          --bg: hsl(var(--hue), 10%, 10%);
+          --fg: hsl(var(--hue), 10%, 90%);
+          --primary: hsl(var(--hue), 90%, 70%);
+        }
+      }
+    </style>
+    <svg display="none">
+      <symbol id="arrow">
+        <polyline points="7 10,12 15,17 10" fill="none" stroke="currentcolor" stroke-linecap="round"
+          stroke-linejoin="round" stroke-width="2" />
+      </symbol>
+    </svg>
+    <h1>A Brief Timeline of Devplexity</h1>
+    <div id="timeline" class="timeline">
+      <div class="btn-group">
+        <button class="btn" type="button" data-action="expand">Expand All</button>
+        <button class="btn" type="button" data-action="collapse">Collapse All</button>
+      </div>
+
+      <!-- Timeline Item 1: Web Development Begins -->
+      <div class="timeline__item">
+        <div class="timeline__item-header">
+          <button class="timeline__arrow" type="button" id="item1" aria-labelledby="item1-name" aria-expanded="false"
+            aria-controls="item1-ctrld" aria-haspopup="true" data-item="1">
+            <svg class="timeline__arrow-icon" viewBox="0 0 24 24" width="24px" height="24px">
+              <use href="#arrow" />
+            </svg>
+          </button>
+          <span class="timeline__dot"></span>
+          <span id="item1-name" class="timeline__meta">
+            <time class="timeline__date" datetime="2023-08-01">August 2023</time><br>
+            <strong class="timeline__title">Web Development Begins</strong>
+          </span>
+        </div>
+        <div class="timeline__item-body" id="item1-ctrld" role="region" aria-labelledby="item1" aria-hidden="true">
+          <div class="timeline__item-body-content">
+            <p class="timeline__item-p">Devplexity started its journey in web development with a college project—a
+              <strong>Library Management System</strong>. This marked the beginning of our passion for building
+              innovative digital solutions.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Timeline Item 2: NIELIT Jorhat Project -->
+      <div class="timeline__item">
+        <div class="timeline__item-header">
+          <button class="timeline__arrow" type="button" id="item2" aria-labelledby="item2-name" aria-expanded="false"
+            aria-controls="item2-ctrld" aria-haspopup="true" data-item="2">
+            <svg class="timeline__arrow-icon" viewBox="0 0 24 24" width="24px" height="24px">
+              <use href="#arrow" />
+            </svg>
+          </button>
+          <span class="timeline__dot"></span>
+          <span id="item2-name" class="timeline__meta">
+            <time class="timeline__date" datetime="2024-01-01">January 2024</time><br>
+            <strong class="timeline__title">NIELIT Jorhat's Management System</strong>
+          </span>
+        </div>
+        <div class="timeline__item-body" id="item2-ctrld" role="region" aria-labelledby="item2" aria-hidden="true">
+          <div class="timeline__item-body-content">
+            <p class="timeline__item-p">Within just one month, we developed a <strong>Management System for NIELIT
+                Jorhat</strong> using PHP. This project showcased our ability to deliver efficient and scalable
+              solutions quickly.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Timeline Item 3: First Client Project -->
+      <div class="timeline__item">
+        <div class="timeline__item-header">
+          <button class="timeline__arrow" type="button" id="item3" aria-labelledby="item3-name" aria-expanded="false"
+            aria-controls="item3-ctrld" aria-haspopup="true" data-item="3">
+            <svg class="timeline__arrow-icon" viewBox="0 0 24 24" width="24px" height="24px">
+              <use href="#arrow" />
+            </svg>
+          </button>
+          <span class="timeline__dot"></span>
+          <span id="item3-name" class="timeline__meta">
+            <time class="timeline__date" datetime="2024-01-01">January 2024</time><br>
+            <strong class="timeline__title">First Client: CSJMC Alumni Website</strong>
+          </span>
+        </div>
+        <div class="timeline__item-body" id="item3-ctrld" role="region" aria-labelledby="item3" aria-hidden="true">
+          <div class="timeline__item-body-content">
+            <p class="timeline__item-p">We secured our first client and developed the <strong>CSJMC Alumni
+                Website</strong> using the MERN stack. This project was a significant milestone in establishing our
+              reputation as a reliable web development agency.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Timeline Item 4: Journal Management System -->
+      <div class="timeline__item">
+        <div class="timeline__item-header">
+          <button class="timeline__arrow" type="button" id="item4" aria-labelledby="item4-name" aria-expanded="false"
+            aria-controls="item4-ctrld" aria-haspopup="true" data-item="4">
+            <svg class="timeline__arrow-icon" viewBox="0 0 24 24" width="24px" height="24px">
+              <use href="#arrow" />
+            </svg>
+          </button>
+          <span class="timeline__dot"></span>
+          <span id="item4-name" class="timeline__meta">
+            <time class="timeline__date" datetime="2024-06-01">June 2024</time><br>
+            <strong class="timeline__title">Journal Management System</strong>
+          </span>
+        </div>
+        <div class="timeline__item-body" id="item4-ctrld" role="region" aria-labelledby="item4" aria-hidden="true">
+          <div class="timeline__item-body-content">
+            <p class="timeline__item-p">We began working on a <strong>Journal Management System</strong>, a set of 10
+              websites. As of now, 5 websites are completed, and the project is still ongoing. This project highlights
+              our expertise in handling complex, multi-website systems.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Timeline Item 5: Pharma Alumni System -->
+      <div class="timeline__item">
+        <div class="timeline__item-header">
+          <button class="timeline__arrow" type="button" id="item5" aria-labelledby="item5-name" aria-expanded="false"
+            aria-controls="item5-ctrld" aria-haspopup="true" data-item="5">
+            <svg class="timeline__arrow-icon" viewBox="0 0 24 24" width="24px" height="24px">
+              <use href="#arrow" />
+            </svg>
+          </button>
+          <span class="timeline__dot"></span>
+          <span id="item5-name" class="timeline__meta">
+            <time class="timeline__date" datetime="2024-12-01">December 2024</time><br>
+            <strong class="timeline__title">Pharma Alumni Management System</strong>
+          </span>
+        </div>
+        <div class="timeline__item-body" id="item5-ctrld" role="region" aria-labelledby="item5" aria-hidden="true">
+          <div class="timeline__item-body-content">
+            <p class="timeline__item-p">We developed an <strong>Alumni Management System</strong> for the Pharma
+              Department using PHP. This project further solidified our expertise in building robust and user-friendly
+              systems.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Timeline Item 6: Saltbrook Academy Collaboration -->
+      <div class="timeline__item">
+        <div class="timeline__item-header">
+          <button class="timeline__arrow" type="button" id="item6" aria-labelledby="item6-name" aria-expanded="false"
+            aria-controls="item6-ctrld" aria-haspopup="true" data-item="6">
+            <svg class="timeline__arrow-icon" viewBox="0 0 24 24" width="24px" height="24px">
+              <use href="#arrow" />
+            </svg>
+          </button>
+          <span class="timeline__dot"></span>
+          <span id="item6-name" class="timeline__meta">
+            <time class="timeline__date" datetime="2024-12-26">December 26, 2024</time><br>
+            <strong class="timeline__title">Saltbrook Academy Collaboration</strong>
+          </span>
+        </div>
+        <div class="timeline__item-body" id="item6-ctrld" role="region" aria-labelledby="item6" aria-hidden="true">
+          <div class="timeline__item-body-content">
+            <p class="timeline__item-p">We started collaborating with <strong>Saltbrook Academy's Tech Team</strong> to
+              develop website modules for US-based clients. This marks our entry into international projects and
+              showcases our ability to deliver high-quality solutions for global clients.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Timeline Item 7: Devplexity Goes Live -->
+      <div class="timeline__item">
+        <div class="timeline__item-header">
+          <button class="timeline__arrow" type="button" id="item7" aria-labelledby="item7-name" aria-expanded="false"
+            aria-controls="item7-ctrld" aria-haspopup="true" data-item="7">
+            <svg class="timeline__arrow-icon" viewBox="0 0 24 24" width="24px" height="24px">
+              <use href="#arrow" />
+            </svg>
+          </button>
+          <span class="timeline__dot"></span>
+          <span id="item7-name" class="timeline__meta">
+            <time class="timeline__date" datetime="2025-01-22">January 22, 2025</time><br>
+            <strong class="timeline__title">Devplexity Goes Live</strong>
+          </span>
+        </div>
+        <div class="timeline__item-body" id="item7-ctrld" role="region" aria-labelledby="item7" aria-hidden="true">
+          <div class="timeline__item-body-content">
+            <p class="timeline__item-p">Devplexity officially goes live as a full-fledged web development agency,
+              offering a wide range of digital solutions to clients in Dibrugarh, Assam, and beyond. We are ready to
+              transform businesses with our innovative and scalable solutions.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script>
+      window.addEventListener("DOMContentLoaded", () => {
+        const ctl = new CollapsibleTimeline("#timeline");
+      });
+
+      class CollapsibleTimeline {
+        constructor(el) {
+          this.el = document.querySelector(el);
+
+          this.init();
+        }
+        init() {
+          this.el?.addEventListener("click", this.itemAction.bind(this));
+        }
+        animateItemAction(button, ctrld, contentHeight, shouldCollapse) {
+          const expandedClass = "timeline__item-body--expanded";
+          const animOptions = {
+            duration: 300,
+            easing: "cubic-bezier(0.65,0,0.35,1)"
+          };
+
+          if (shouldCollapse) {
+            button.ariaExpanded = "false";
+            ctrld.ariaHidden = "true";
+            ctrld.classList.remove(expandedClass);
+            animOptions.duration *= 2;
+            this.animation = ctrld.animate([
+              { height: `${contentHeight}px` },
+              { height: `${contentHeight}px` },
+              { height: "0px" }
+            ], animOptions);
+          } else {
+            button.ariaExpanded = "true";
+            ctrld.ariaHidden = "false";
+            ctrld.classList.add(expandedClass);
+            this.animation = ctrld.animate([
+              { height: "0px" },
+              { height: `${contentHeight}px` }
+            ], animOptions);
+          }
+        }
+        itemAction(e) {
+          const { target } = e;
+          const action = target?.getAttribute("data-action");
+          const item = target?.getAttribute("data-item");
+
+          if (action) {
+            const targetExpanded = action === "expand" ? "false" : "true";
+            const buttons = Array.from(this.el?.querySelectorAll(`[aria-expanded="${targetExpanded}"]`));
+            const wasExpanded = action === "collapse";
+
+            for (let button of buttons) {
+              const buttonID = button.getAttribute("data-item");
+              const ctrld = this.el?.querySelector(`#item${buttonID}-ctrld`);
+              const contentHeight = ctrld.firstElementChild?.offsetHeight;
+
+              this.animateItemAction(button, ctrld, contentHeight, wasExpanded);
+            }
+
+          } else if (item) {
+            const button = this.el?.querySelector(`[data-item="${item}"]`);
+            const expanded = button?.getAttribute("aria-expanded");
+
+            if (!expanded) return;
+
+            const wasExpanded = expanded === "true";
+            const ctrld = this.el?.querySelector(`#item${item}-ctrld`);
+            const contentHeight = ctrld.firstElementChild?.offsetHeight;
+
+            this.animateItemAction(button, ctrld, contentHeight, wasExpanded);
+          }
+        }
+      }
+    </script>
+
+
+    <!-- ..................................................................................................................... -->
+
+
     <!-- Call To Action Section -->
     <style>
       .call-to-action {
@@ -2573,7 +3209,8 @@
     <section id="call-to-action" class="call-to-action section dark-background">
       <!-- <img src="https://images.freecreatives.com/wp-content/uploads/2016/04/Website-Backgrounds-For-Desktop.jpg"
         alt="Call to Action Background" /> -->
-      <img src="https://i.pinimg.com/originals/85/31/5d/85315dfc4cce06ca2c5af1048eddd54e.gif"
+      <img
+        src="https://img.freepik.com/free-vector/lights-northern-sky-background_23-2148273863.jpg?t=st=1737390871~exp=1737394471~hmac=6c7124b31e9ff84a72395f45e2d0a254094f4a2551d98dce58b9a24153a987ea&w=740"
         alt="Call to Action Background" />
 
       <div class="container">
@@ -3045,7 +3682,7 @@
     <!-- Testimonials Section -->
     <section id="testimonials" class="testimonials section bg-black">
       <img
-        src="https://img.freepik.com/premium-vector/minimal-geometric-background-dynamic-shapes-composition-full-color_573652-174.jpg?w=1060"
+        src="https://i.pinimg.com/originals/f2/da/a4/f2daa437c0c8b7d139e07a13e88b3f0b.jpg"
         class="testimonials-bg" alt="Testimonials Background" />
 
       <div class="container" data-aos="fade-up" data-aos-delay="100">
@@ -3120,7 +3757,7 @@
             <div class="swiper-slide">
               <div class="testimonial-item">
                 <img
-                  src="https://instagram.fgau1-3.fna.fbcdn.net/v/t51.2885-19/269884068_1119143455490065_1910673412901612636_n.jpg?stp=dst-jpg_s150x150_tt6&_nc_ht=instagram.fgau1-3.fna.fbcdn.net&_nc_cat=101&_nc_ohc=uf0fxKi_Qp0Q7kNvgHMJYv-&_nc_gid=e59d70425f0e445c8b6773c1905df08f&edm=AOQ1c0wBAAAA&ccb=7-5&oh=00_AYAlwHLcvVmsd-9mKfjItKPt2GaXnjCG35KXW2x-RHvaxg&oe=67872DF5&_nc_sid=8b3546"
+                  src="https://static.vecteezy.com/system/resources/previews/007/409/979/original/people-icon-design-avatar-icon-person-icons-people-icons-are-set-in-trendy-flat-style-user-icon-set-vector.jpg"
                   class="testimonial-img" alt="Michael Brown" />
                 <h3>Sudipta Pran Bhattacharjee</h3>
                 <h4>CTO, Little Box India</h4>
@@ -3204,160 +3841,6 @@
 
 
     <!-- Testimonials Section -->
-    <section id="testimonials" class="testimonials section bg-black">
-      <img
-        src="https://img.freepik.com/premium-vector/minimal-geometric-background-dynamic-shapes-composition-full-color_573652-174.jpg?w=1060"
-        class="testimonials-bg" alt="Testimonials Background" />
-
-      <div class="container" data-aos="fade-up" data-aos-delay="100">
-        <div class="swiper init-swiper">
-          <script type="application/json" class="swiper-config">
-              {
-                "loop": true,
-                "speed": 600,
-                "autoplay": {
-                  "delay": 5000
-                },
-                "slidesPerView": "auto",
-                "pagination": {
-                  "el": ".swiper-pagination",
-                  "type": "bullets",
-                  "clickable": true
-                }
-              }
-          </script>
-          <div class="swiper-wrapper">
-            <div class="swiper-slide">
-              <div class="testimonial-item">
-                <img
-                  src="https://i1.rgstatic.net/ii/profile.image/11431281104196663-1669970403724_Q512/Rizwan-Rehman-2.jpg"
-                  class="testimonial-img" alt="John Doe" />
-                <h3>Dr. Rizwan Rehman</h3>
-                <h4>Asst. Professor, Dibrugarh University</h4>
-                <div class="stars">
-                  <i class="bi bi-star-fill"></i>
-                  <i class="bi bi-star-fill"></i>
-                  <i class="bi bi-star-fill"></i>
-                  <i class="bi bi-star-fill"></i>
-                  <i class="bi bi-star-fill"></i>
-                </div>
-                <p>
-                  <i class="bi bi-quote quote-icon-left"></i>
-                  <span>Devplexity transformed our online presence for
-                    Digital Solutions Cell, with a stunning website and
-                    effective digital marketing strategies. Highly recommend
-                    their expertise!</span>
-                  <i class="bi bi-quote quote-icon-right"></i>
-                </p>
-              </div>
-            </div>
-            <!-- End testimonial item -->
-
-            <div class="swiper-slide">
-              <div class="testimonial-item">
-                <img
-                  src="https://files.elfsightcdn.com/10f57fcd-29bb-4da4-9c09-61ea49a5bf6e/63dfd52f-f340-4e29-8cb8-11a65a5a79f9/PPP-New-HD.jpg"
-                  class="testimonial-img" alt="Jane Smith" />
-                <h3>Abhilash Boruah</h3>
-                <h4>Asst. Professor, Dibrugarh University</h4>
-                <div class="stars">
-                  <i class="bi bi-star-fill"></i>
-                  <i class="bi bi-star-fill"></i>
-                  <i class="bi bi-star-fill"></i>
-                  <i class="bi bi-star-fill"></i>
-                  <i class="bi bi-star-fill"></i>
-                </div>
-                <p>
-                  <i class="bi bi-quote quote-icon-left"></i>
-                  <span>The Devplexity team delivered a seamless Alumni Portal that
-                    automated and enhanced our Alumni registration. Truly a
-                    partner in innovation and growth.</span>
-                  <i class="bi bi-quote quote-icon-right"></i>
-                </p>
-              </div>
-            </div>
-            <!-- End testimonial item -->
-
-            <div class="swiper-slide">
-              <div class="testimonial-item">
-                <img
-                  src="https://instagram.fgau1-3.fna.fbcdn.net/v/t51.2885-19/269884068_1119143455490065_1910673412901612636_n.jpg?stp=dst-jpg_s150x150_tt6&_nc_ht=instagram.fgau1-3.fna.fbcdn.net&_nc_cat=101&_nc_ohc=uf0fxKi_Qp0Q7kNvgHMJYv-&_nc_gid=e59d70425f0e445c8b6773c1905df08f&edm=AOQ1c0wBAAAA&ccb=7-5&oh=00_AYAlwHLcvVmsd-9mKfjItKPt2GaXnjCG35KXW2x-RHvaxg&oe=67872DF5&_nc_sid=8b3546"
-                  class="testimonial-img" alt="Michael Brown" />
-                <h3>Sudipta Pran Bhattacharjee</h3>
-                <h4>CTO, Little Box India</h4>
-                <div class="stars">
-                  <i class="bi bi-star-fill"></i>
-                  <i class="bi bi-star-fill"></i>
-                  <i class="bi bi-star-fill"></i>
-                  <i class="bi bi-star-fill"></i>
-                  <i class="bi bi-star-fill"></i>
-                </div>
-                <p>
-                  <i class="bi bi-quote quote-icon-left"></i>
-                  <span>He saw the website of Urbanhype, an e-commerce design, to
-                    be very engaging and congratulated us for winning 2nd
-                    prize at the hackathon.</span>
-                  <i class="bi bi-quote quote-icon-right"></i>
-                </p>
-              </div>
-            </div>
-            <!-- End testimonial item -->
-
-            <div class="swiper-slide">
-              <div class="testimonial-item">
-                <img src="https://th.bing.com/th/id/OIP.wsM6HBD8xJGTWCuATBeAJAHaHa?w=152&h=180&c=7&r=0&o=5&pid=1.7"
-                  class="testimonial-img" alt="Sarah Johnson" />
-                <h3>Prof. Ankur Bharali</h3>
-                <h4>Director, IQAC at Dibrugarh University</h4>
-                <div class="stars">
-                  <i class="bi bi-star-fill"></i>
-                  <i class="bi bi-star-fill"></i>
-                  <i class="bi bi-star-fill"></i>
-                  <i class="bi bi-star-fill"></i>
-                  <i class="bi bi-star-fill"></i>
-                </div>
-                <p>
-                  <i class="bi bi-quote quote-icon-left"></i>
-                  <span>Their mathematical forum website exceeded our
-                    expectations, and we appreciate the innovative solutions
-                    they developed for journal automation, making the entire
-                    process comprehensive and efficient. Highly professional
-                    and reliable team.</span>
-                  <i class="bi bi-quote quote-icon-right"></i>
-                </p>
-              </div>
-            </div>
-            <!-- End testimonial item -->
-
-            <div class="swiper-slide">
-              <div class="testimonial-item">
-                <img src="assets/img/testimonials/testimonials-5.jpg" class="testimonial-img" alt="David Wilson" />
-                <h3>Adnan Farooq</h3>
-                <h4>Co-founder, Solar-X</h4>
-                <div class="stars">
-                  <i class="bi bi-star-fill"></i>
-                  <i class="bi bi-star-fill"></i>
-                  <i class="bi bi-star-fill"></i>
-                  <i class="bi bi-star-fill"></i>
-                  <i class="bi bi-star-fill"></i>
-                </div>
-                <p>
-                  <i class="bi bi-quote quote-icon-left"></i>
-                  <span>The Solar-X website is looking very beautiful and we are
-                    excited for its launch soon. Thanks to Devplexity for
-                    the ongoing design and changes we addressed. Their
-                    attention to detail and commitment to quality are
-                    exceptional.</span>
-                  <i class="bi bi-quote quote-icon-right"></i>
-                </p>
-              </div>
-            </div>
-            <!-- End testimonial item -->
-          </div>
-          <div class="swiper-pagination"></div>
-        </div>
-      </div>
-    </section>
     <!-- /Testimonials Section -->
 
 
@@ -3869,672 +4352,7 @@
     <!-- Without Devplexity Mode Contact Section -v3 -->
 
 
-    <style>
-      #contact-us-parent {
-        font-family: 'Poppins', sans-serif;
-        background: linear-gradient(to bottom, #020314, #0F0B3A);
-      }
 
-      .video-bg {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        opacity: 0.8;
-        filter: brightness(0.9) contrast(1.8);
-      }
-
-      .form-control {
-        background-color: transparent;
-        border: none;
-        border-bottom: 1px solid #333;
-        border-radius: 0;
-        color: white;
-        padding-left: 0;
-      }
-
-      .form-control:focus {
-        background-color: transparent;
-        border-color: white;
-        box-shadow: none;
-        color: white;
-      }
-
-      .form-control::placeholder {
-        color: rgba(255, 255, 255, 0.5);
-      }
-
-      .btn-custom {
-        background-color: #7d2ae8;
-        border: none;
-        color: #fff;
-        transition: all 0.3s ease;
-      }
-
-      .btn-custom:hover {
-        background-color: #6a1fd6;
-        transform: scale(1.05);
-      }
-
-      .attachment-label:hover {
-        color: #17a2b8 !important;
-      }
-
-      /* for the button part */
-      .button {
-        position: relative;
-        padding: 10px 22px;
-        border-radius: 6px;
-        border: none;
-        color: #fff;
-        cursor: pointer;
-        background-color: #7d2ae8;
-        transition: all 0.2s ease;
-      }
-
-      .button:active {
-        transform: scale(0.96);
-      }
-
-      .button:before,
-      .button:after {
-        position: absolute;
-        content: "";
-        width: 150%;
-        left: 50%;
-        height: 100%;
-        transform: translateX(-50%);
-        z-index: -1000;
-        background-repeat: no-repeat;
-      }
-
-      .button:hover:before {
-        top: -70%;
-        background-image: radial-gradient(circle, #7d2ae8 20%, transparent 20%),
-          radial-gradient(circle, transparent 20%, #7d2ae8 20%, transparent 30%),
-          radial-gradient(circle, #7d2ae8 20%, transparent 20%),
-          radial-gradient(circle, #7d2ae8 20%, transparent 20%),
-          radial-gradient(circle, transparent 10%, #7d2ae8 15%, transparent 20%),
-          radial-gradient(circle, #7d2ae8 20%, transparent 20%),
-          radial-gradient(circle, #7d2ae8 20%, transparent 20%),
-          radial-gradient(circle, #7d2ae8 20%, transparent 20%),
-          radial-gradient(circle, #7d2ae8 20%, transparent 20%);
-        background-size: 10% 10%, 20% 20%, 15% 15%, 20% 20%, 18% 18%, 10% 10%, 15% 15%,
-          10% 10%, 18% 18%;
-        background-position: 50% 120%;
-        animation: greentopBubbles 0.6s ease;
-      }
-
-      @keyframes greentopBubbles {
-        0% {
-          background-position: 5% 90%, 10% 90%, 10% 90%, 15% 90%, 25% 90%, 25% 90%,
-            40% 90%, 55% 90%, 70% 90%;
-        }
-
-        50% {
-          background-position: 0% 80%, 0% 20%, 10% 40%, 20% 0%, 30% 30%, 22% 50%,
-            50% 50%, 65% 20%, 90% 30%;
-        }
-
-        100% {
-          background-position: 0% 70%, 0% 10%, 10% 30%, 20% -10%, 30% 20%, 22% 40%,
-            50% 40%, 65% 10%, 90% 20%;
-          background-size: 0% 0%, 0% 0%, 0% 0%, 0% 0%, 0% 0%, 0% 0%;
-        }
-      }
-
-      .button:hover::after {
-        bottom: -70%;
-        background-image: radial-gradient(circle, #2a3ae8 20%, transparent 20%),
-          radial-gradient(circle, #2aa9e8 20%, transparent 20%),
-          radial-gradient(circle, transparent 10%, #1a63f4 15%, transparent 20%),
-          radial-gradient(circle, #2aace8 20%, transparent 20%),
-          radial-gradient(circle, #2ad8e8 20%, transparent 20%),
-          radial-gradient(circle, #2a2de8 20%, transparent 20%),
-          radial-gradient(circle, #3990f4 20%, transparent 20%);
-        background-size: 15% 15%, 20% 20%, 18% 18%, 20% 20%, 15% 15%, 20% 20%, 18% 18%;
-        background-position: 50% 0%;
-        animation: greenbottomBubbles 0.6s ease;
-      }
-
-      @keyframes greenbottomBubbles {
-        0% {
-          background-position: 10% -10%, 30% 10%, 55% -10%, 70% -10%, 85% -10%,
-            70% -10%, 70% 0%;
-        }
-
-        50% {
-          background-position: 0% 80%, 20% 80%, 45% 60%, 60% 100%, 75% 70%, 95% 60%,
-            105% 0%;
-        }
-
-        100% {
-          background-position: 0% 90%, 20% 90%, 45% 70%, 60% 110%, 75% 80%, 95% 70%,
-            110% 10%;
-          background-size: 0% 0%, 0% 0%, 0% 0%, 0% 0%, 0% 0%, 0% 0%;
-        }
-      }
-
-      .input-container {
-        position: relative;
-        margin: 20px;
-      }
-
-      /* Input field */
-      .input-field {
-        display: block;
-        width: 100%;
-        padding: 10px;
-        font-size: 16px;
-        border: none;
-        border-bottom: 2px solid #ccc;
-        outline: none;
-        background-color: transparent;
-      }
-
-      /* Input label */
-      .input-label {
-        position: absolute;
-        top: 0;
-        left: 0;
-        font-size: 16px;
-        color: rgba(204, 204, 204, 0);
-        pointer-events: none;
-        transition: all 0.3s ease;
-      }
-
-      /* Input highlight */
-      .input-highlight {
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        height: 2px;
-        width: 0;
-        background-color: #007bff;
-        transition: all 0.3s ease;
-      }
-
-      /* Input field:focus styles */
-      .input-field:focus+.input-label {
-        top: -20px;
-        font-size: 12px;
-        color: #007bff;
-      }
-
-      .input-field:focus+.input-label+.input-highlight {
-        width: 100%;
-      }
-    </style>
-    <style>
-      .creative-send-button {
-        --primary: #ff5569;
-        --neutral-1: #f7f8f7;
-        --neutral-2: #e7e7e7;
-        --radius: 14px;
-
-        cursor: pointer;
-        border-radius: var(--radius);
-        text-shadow: 0 1px 1px rgba(0, 0, 0, 0.3);
-        border: none;
-        box-shadow: 0 0.5px 0.5px 1px rgba(255, 255, 255, 0.2),
-          0 10px 20px rgba(0, 0, 0, 0.2), 0 4px 5px 0px rgba(0, 0, 0, 0.05);
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        position: relative;
-        transition: all 0.3s ease;
-        min-width: 200px;
-        padding: 20px;
-        height: 68px;
-        font-family: "Galano Grotesque", Poppins, Montserrat, sans-serif;
-        font-style: normal;
-        font-size: 18px;
-        font-weight: 600;
-      }
-
-      .creative-send-button:hover {
-        transform: scale(1.02);
-        box-shadow: 0 0 1px 2px rgba(255, 255, 255, 0.3),
-          0 15px 30px rgba(0, 0, 0, 0.3), 0 10px 3px -3px rgba(0, 0, 0, 0.04);
-      }
-
-      .creative-send-button:active {
-        transform: scale(1);
-        box-shadow: 0 0 1px 2px rgba(255, 255, 255, 0.3),
-          0 10px 3px -3px rgba(0, 0, 0, 0.2);
-      }
-
-      .creative-send-button:after {
-        content: "";
-        position: absolute;
-        inset: 0;
-        border-radius: var(--radius);
-        border: 2.5px solid transparent;
-        background: linear-gradient(var(--neutral-1), var(--neutral-2)) padding-box,
-          linear-gradient(to bottom, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.45)) border-box;
-        z-index: 0;
-        transition: all 0.4s ease;
-      }
-
-      .creative-send-button:hover::after {
-        transform: scale(1.05, 1.1);
-        box-shadow: inset 0 -1px 3px 0 rgba(255, 255, 255, 1);
-      }
-
-      .creative-send-button::before {
-        content: "";
-        inset: 7px 6px 6px 6px;
-        position: absolute;
-        background: linear-gradient(to top, var(--neutral-1), var(--neutral-2));
-        border-radius: 30px;
-        filter: blur(0.5px);
-        z-index: 2;
-      }
-
-      .state p {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-      }
-
-      .state .icon {
-        position: absolute;
-        left: 0;
-        top: 0;
-        bottom: 0;
-        margin: auto;
-        transform: scale(1.25);
-        transition: all 0.3s ease;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-      }
-
-      .state .icon svg {
-        overflow: visible;
-      }
-
-      /* outline */
-      .creative-send-outline {
-        position: absolute;
-        border-radius: inherit;
-        overflow: hidden;
-        z-index: 1;
-        opacity: 0;
-        transition: opacity 0.4s ease;
-        inset: -2px -3.5px;
-      }
-
-      .creative-send-outline::before {
-        content: "";
-        position: absolute;
-        inset: -100%;
-        background: conic-gradient(from 180deg,
-            transparent 60%,
-            white 80%,
-            transparent 100%);
-        animation: spin 2s linear infinite;
-        animation-play-state: paused;
-      }
-
-      @keyframes spin {
-        0% {
-          transform: rotate(0deg);
-        }
-
-        100% {
-          transform: rotate(360deg);
-        }
-      }
-
-      .creative-send-button:hover .creative-send-outline {
-        opacity: 1;
-      }
-
-      .creative-send-button:hover .creative-send-outline::before {
-        animation-play-state: running;
-      }
-
-      /* Letters */
-      .state p span {
-        display: block;
-        opacity: 0;
-        animation: slideDown 0.8s ease forwards calc(var(--i) * 0.03s);
-      }
-
-      .creative-send-button:hover p span {
-        opacity: 1;
-        animation: wave 0.5s ease forwards calc(var(--i) * 0.02s);
-      }
-
-      .creative-send-button:focus p span {
-        opacity: 1;
-        animation: disapear 0.6s ease forwards calc(var(--i) * 0.03s);
-      }
-
-      @keyframes wave {
-        30% {
-          opacity: 1;
-          transform: translateY(4px) translateX(0) rotate(0);
-        }
-
-        50% {
-          opacity: 1;
-          transform: translateY(-3px) translateX(0) rotate(0);
-          color: var(--primary);
-        }
-
-        100% {
-          opacity: 1;
-          transform: translateY(0) translateX(0) rotate(0);
-        }
-      }
-
-      @keyframes slideDown {
-        0% {
-          opacity: 0;
-          transform: translateY(-20px) translateX(5px) rotate(-90deg);
-          color: var(--primary);
-          filter: blur(5px);
-        }
-
-        30% {
-          opacity: 1;
-          transform: translateY(4px) translateX(0) rotate(0);
-          filter: blur(0);
-        }
-
-        50% {
-          opacity: 1;
-          transform: translateY(-3px) translateX(0) rotate(0);
-        }
-
-        100% {
-          opacity: 1;
-          transform: translateY(0) translateX(0) rotate(0);
-        }
-      }
-
-      @keyframes disapear {
-        from {
-          opacity: 1;
-        }
-
-        to {
-          opacity: 0;
-          transform: translateX(5px) translateY(20px);
-          color: var(--primary);
-          filter: blur(5px);
-        }
-      }
-
-      /* Plane */
-      .state--default .icon svg {
-        animation: land 0.6s ease forwards;
-      }
-
-      .creative-send-button:hover .state--default .icon {
-        transform: rotate(45deg) scale(1.25);
-      }
-
-      .creative-send-button:focus .state--default svg {
-        animation: takeOff 0.8s linear forwards;
-      }
-
-      .creative-send-button:focus .state--default .icon {
-        transform: rotate(0) scale(1.25);
-      }
-
-      @keyframes takeOff {
-        0% {
-          opacity: 1;
-        }
-
-        60% {
-          opacity: 1;
-          transform: translateX(70px) rotate(45deg) scale(2);
-        }
-
-        100% {
-          opacity: 0;
-          transform: translateX(160px) rotate(45deg) scale(0);
-        }
-      }
-
-      @keyframes land {
-        0% {
-          transform: translateX(-60px) translateY(30px) rotate(-50deg) scale(2);
-          opacity: 0;
-          filter: blur(3px);
-        }
-
-        100% {
-          transform: translateX(0) translateY(0) rotate(0);
-          opacity: 1;
-          filter: blur(0);
-        }
-      }
-
-      /* Contrail */
-      .state--default .icon:before {
-        content: "";
-        position: absolute;
-        top: 50%;
-        height: 2px;
-        width: 0;
-        left: -5px;
-        background: linear-gradient(to right, transparent, rgba(0, 0, 0, 0.5));
-      }
-
-      .creative-send-button:focus .state--default .icon:before {
-        animation: contrail 0.8s linear forwards;
-      }
-
-      @keyframes contrail {
-        0% {
-          width: 0;
-          opacity: 1;
-        }
-
-        8% {
-          width: 15px;
-        }
-
-        60% {
-          opacity: 0.7;
-          width: 80px;
-        }
-
-        100% {
-          opacity: 0;
-          width: 160px;
-        }
-      }
-
-      /* States */
-      .state {
-        padding-left: 29px;
-        z-index: 2;
-        display: flex;
-        position: relative;
-      }
-
-      .state--default span:nth-child(4) {
-        margin-right: 5px;
-      }
-
-      .state--sent {
-        display: none;
-      }
-
-      .state--sent svg {
-        transform: scale(1.25);
-        margin-right: 8px;
-      }
-
-      .creative-send-button:focus .state--default {
-        position: absolute;
-      }
-
-      .creative-send-button:focus .state--sent {
-        display: flex;
-      }
-
-      .creative-send-button:focus .state--sent span {
-        opacity: 0;
-        animation: slideDown 0.8s ease forwards calc(var(--i) * 0.2s);
-      }
-
-      .creative-send-button:focus .state--sent .icon svg {
-        opacity: 0;
-        animation: appear 1.2s ease forwards 0.8s;
-      }
-
-      @keyframes appear {
-        0% {
-          opacity: 0;
-          transform: scale(4) rotate(-40deg);
-          color: var(--primary);
-          filter: blur(4px);
-        }
-
-        30% {
-          opacity: 1;
-          transform: scale(0.6);
-          filter: blur(1px);
-        }
-
-        50% {
-          opacity: 1;
-          transform: scale(1.2);
-          filter: blur(0);
-        }
-
-        100% {
-          opacity: 1;
-          transform: scale(1);
-        }
-      }
-    </style>
-
-    <div id="contact-us-parent"
-      class="container-fluid min-vh-100 d-flex align-items-center justify-content-center py-5">
-      <div class="row w-100">
-        <!-- Left Section with Video Background -->
-        <div class="col-lg-6 p-0 position-relative overflow-hidden rounded-start">
-          <!-- <video autoplay muted loop playsinline class="video-bg">
-            <source src="./test/testvideo2.mp4" type="video/mp4">
-            Your browser does not support the video tag.
-          </video> -->
-          <img src="https://64.media.tumblr.com/81c20b750ad6549843bd1b57758bf77c/tumblr_ptjt286Asi1se3uws_540.gif"
-            alt="image" style="position: absolute; width: 100vw; height: 100vh; object-fit: cover;" class="video-bg">
-          <div class="position-relative z-1 p-4 text-white">
-            <div class="mt-5">
-              <h2 style="color: #fff;" class="display-3 fw-bold">
-                Don't be Shy,<br>
-                Say Hi!...<br>
-              </h2>
-            </div>
-          </div>
-        </div>
-        <!-- Right Section -->
-        <div class="col-lg-6 p-5 bg-black text-white rounded-end">
-          <h2 class="text-white display-6 fw-bold mb-4">Share what's in your mind</h2>
-          <form>
-            <div class="mb-4 input-container">
-              <input type="text" class="form-control input-field" placeholder="Enter Your Name">
-              <label for="input-field" class="input-label">Enter Your Name</label>
-              <span class="input-highlight"></span>
-            </div>
-            <div class="mb-4 input-container">
-              <input type="email" class="form-control input-field" placeholder="Enter Your Email">
-              <label for="input-field" class="input-label">Enter Your Email</label>
-              <span class="input-highlight"></span>
-            </div>
-            <div class="mb-4">
-              <textarea class="form-control" rows="3" placeholder="Tell us about your Issue"></textarea>
-            </div>
-            <!-- <button type="submit" class="btn btn-custom rounded-pill px-4 py-2 button">Send request</button> -->
-            <div style="display: flex;justify-content: center;align-items: center;border: 1px solid black;">
-              <button class="creative-send-button">
-                <div class="creative-send-outline"></div>
-                <div class="state state--default">
-                  <div class="icon">
-                    <svg width="1em" height="1em" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                      <g style="filter: url(#shadow)">
-                        <path
-                          d="M14.2199 21.63C13.0399 21.63 11.3699 20.8 10.0499 16.83L9.32988 14.67L7.16988 13.95C3.20988 12.63 2.37988 10.96 2.37988 9.78001C2.37988 8.61001 3.20988 6.93001 7.16988 5.60001L15.6599 2.77001C17.7799 2.06001 19.5499 2.27001 20.6399 3.35001C21.7299 4.43001 21.9399 6.21001 21.2299 8.33001L18.3999 16.82C17.0699 20.8 15.3999 21.63 14.2199 21.63ZM7.63988 7.03001C4.85988 7.96001 3.86988 9.06001 3.86988 9.78001C3.86988 10.5 4.85988 11.6 7.63988 12.52L10.1599 13.36C10.3799 13.43 10.5599 13.61 10.6299 13.83L11.4699 16.35C12.3899 19.13 13.4999 20.12 14.2199 20.12C14.9399 20.12 16.0399 19.13 16.9699 16.35L19.7999 7.86001C20.3099 6.32001 20.2199 5.06001 19.5699 4.41001C18.9199 3.76001 17.6599 3.68001 16.1299 4.19001L7.63988 7.03001Z"
-                          fill="currentColor"></path>
-                        <path
-                          d="M10.11 14.4C9.92005 14.4 9.73005 14.33 9.58005 14.18C9.29005 13.89 9.29005 13.41 9.58005 13.12L13.16 9.53C13.45 9.24 13.93 9.24 14.22 9.53C14.51 9.82 14.51 10.3 14.22 10.59L10.64 14.18C10.5 14.33 10.3 14.4 10.11 14.4Z"
-                          fill="currentColor"></path>
-                      </g>
-                      <defs>
-                        <filter id="shadow">
-                          <fedropshadow dx="0" dy="1" stdDeviation="0.6" flood-opacity="0.5"></fedropshadow>
-                        </filter>
-                      </defs>
-                    </svg>
-                  </div>
-                  <p style="margin-top: 15px;">
-                    <span style="--i:0">S</span>
-                    <span style="--i:1">e</span>
-                    <span style="--i:2">n</span>
-                    <span style="--i:3">d</span>
-                    <span style="--i:4">M</span>
-                    <span style="--i:5">e</span>
-                    <span style="--i:6">s</span>
-                    <span style="--i:7">s</span>
-                    <span style="--i:8">a</span>
-                    <span style="--i:9">g</span>
-                    <span style="--i:10">e</span>
-                  </p>
-                </div>
-                <div class="state state--sent">
-                  <div class="icon">
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" height="1em" width="1em"
-                      stroke-width="0.5px" stroke="black">
-                      <g style="filter: url(#shadow)">
-                        <path fill="currentColor"
-                          d="M12 22.75C6.07 22.75 1.25 17.93 1.25 12C1.25 6.07 6.07 1.25 12 1.25C17.93 1.25 22.75 6.07 22.75 12C22.75 17.93 17.93 22.75 12 22.75ZM12 2.75C6.9 2.75 2.75 6.9 2.75 12C2.75 17.1 6.9 21.25 12 21.25C17.1 21.25 21.25 17.1 21.25 12C21.25 6.9 17.1 2.75 12 2.75Z">
-                        </path>
-                        <path fill="currentColor"
-                          d="M10.5795 15.5801C10.3795 15.5801 10.1895 15.5001 10.0495 15.3601L7.21945 12.5301C6.92945 12.2401 6.92945 11.7601 7.21945 11.4701C7.50945 11.1801 7.98945 11.1801 8.27945 11.4701L10.5795 13.7701L15.7195 8.6301C16.0095 8.3401 16.4895 8.3401 16.7795 8.6301C17.0695 8.9201 17.0695 9.4001 16.7795 9.6901L11.1095 15.3601C10.9695 15.5001 10.7795 15.5801 10.5795 15.5801Z">
-                        </path>
-                      </g>
-                    </svg>
-                  </div>
-                  <p>
-                    <span style="--i:5">S</span>
-                    <span style="--i:6">e</span>
-                    <span style="--i:7">n</span>
-                    <span style="--i:8">t</span>
-                  </p>
-                </div>
-              </button>
-
-            </div>
-          </form>
-        </div>
-      </div>
-    </div>
-
-    <script>
-      document.getElementById('file-input').addEventListener('change', function (e) {
-        const fileName = e.target.files[0]?.name;
-        if (fileName) {
-          document.getElementById('file-name').textContent = fileName;
-        }
-      });
-
-      document.querySelector('form').addEventListener('submit', function (e) {
-        e.preventDefault();
-        console.log('Form submitted!');
-        // Add your form submission logic here
-      });
-    </script>
 
 
     <!-- /Without Devplexity Mode Contact Section -v3 -->

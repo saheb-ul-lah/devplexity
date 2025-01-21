@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <style>
+        @import url("https://fonts.googleapis.com/css2?family=Yeseva+One&display=swap");
+
+        * {
+            box-sizing: border-box;
+            margin: auto;
+        }
+
+        body {
+            position: relative;
+            height: 100vh;
+            display: flex;
+            background: radial-gradient(circle at bottom right, #007cb7, #83b4b6 69%, #e6ecebaf 70%, #00abc5), #00abc5;
+            overflow: hidden;
+            perspective: 1440px;
+            font-family: "Yeseva One";
+        }
+
+        svg {
+            position: absolute;
+        }
+
+        .quote {
+            position: relative;
+            width: 90%;
+            max-width: 90vh;
+            aspect-ratio: 1/1;
+            display: flex;
+            flex-direction: column;
+            border-radius: 20px 20px 50% 50%;
+            overflow: hidden;
+            text-align: center;
+            word-wrap: no-wrap;
+            filter: drop-shadow(-20px 20px 5px #006793);
+        }
+
+        .quote figure {
+            margin: auto;
+            font-size: clamp(12vh, 12vh, 6rem);
+            filter: drop-shadow(0 0 5px #006793);
+        }
+
+        .quote figure span.wave {
+            background: -50% 0%/200% 100% linear-gradient(90deg, #ffffff0f, #006793, #ffffff0f);
+            background-position: -50% 0;
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            animation: flow 5s linear infinite, sheen 10s linear infinite;
+        }
+
+        .quote figure span.wave.oppo {
+            animation-direction: reverse;
+        }
+
+        .quote figure figcaption {
+            font-size: clamp(8vh, 8vh, 4rem);
+            text-align: right;
+        }
+
+        .quote .frame {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: #ffffff;
+        }
+
+        .quote .frame:nth-of-type(1) {
+            height: 33.3%;
+            opacity: 0.6;
+        }
+
+        .quote .frame:nth-of-type(2) {
+            height: 66.6%;
+            opacity: 0.4;
+        }
+
+        .quote .frame:nth-of-type(3) {
+            height: 99.9%;
+            opacity: 0.2;
+        }
+
+        .pond {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: #ffff000f;
+        }
+
+        .pond .film {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            backdrop-filter: blur(8px);
+            background-size: cover;
+            filter: url(#displacementFilter) url(#goo);
+        }
+
+        .pond .ripple {
+            position: absolute;
+            width: 50vw;
+            aspect-ratio: 1/1;
+            border-radius: 50%;
+            border: 5px solid #fff;
+            transform-origin: center;
+            transform: translate(-50%, -50%) scale(0);
+            opacity: 0;
+            animation: ripple 5s ease-in-out infinite;
+        }
+
+        .pond .ripple:nth-of-type(1) {
+            width: 46vw;
+            top: 73vh;
+            left: 10vw;
+            border-width: 3px;
+            animation-duration: 9s;
+            animation-delay: 2.5071435991s;
+        }
+
+        .pond .ripple:nth-of-type(2) {
+            width: 39vw;
+            top: 32vh;
+            left: 83vw;
+            border-width: 5px;
+            animation-duration: 7s;
+            animation-delay: 2.9359399189s;
+        }
+
+        .pond .ripple:nth-of-type(3) {
+            width: 36vw;
+            top: 95vh;
+            left: 75vw;
+            border-width: 3px;
+            animation-duration: 8s;
+            animation-delay: 2.3361557064s;
+        }
+
+        .pond .ripple:nth-of-type(4) {
+            width: 36vw;
+            top: 22vh;
+            left: 14vw;
+            border-width: 4px;
+            animation-duration: 10s;
+            animation-delay: 1.3630064185s;
+        }
+
+        .pond .ripple:nth-of-type(5) {
+            width: 29vw;
+            top: 64vh;
+            left: 40vw;
+            border-width: 5px;
+            animation-duration: 6s;
+            animation-delay: 1.8946616445s;
+        }
+
+        .pond .ripple:nth-of-type(6) {
+            width: 31vw;
+            top: 7vh;
+            left: 17vw;
+            border-width: 5px;
+            animation-duration: 6s;
+            animation-delay: 1.9855476242s;
+        }
+
+        .pond .ripple:nth-of-type(7) {
+            width: 50vw;
+            top: 55vh;
+            left: 7vw;
+            border-width: 4px;
+            animation-duration: 8s;
+            animation-delay: 2.1168220896s;
+        }
+
+        .pond .ripple:nth-of-type(8) {
+            width: 36vw;
+            top: 74vh;
+            left: 45vw;
+            border-width: 4px;
+            animation-duration: 8s;
+            animation-delay: 1.8399239518s;
+        }
+
+        .pond .fish {
+            position: absolute;
+            width: 38px;
+            aspect-ratio: 0.3/1;
+            display: flex;
+            flex-direction: column;
+            filter: url(#goo);
+            animation: voyage 20s linear infinite;
+            transform: rotate(38deg);
+        }
+
+        .pond .fish .part {
+            width: 100%;
+            flex-grow: 2;
+            background: #006793;
+        }
+
+        .pond .fish .part.head {
+            transform-origin: bottom center;
+            clip-path: polygon(50% 0%, 100% 100%, 0% 100%);
+            animation: swim 1.3s linear infinite;
+        }
+
+        .pond .fish .part.tail {
+            transform-origin: top center;
+            flex-grow: 4;
+            clip-path: polygon(50% 100%, 100% 0%, 0% 0%);
+            animation: swim 1.3s linear infinite reverse;
+        }
+
+        .pond .fish:nth-of-type(1) {
+            top: 110vh;
+            left: 30vw;
+            animation-delay: 0.0168531274s;
+            animation-duration: 15s;
+        }
+
+        .pond .fish:nth-of-type(2) {
+            top: 50vh;
+            left: -5vw;
+            animation-delay: 1.071544005s;
+            animation-duration: 13s;
+        }
+
+        .pond .fish:nth-of-type(3) {
+            top: 110vh;
+            left: 70vw;
+            animation-delay: 2.2168463538s;
+            animation-duration: 20s;
+        }
+
+        .wave {
+            -webkit-mask: radial-gradient(46.6154480832px at 50% calc(100% - (27px + 38px)), blue 99%, #0000 101%), radial-gradient(46.6154480832px at 50% calc(100% + 38px), #0000 99%, red 101%) repeat-x;
+            -webkit-mask-size: calc(4*27px) 100%;
+            -webkit-mask-position: calc(50% - 2*27px) 0, 50% calc(100% - 27px);
+            animation: flow 5s linear infinite;
+        }
+
+        .wave.oppo {
+            animation-direction: reverse;
+        }
+
+        @keyframes flow {
+            100% {
+                -webkit-mask-position: calc(50% - 6*27px) 0, calc(50% - 4*27px) calc(200% - 27px);
+            }
+        }
+
+        @keyframes swim {
+
+            0%,
+            100% {
+                transform: rotate(0deg);
+            }
+
+            33.3% {
+                transform: rotate(15deg);
+            }
+
+            75% {
+                transform: rotate(-15deg);
+            }
+        }
+
+        @keyframes voyage {
+            100% {
+                translate: 40vw -130vh;
+            }
+        }
+
+        @keyframes sheen {
+            100% {
+                background-position: 150% 0%;
+            }
+        }
+
+        @keyframes ripple {
+            50% {
+                opacity: 1;
+            }
+
+            100% {
+                opacity: 0;
+                transform: translate(-50%, -50%) scale(1);
+            }
+        }
+
+        @media (max-width: 700px) {
+
+            .quote figure,
+            .quote figure figcaption {
+                font-size: clamp(30px, 10vw, 4rem);
+            }
+        }
+    </style>
+    <div class="pond">
+        <div>
+            <div class="fish">
+                <div class="part head"></div>
+                <div class="part body"></div>
+                <div class="part tail"></div>
+            </div>
+            <div class="fish">
+                <div class="part head"></div>
+                <div class="part body"></div>
+                <div class="part tail"></div>
+            </div>
+            <div class="fish">
+                <div class="part head"></div>
+                <div class="part body"></div>
+                <div class="part tail"></div>
+            </div>
+        </div>
+        <div>
+            <div class="ripple"></div>
+            <div class="ripple"></div>
+            <div class="ripple"></div>
+            <div class="ripple"></div>
+            <div class="ripple"></div>
+            <div class="ripple"></div>
+            <div class="ripple"></div>
+            <div class="ripple"></div>
+        </div>
+        <div class="film"></div>
+    </div>
+    <div class="quote">
+        <div class="frame wave"></div>
+        <div class="frame wave oppo"></div>
+        <div class="frame wave"></div>
+        <figure style="">
+            <blockquote> <span class="wave">Be water,</span><br /><span class="wave oppo">my friend.</span></blockquote>
+            <figcaption><span class="wave oppo">- Bruce Lee</span></figcaption>
+        </figure>
+    </div>
+    <svg xmlns="http://www.w3.org/2000/svg" version="1.1">
+        <defs>
+            <filter id="goo">
+                <feGaussianBlur in="SourceGraphic" stdDeviation="5" result="blur"></feGaussianBlur>
+                <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 19 -9"
+                    result="goo"></feColorMatrix>
+                <!--feBlend(in="SourceGraphic" in2="goo")-->
+                <feComposite in="SourceGraphic" in2="goo" operator="atop"></feComposite>
+            </filter>
+        </defs>
+    </svg>
+    <svg xmlns="https://wrw.w3.org/2000/svg">
+        <filter id="displacementFilter" x="0" y="0" width="100%" height="100%">
+            <feTurbulence id="sea-filter" type="turbulence" baseFrequency="0.02 0.05" numbOctaves="3" seed="2"
+                result="turbulence"></feTurbulence>
+            <feDisplacementMap in2="turbulence" in="SourceGraphic" scale="50" xChannelSelector="R" yChannelSelector="G">
+            </feDisplacementMap>
+            <animate xlink:href="#sea-filter" attributeName="baseFrequency" dur="60s" keyTimes="0;0.5;1"
+                values="0.02 0.06;0.04 0.08;0.02 0.06" repeatCount="indefinite"></animate>
+        </filter>
+    </svg>
+</body>
+
+</html>
